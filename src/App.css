@@ -1,38 +1,37 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+:root {
+  --bg-color: pink;
+  /* --bg-color: rgb(246, 233, 246); */
+  --font: sans-serif;
+  --submit-color: #06b;
+  --submit-hover: rgb(97, 163, 217);
+  --text-color: #fff;
+  --background-gradient: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  padding: 0;
+  margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  background-color: var(--bg-color);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
+@keyframes fadeInUp {
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(10vh);
   }
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0vh;
+  z-index: 99999;
 }

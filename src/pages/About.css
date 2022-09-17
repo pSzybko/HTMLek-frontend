@@ -1,0 +1,23 @@
+:root {
+    --typewriterSpeed: 3s;
+    --typewriterCharacters: 13;
+    --bg-color: #c4e5ff;
+    --font-color: #453F3C;
+    --special-color: #F78764;
+}
+
+.about {
+    height: 100vh;
+    color: var(--font-color);
+    margin: 0vh 5vw 0vh 5vw;
+    padding-top: 50px;
+}
+
+.header {
+    color: var(--font-color);
+    font-size: clamp(0.7rem, 1.5vw, 3rem);
+
+    /* position: absolute; */
+    top: 50%;
+    left: 50%;
+}

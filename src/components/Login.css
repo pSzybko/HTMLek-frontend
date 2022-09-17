@@ -1,0 +1,10 @@
+:root {
+    --white: rgba(255, 255, 255, 0.3);
+}
+
+.form {
+    background: var(--white);
+    height: 100%;
+    overflow: auto;
+    padding: 20px;
+}
