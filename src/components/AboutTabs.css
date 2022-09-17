@@ -14,7 +14,6 @@
     -moz-user-select: none;
     -ms-user-select: none;
     margin-top: 50px;
-    /* font-size: clamp(1rem, 3.5vw, 4rem); */
     font-size: clamp(0.7rem, 1.5vw, 3rem);
 
 

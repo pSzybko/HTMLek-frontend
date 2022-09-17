@@ -116,7 +116,7 @@
 }
 
 .Text-box .Title::before {
-    /* background: var(--bg-color); */
+    background: var(--bg-color);
     animation: typewriter var(--typewriterSpeed) steps(var(--typewriterCharacters)) 1s forwards;
 }
 

@@ -17,7 +17,7 @@ export const modalStyle = {
         transform: 'translate(-50%, -50%)',
         border: '1px solid white',
         backgroundColor: 'rgba(255, 255, 255, 0.00)',
-        overflow: 'auto',
+        overflow: 'hidden',
         WebkitOverflowScrolling: 'touch',
         borderRadius: '20px',
         outline: 'none',

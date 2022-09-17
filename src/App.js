@@ -1,6 +1,6 @@
 import './App.css'
 
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { IconContext } from "react-icons"
 import MenuBar from './components/MenuBar'
 import Modal from 'react-modal'
@@ -20,18 +20,22 @@ function App() {
         window.scrollTo(0, 0)
     }
     const openLoginModal = () => {
+        document.body.style.overflow = 'hidden'
         setShowLoginModal(true)
     }
 
     const openRegisterModal = () => {
+        document.body.style.overflow = 'hidden'
         setShowRegisterModal(true)
     }
 
     const closeLoginModal = () => {
+        document.body.style.overflow = 'unset'
         setShowLoginModal(false)
     }
 
     const closeRegisterModal = () => {
+        document.body.style.overflow = 'unset'
         setShowRegisterModal(false)
     }
 
@@ -39,7 +43,7 @@ function App() {
         setAuth(!auth)
     }
     return (
-        <>
+        <div>
             <div className='menu'>
                 <IconContext.Provider value={{ color: "#15172b", size: "50px" }}>
                     {!auth ? (
@@ -66,12 +70,12 @@ function App() {
                     isOpen={showRegisterModal}
                     onRequestClose={closeRegisterModal}
                 >
-                    <Register />
+                    <Register closeRegisterModal={closeRegisterModal} />
                 </Modal>
             </div>
             <Home />
             <About />
-        </>
+        </div>
     )
 }
 
