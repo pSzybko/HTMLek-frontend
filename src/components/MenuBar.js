@@ -15,7 +15,7 @@ export default function MenuBar({ openRegisterModal, openLoginModal }) {
 
     return (
         <div className="taskbarWrapper">
-            <IconContext.Provider value={{ color: "grey", size: "40px" }}>
+            <IconContext.Provider value={{ color: "#453F3C", size: "40px" }}>
                 <nav className={"nav-menu"}>
                     <ul className="nav-menu-items">
                         <li className='button' onClick={openRegisterModal}><BiIcons.BiLogIn /><br />zarejestruj się</li>

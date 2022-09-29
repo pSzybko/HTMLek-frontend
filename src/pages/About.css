@@ -1,6 +1,4 @@
 :root {
-    --typewriterSpeed: 3s;
-    --typewriterCharacters: 13;
     --bg-color: #c4e5ff;
     --font-color: #453F3C;
     --special-color: #F78764;
@@ -10,7 +8,7 @@
     height: 100vh;
     color: var(--font-color);
     margin: 0vh 5vw 0vh 5vw;
-    padding-top: 50px;
+    padding-top: 0.5vh;
 }
 
 .header {

@@ -1,6 +1,4 @@
 import React from "react"
-// import * as BiIcons from "react-icons/bi"
-// import * as FiIcons from "react-icons/fi"
 import * as CgIcons from "react-icons/cg"
 
 export const ManuBarElements = [
@@ -14,15 +12,15 @@ export const ManuBarElements = [
     {
         title: "About",
         path: "about",
-        icon: <CgIcons.CgInfo />,
+        icon: <CgIcons.CgFeed />,
         cName: "nav-text",
         description: "nasza misja",
 
     },
     {
         title: "Testimonials",
-        path: "testimonials",
-        icon: <CgIcons.CgFeed />,
+        path: "tasks",
+        icon: <CgIcons.CgInfo />,
         cName: "nav-text",
         description: "o nas",
     },

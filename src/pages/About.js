@@ -5,7 +5,7 @@ import AboutTabs from '../components/AboutTabs'
 export default function About() {
     return (
         <div className='about' id='about'>
-            <h3 className='header'>O nas</h3>
+            {/* <h3 className='header'>Nasza misja</h3> */}
             <AboutTabs />
         </div >
     )

@@ -15,8 +15,7 @@ export default function Login(props) {
         try {
             const res = await axios.post((process.env.baseURL || "http://localhost:3001") + '/api/login', dataJson, {
                 headers: { 'Content-Type': 'application/json' }
-            })/*.catch((err) => { console.log('cant find API') })*/
-            // console.log(JSON.stringify(res.data.token))
+            })
 
             if (res) {
                 props.changeAuth()
@@ -49,7 +48,7 @@ export default function Login(props) {
                     Password
                 </label>
             </div>
-            <button id="login" type="text" className="submit">
+            <button type="submit" id="login" className="submit">
                 Log in
             </button>
         </form>

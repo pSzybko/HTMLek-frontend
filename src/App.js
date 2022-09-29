@@ -1,3 +1,10 @@
+// lekcja{
+// tytuł: Lekcja 1,
+// opis: xxxxxxxxxx,
+// zadania_tytuł: [zad1, zad2, zad3],
+// zadania_tresc: [xxx, xxx, xxx],
+// }
+
 import './App.css'
 
 import React, { useState } from 'react'
@@ -6,6 +13,7 @@ import MenuBar from './components/MenuBar'
 import Modal from 'react-modal'
 
 import Login from './components/Login'
+import Tasks from './components/Tasks'
 import Register from './components/Register'
 import { modalStyle } from './components/ModalStyle'
 import Home from './pages/Home'
@@ -75,6 +83,7 @@ function App() {
             </div>
             <Home />
             <About />
+            <Tasks />
         </div>
     )
 }
