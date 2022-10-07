@@ -19,7 +19,7 @@ export default function Register(props) {
                 document.getElementById("email").value = ""
                 document.getElementById("password").value = ""
                 document.getElementById("passwordRepeat").value = ""
-                alert("Registration successful. You can proceed to the Log in panel.")
+                alert("Udało się stworzyć konto. Teraz możesz się zalogować.")
                 props.closeRegisterModal()
             }
 
@@ -28,7 +28,7 @@ export default function Register(props) {
             document.getElementById("email").value = ""
             document.getElementById("password").value = ""
             document.getElementById("passwordRepeat").value = ""
-            alert("Nickname already exist!")
+            alert("Podany nickname już istnieje!")
         }
     }
 
@@ -37,7 +37,7 @@ export default function Register(props) {
         if (password !== passwordRep) {
             document.getElementById("password").value = ""
             document.getElementById("passwordRepeat").value = ""
-            alert('Passwords do not match!')
+            alert('Hasła nie są jednakowe!')
         }
         else {
             registerUser()

@@ -1,13 +1,6 @@
-// lekcja{
-// tytuł: Lekcja 1,
-// opis: xxxxxxxxxx,
-// zadania_tytuł: [zad1, zad2, zad3],
-// zadania_tresc: [xxx, xxx, xxx],
-// }
-
 import './App.css'
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { IconContext } from "react-icons"
 import MenuBar from './components/MenuBar'
 import Modal from 'react-modal'
@@ -15,14 +8,17 @@ import Modal from 'react-modal'
 import Login from './components/Login'
 import Tasks from './components/Tasks'
 import Register from './components/Register'
+import Author from './components/Author'
 import { modalStyle } from './components/ModalStyle'
 import Home from './pages/Home'
 import About from './pages/About'
+import jwtDecode from 'jwt-decode'
 
 function App() {
     const [showLoginModal, setShowLoginModal] = useState(false)
     const [showRegisterModal, setShowRegisterModal] = useState(false)
     const [auth, setAuth] = useState(false)
+    const [username, setUsername] = useState() // TODO
 
     window.onbeforeunload = function () {
         window.scrollTo(0, 0)
@@ -50,41 +46,66 @@ function App() {
     const changeAuth = () => {
         setAuth(!auth)
     }
+
+    const logOut = () => {
+        localStorage.removeItem('token')
+        setAuth(false)
+    }
+
+    useEffect(() => {
+        const token = localStorage.getItem('token')
+        if (token) {
+            const user = jwtDecode(token)
+            if (!user) {
+                localStorage.removeItem('token')
+                setAuth(false)
+            } else {
+                setAuth(true)
+            }
+        }
+    }, [])
+
     return (
-        <div>
-            <div className='menu'>
-                <IconContext.Provider value={{ color: "#15172b", size: "50px" }}>
-                    {!auth ? (
-                        <MenuBar openLoginModal={openLoginModal} openRegisterModal={openRegisterModal} />
-                    )
-                        :
-                        (
-                            <p>wrr</p>
-                        )
-                    }
-                </IconContext.Provider>
-                <Modal
-                    ariaHideApp={false}
-                    style={modalStyle}
-                    isOpen={showLoginModal}
-                    onRequestClose={closeLoginModal
-                    }
-                >
-                    <Login auth={auth} closeLoginModal={closeLoginModal} changeAuth={changeAuth} />
-                </Modal>
-                <Modal
-                    ariaHideApp={false}
-                    style={modalStyle}
-                    isOpen={showRegisterModal}
-                    onRequestClose={closeRegisterModal}
-                >
-                    <Register closeRegisterModal={closeRegisterModal} />
-                </Modal>
-            </div>
-            <Home />
-            <About />
-            <Tasks />
-        </div>
+        <>
+            {!auth ? (
+                <div>
+                    <div className='menu'>
+                        <IconContext.Provider value={{ color: "#15172b", size: "50px" }}>
+                            <MenuBar openLoginModal={openLoginModal} openRegisterModal={openRegisterModal} />
+                        </IconContext.Provider>
+                        <Modal
+                            ariaHideApp={false}
+                            style={modalStyle}
+                            isOpen={showLoginModal}
+                            onRequestClose={closeLoginModal
+                            }
+                        >
+                            <Login auth={auth} closeLoginModal={closeLoginModal} openRegisterModal={openRegisterModal} changeAuth={changeAuth} setUsername={setUsername} />
+                        </Modal>
+                        <Modal
+                            ariaHideApp={false}
+                            style={modalStyle}
+                            isOpen={showRegisterModal}
+                            onRequestClose={closeRegisterModal}
+                        >
+                            <Register closeRegisterModal={closeRegisterModal} />
+                        </Modal>
+                    </div>
+                    <Home />
+                    <About />
+                    <Author />
+                </div>
+            )
+                :
+                (
+                    <>
+                        <p>Witaj ponownie {username} </p>
+                        <button onClick={logOut}>Wyloguj</button>
+                        <Tasks />
+                    </>
+                )
+            }
+        </>
     )
 }
 

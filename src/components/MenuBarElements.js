@@ -19,7 +19,7 @@ export const ManuBarElements = [
     },
     {
         title: "Testimonials",
-        path: "tasks",
+        path: "author",
         icon: <CgIcons.CgInfo />,
         cName: "nav-text",
         description: "o nas",

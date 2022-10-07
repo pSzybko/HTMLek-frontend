@@ -18,7 +18,10 @@ export default function Login(props) {
             })
 
             if (res) {
+                // alert(res.data.token)
+                localStorage.setItem('token', res.data.token)
                 props.changeAuth()
+                props.setUsername(username)
                 props.closeLoginModal()
             }
         }
@@ -28,6 +31,12 @@ export default function Login(props) {
     const handleSubmit = (e) => {
         e.preventDefault()
         logInUser()
+    }
+
+    const handleRegister = (e) => {
+        e.preventDefault()
+        props.closeLoginModal()
+        props.openRegisterModal()
     }
 
     return (
@@ -50,6 +59,10 @@ export default function Login(props) {
             </div>
             <button type="submit" id="login" className="submit">
                 Log in
+            </button>
+            <p>Jesteś tutaj po raz pierwszy? </p>
+            <button type="button" onClick={handleRegister}>
+                Zarejestruj się
             </button>
         </form>
     )
