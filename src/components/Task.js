@@ -5,7 +5,7 @@ export default function Task(props) {
 
     return (
         <div className='task'>
-            <p className={ShowMore ? 'taskTitle open' : 'taskTitle closed'} onClick={() => { setShowMore(!ShowMore) }}>{props.task.title}</p>
+            <div className={ShowMore ? 'taskTitle open' : 'taskTitle closed'} onClick={() => { setShowMore(!ShowMore) }}>{props.task.title}</div>
             {
                 ShowMore && (
                     <div className='taskDescription'>
@@ -16,8 +16,8 @@ export default function Task(props) {
                             Teoria i ćwiczenia:
                         </p>
                         <ul className='exerciseList'>
-                            {props.task.exercises.map(exercise => (
-                                <li className='exercise'>{exercise.exerciseTitle}</li>
+                            {props.task.exercises.map((exercise, index) => (
+                                <li className='exercise' key={index}>{exercise.exerciseTitle}</li>
                             ))}
                         </ul>
                     </div>

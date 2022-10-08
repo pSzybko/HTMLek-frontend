@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import { IconContext } from "react-icons"
 import { ManuBarElements } from "./MenuBarElements"
 import * as BiIcons from "react-icons/bi"
@@ -7,12 +7,6 @@ import * as Scroll from 'react-scroll'
 import './MenuBar.css'
 
 export default function MenuBar({ openRegisterModal, openLoginModal }) {
-    const [BarState, setBarState] = useState(true)
-
-    const changeBar = () => {
-        setBarState(!BarState)
-    }
-
     return (
         <div className="taskbarWrapper">
             <IconContext.Provider value={{ color: "#453F3C", size: "40px" }}>
