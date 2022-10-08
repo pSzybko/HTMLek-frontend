@@ -24,7 +24,7 @@ export default function Tasks() {
     }, [])
 
     return (
-        <div div className='tasks' id='tasks' >
+        <div className='tasks' id='tasks' >
             <div className='tasksWrapepr'>
                 {
                     Tasks.map((task, index) => (
