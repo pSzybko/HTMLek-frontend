@@ -2,8 +2,10 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import Task from './Task'
+import '../pages/TaskPage'
 
 import "./Tasks.css"
+import TaskPage from '../pages/TaskPage'
 
 export default function Tasks() {
     const [Tasks, setTasks] = useState([])
@@ -32,6 +34,7 @@ export default function Tasks() {
                     ))
                 }
             </div>
+            <TaskPage />
         </div>
     )
 }

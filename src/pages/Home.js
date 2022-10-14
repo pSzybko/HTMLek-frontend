@@ -4,7 +4,7 @@ import './Home.css'
 export default function Home() {
     return (
         <div className='home' id='home' >
-            <svg width="50vw" height="50vh" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" className='mySvg'>
+            <svg width="50%" height="50%" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" className='mySvg'>
                 <g id="study">
                     <rect width="64" height="64" />
                     <g id="smoke">
