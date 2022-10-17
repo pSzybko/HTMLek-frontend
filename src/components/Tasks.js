@@ -34,7 +34,6 @@ export default function Tasks() {
                     ))
                 }
             </div>
-            <TaskPage />
         </div>
     )
 }

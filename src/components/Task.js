@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+import { Link, Route, Routes, BrowserRouter } from "react-router-dom"
+
+import TaskPage from '../pages/TaskPage'
 
 export default function Task(props) {
     const [ShowMore, setShowMore] = useState(false)
@@ -17,7 +20,13 @@ export default function Task(props) {
                         </p>
                         <ul className='exerciseList'>
                             {props.task.exercises.map((exercise, index) => (
-                                <li className='exercise' key={index}>{exercise.exerciseTitle}</li>
+                                <li className='exercise' key={index}>
+                                    <div className='clickableLinks'>
+                                        <Link to='/exercise' state={{ exercise: exercise, task: props.task }}>
+                                            {exercise.exerciseTitle}
+                                        </Link>
+                                    </div>
+                                </li>
                             ))}
                         </ul>
                     </div>

@@ -1,16 +1,22 @@
 import React, { useState, useEffect } from 'react'
 
 import Editor from '../components/Editor'
-import useLocalStorage from '../hooks/useLocalStorage'
 import { IconContext } from "react-icons"
-import { VscDebugRestart } from "react-icons/vsc"
 import * as BiIcons from "react-icons/bi"
+import './TaskPage.css'
 
-export default function TaskPage() {
+import { useLocation } from 'react-router-dom'
+
+export default function TaskPage(props) {
+    const location = useLocation()
     const [htmlCode, setHtmlCode] = useState("<p class='myClass'>Witaj</p>")
     const [cssCode, setCssCode] = useState('.myClass {color: red}')
 
     const [source, setSource] = useState('')
+
+    useEffect(() => {
+
+    }, [])
 
     useEffect(() => {
         const timeout = setTimeout(() => {
@@ -24,37 +30,77 @@ export default function TaskPage() {
         return () => clearTimeout(timeout)
     }, [htmlCode, cssCode])
 
+    const handleFinish = () => {
+        //TODO zmiana statusu w bazie danych 
+        window.close()
+    }
+
+    const handleAbort = () => {
+        window.close()
+    }
+
+    const handleHelp = () => {
+        //TODO alert -> help modal
+        alert(location.state.exercise.exerciseDescription)
+    }
+
+    const handleReset = () => {
+        //Reset kodu do stanu początkowego - ponowne pobranie z bazy 
+    }
+
     return (
-        <div>
-            <div className='editors'>
-                <IconContext.Provider value={{ color: "#453F3C", size: "40px" }}>
+        <div className='TaskPage'>
+            <IconContext.Provider value={{ color: "#453F3C", size: "40px" }}>
+                <div className='controlPanel'>
+                    <div className='taskName'>Nazwa</div>
                     <div className='buttons'>
-                        <div className='taskName'>Nazwa</div>
-                        <button><BiIcons.BiQuestionMark /></button>
-                        <button><VscDebugRestart /></button>
+                        <button className='finishButton' onClick={handleFinish}><BiIcons.BiCheck /></button>
+                        <button className='abortButton' onClick={handleAbort}><BiIcons.BiX /></button>
+                        <button className='helpButton' onClick={handleHelp}><BiIcons.BiQuestionMark /></button>
+                        <button className='resetButton' onClick={handleReset}><BiIcons.BiReset /></button>
                     </div>
-                </IconContext.Provider>
+                </div>
+            </IconContext.Provider>
+            <div className='break'></div>
+            <div className='htmlEditor item'>
                 <Editor
                     language="xml"
                     displayName="HTML"
                     codeValue={htmlCode}
                     onChange={setHtmlCode} />
+            </div>
+            <div className='cssEditor item'>
                 <Editor
                     language="css"
                     displayName="CSS"
                     codeValue={cssCode}
                     onChange={setCssCode} />
             </div>
-            <div className='results'>
-                <iframe srcDoc={source}
+            <div className='break'></div>
+            <div className='actualResult item'>
+                <div className='result-header'>
+                    AKTUALNY REZULTAT
+                </div>
+                <iframe
+                    className='myFrame'
+                    srcDoc={source}
                     title="result"
                     sandbox="allow-scripts"
-                    frameBorder="1"
-                    width="50%"
+                    width="100%"
                     height="100%" />
-                <div className='expectedResult'>
-
+            </div>
+            <div className='expectedResult item'>
+                <div className='result-header'>
+                    PRZYKŁADOWY REZULTAT
                 </div>
+                {/* source zmienić na pobrany z bazy danych */}
+                <iframe
+                    className='myFrame'
+                    srcDoc={source}
+                    title="result"
+                    sandbox="allow-scripts"
+                    width="100%"
+                    height="100%" />
             </div>
         </div>
     )
