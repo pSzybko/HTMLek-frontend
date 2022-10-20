@@ -15,14 +15,14 @@ export const modalStyle = {
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
-        border: '1px solid white',
+        border: '7px solid white',
         backgroundColor: 'rgba(255, 255, 255, 0.00)',
         overflow: 'hidden',
         WebkitOverflowScrolling: 'touch',
         borderRadius: '20px',
         outline: 'none',
         padding: '0px',
-        height: '50vh',
-        width: '20vw',
+        height: 'clamp(500px, 50vh, 800px)',
+        width: 'clamp(400px,25vw, 700px)',
     }
 }

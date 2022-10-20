@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
-import { Link, Route, Routes, BrowserRouter } from "react-router-dom"
-
-import TaskPage from '../pages/TaskPage'
+import { Link } from "react-router-dom"
 
 export default function Task(props) {
     const [ShowMore, setShowMore] = useState(false)

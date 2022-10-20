@@ -1,0 +1,17 @@
+.technology {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.technologyItem {
+    flex: 50%;
+}
+
+.technologyText {
+    padding: 10px;
+}
+
+.technologyImage {
+    padding: 10px;
+}

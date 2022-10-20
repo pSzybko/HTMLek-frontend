@@ -86,7 +86,7 @@ export default function MainComponent() {
                             isOpen={showRegisterModal}
                             onRequestClose={closeRegisterModal}
                         >
-                            <Register closeRegisterModal={closeRegisterModal} />
+                            <Register closeRegisterModal={closeRegisterModal} openLoginModal={openLoginModal} />
                         </Modal>
                     </div>
                     <Home />

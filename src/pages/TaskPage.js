@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useNavigate } from "react-router-dom"
 
 import Editor from '../components/Editor'
 import { IconContext } from "react-icons"
@@ -13,6 +14,8 @@ export default function TaskPage(props) {
     const [cssCode, setCssCode] = useState('.myClass {color: red}')
 
     const [source, setSource] = useState('')
+
+    const navigate = useNavigate()
 
     useEffect(() => {
 
@@ -32,11 +35,11 @@ export default function TaskPage(props) {
 
     const handleFinish = () => {
         //TODO zmiana statusu w bazie danych 
-        window.close()
+        navigate("/")
     }
 
     const handleAbort = () => {
-        window.close()
+        navigate("/")
     }
 
     const handleHelp = () => {

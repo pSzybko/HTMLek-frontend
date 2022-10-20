@@ -1,0 +1,18 @@
+.education {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.educationItem {
+    flex: 50%;
+
+}
+
+.educationText {
+    padding: 10px;
+}
+
+.educationImage {
+    padding: 10px;
+}

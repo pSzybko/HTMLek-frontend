@@ -1,8 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 
 :root {
-  --bg-color: pink;
-  /* --bg-color: rgb(246, 233, 246); */
   --font: sans-serif;
   --submit-color: #06b;
   --submit-hover: rgb(97, 163, 217);
