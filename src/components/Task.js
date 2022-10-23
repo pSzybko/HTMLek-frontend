@@ -20,7 +20,7 @@ export default function Task(props) {
                             {props.task.exercises.map((exercise, index) => (
                                 <li className='exercise' key={index}>
                                     <div className='clickableLinks'>
-                                        <Link to='/exercise' state={{ exercise: exercise, task: props.task }}>
+                                        <Link className='myLink' to='/exercise' state={{ exercise: exercise, task: props.task }}>
                                             {exercise.exerciseTitle}
                                         </Link>
                                     </div>
