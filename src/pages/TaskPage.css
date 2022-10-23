@@ -17,7 +17,7 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
-    width: 20vw;
+    width: 25vw;
 }
 
 .taskName {
@@ -53,4 +53,9 @@
     background-color: white;
     height: 500px;
     border: none;
+}
+
+.result-header {
+    white-space: nowrap;
+    overflow: hidden;
 }

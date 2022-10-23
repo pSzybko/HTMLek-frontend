@@ -61,7 +61,7 @@ export default function Register(props) {
                     <input id='passwordRepeat' className='input' type='password' placeholder='Powtórz hasło' onChange={(e) => { setPasswordRep(e.target.value) }} required />
                 </div>
                 <button id='register' type='submit' className='modalButton'>
-                    Rejestruj
+                    Zarejestruj
                 </button>
                 <div className='redirectLink'>
                     <p>Masz już konto?</p>

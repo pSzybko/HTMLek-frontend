@@ -5,19 +5,18 @@ import Modal from 'react-modal'
 
 
 import Login from './Login'
-import Tasks from './Tasks'
 import Register from './Register'
 import Author from './Author'
 import { modalStyle } from './ModalStyle'
 import Home from '../pages/Home'
 import About from '../pages/About'
 import jwtDecode from 'jwt-decode'
+import UserPage from '../pages/UserPage'
 
 export default function MainComponent() {
     const [showLoginModal, setShowLoginModal] = useState(false)
     const [showRegisterModal, setShowRegisterModal] = useState(false)
     const [auth, setAuth] = useState(false)
-    const [username, setUsername] = useState() // TODO
 
     window.onbeforeunload = function () {
         window.scrollTo(0, 0)
@@ -66,7 +65,7 @@ export default function MainComponent() {
     return (
         <>
             {!auth ? (
-                <div>
+                <div className='nonAuth'>
                     <div className='menu'>
                         <IconContext.Provider value={{ color: "#15172b", size: "50px" }}>
                             <MenuBar openLoginModal={openLoginModal} openRegisterModal={openRegisterModal} />
@@ -75,10 +74,9 @@ export default function MainComponent() {
                             ariaHideApp={false}
                             style={modalStyle}
                             isOpen={showLoginModal}
-                            onRequestClose={closeLoginModal
-                            }
+                            onRequestClose={closeLoginModal}
                         >
-                            <Login auth={auth} closeLoginModal={closeLoginModal} openRegisterModal={openRegisterModal} changeAuth={changeAuth} setUsername={setUsername} />
+                            <Login auth={auth} closeLoginModal={closeLoginModal} openRegisterModal={openRegisterModal} changeAuth={changeAuth} />
                         </Modal>
                         <Modal
                             ariaHideApp={false}
@@ -96,11 +94,9 @@ export default function MainComponent() {
             )
                 :
                 (
-                    <>
-                        <p>Witaj ponownie {username} </p>
-                        <button onClick={logOut}>Wyloguj</button>
-                        <Tasks />
-                    </>
+                    <div className='auth'>
+                        <UserPage logOut={logOut} />
+                    </div>
                 )
             }
         </>

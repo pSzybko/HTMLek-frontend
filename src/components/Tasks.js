@@ -8,6 +8,10 @@ import "./Tasks.css"
 export default function Tasks() {
     const [Tasks, setTasks] = useState([])
 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
     const getAllTasks = async () => {
         try {
             const res = await axios.get((process.env.baseURL || "http://localhost:3001") + '/api/tasks')

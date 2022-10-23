@@ -1,25 +1,25 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate } from "react-router-dom"
-
-import Editor from '../components/Editor'
 import { IconContext } from "react-icons"
 import * as BiIcons from "react-icons/bi"
-import './TaskPage.css'
-
+import Modal from 'react-modal'
 import { useLocation } from 'react-router-dom'
+
+import Editor from '../components/Editor'
+import { taskModalStyle } from '../components/TaskModalStyle'
+import './TaskPage.css'
+import TaskDescription from '../components/TaskDescription'
 
 export default function TaskPage(props) {
     const location = useLocation()
-    const [htmlCode, setHtmlCode] = useState("<p class='myClass'>Witaj</p>")
-    const [cssCode, setCssCode] = useState('.myClass {color: red}')
+    const [htmlCode, setHtmlCode] = useState(location.state.exercise.exerciseStartingHTMLCode)
+    const [cssCode, setCssCode] = useState(location.state.exercise.exerciseStartingCSSCode)
 
     const [source, setSource] = useState('')
 
+    const [showTaskModal, setShowTaskModal] = useState(true)
+
     const navigate = useNavigate()
-
-    useEffect(() => {
-
-    }, [])
 
     useEffect(() => {
         const timeout = setTimeout(() => {
@@ -33,6 +33,16 @@ export default function TaskPage(props) {
         return () => clearTimeout(timeout)
     }, [htmlCode, cssCode])
 
+    const openTaskModal = () => {
+        document.body.style.overflow = 'hidden'
+        setShowTaskModal(true)
+    }
+
+    const closeTaskModal = () => {
+        document.body.style.overflow = 'unset'
+        setShowTaskModal(false)
+    }
+
     const handleFinish = () => {
         //TODO zmiana statusu w bazie danych 
         navigate("/")
@@ -43,19 +53,19 @@ export default function TaskPage(props) {
     }
 
     const handleHelp = () => {
-        //TODO alert -> help modal
-        alert(location.state.exercise.exerciseDescription)
+        openTaskModal()
     }
 
     const handleReset = () => {
-        //Reset kodu do stanu początkowego - ponowne pobranie z bazy 
+        setHtmlCode(location.state.exercise.exerciseStartingHTMLCode)
+        setCssCode(location.state.exercise.exerciseStartingCSSCode)
     }
 
     return (
         <div className='TaskPage'>
             <IconContext.Provider value={{ color: "#453F3C", size: "40px" }}>
                 <div className='controlPanel'>
-                    <div className='taskName'>Nazwa</div>
+                    <div className='taskName'>{location.state.exercise.exerciseTitle}</div>
                     <div className='buttons'>
                         <button className='finishButton' onClick={handleFinish}><BiIcons.BiCheck /></button>
                         <button className='abortButton' onClick={handleAbort}><BiIcons.BiX /></button>
@@ -64,6 +74,14 @@ export default function TaskPage(props) {
                     </div>
                 </div>
             </IconContext.Provider>
+            <Modal
+                ariaHideApp={false}
+                style={taskModalStyle}
+                isOpen={showTaskModal}
+                onRequestClose={closeTaskModal}
+            >
+                <TaskDescription description={location.state.exercise.exerciseDescription} />
+            </Modal>
             <div className='break'></div>
             <div className='htmlEditor item'>
                 <Editor
@@ -96,7 +114,7 @@ export default function TaskPage(props) {
                 <div className='result-header'>
                     PRZYKŁADOWY REZULTAT
                 </div>
-                {/* source zmienić na pobrany z bazy danych */}
+                {/* TODO source zmienić na pobrany z bazy danych */}
                 <iframe
                     className='myFrame'
                     srcDoc={source}

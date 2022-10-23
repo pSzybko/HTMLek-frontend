@@ -71,11 +71,16 @@
     cursor: pointer;
     opacity: 1;
     visibility: visible;
-    -webkit-transition: all .3s ease;
-    transition: all .3s ease;
+    /* -webkit-transition: all .3s ease;
+    transition: all .3s ease; */
 }
 
 .redirectLink {
     margin-top: 50px;
     text-align: center;
+}
+
+.modalButton:hover {
+    color: var(--special-color);
+    outline: 2px solid var(--special-color);
 }
