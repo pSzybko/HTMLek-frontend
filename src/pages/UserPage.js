@@ -22,6 +22,9 @@ export default function UserPage(props) {
                 <IconContext.Provider value={{ color: '#453F3C', size: '40px' }}>
                     <button onClick={props.logOut}>{<BiIcons.BiLogOut />}</button>
                 </IconContext.Provider>
+                <Link className='myLink' to='/sandbox' >
+                    tryb Sandbox
+                </Link>
             </div>
             <Tasks />
         </div>

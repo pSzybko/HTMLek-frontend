@@ -47,6 +47,13 @@
 .item {
     width: 48%;
     background: rgba(50, 50, 50, 0.35);
+
+}
+
+.wideItem {
+    width: 96%;
+    background: rgba(50, 50, 50, 0.35);
+
 }
 
 .myFrame {

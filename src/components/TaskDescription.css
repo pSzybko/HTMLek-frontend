@@ -1,0 +1,13 @@
+.taskModal {
+    /* background-color: salmon; */
+    height: 100%;
+    width: 100%;
+    /* padding: 10px; */
+    /* height: 100; */
+}
+
+.taskModal h3 {
+    text-align: center;
+    font-size: x-large;
+    margin: 10px;
+}

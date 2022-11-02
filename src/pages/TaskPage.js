@@ -12,8 +12,8 @@ import TaskDescription from '../components/TaskDescription'
 
 export default function TaskPage(props) {
     const location = useLocation()
-    const [htmlCode, setHtmlCode] = useState(location.state.exercise.exerciseStartingHTMLCode)
-    const [cssCode, setCssCode] = useState(location.state.exercise.exerciseStartingCSSCode)
+    const [htmlCode, setHtmlCode] = useState(location.state.exercise.exerciseStartingHTMLCode || '')
+    const [cssCode, setCssCode] = useState(location.state.exercise.exerciseStartingCSSCode || '')
 
     const [source, setSource] = useState('')
 
@@ -112,7 +112,7 @@ export default function TaskPage(props) {
             </div>
             <div className='expectedResult item'>
                 <div className='result-header'>
-                    PRZYKŁADOWY REZULTAT
+                    OCZEKIWANY REZULTAT
                 </div>
                 {/* TODO source zmienić na pobrany z bazy danych */}
                 <iframe

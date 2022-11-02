@@ -22,7 +22,7 @@ export const taskModalStyle = {
         borderRadius: '20px',
         outline: 'none',
         padding: '30px',
-        height: 'max(700px, 80vh)',
-        width: 'max(1000px, 85vw)',
+        height: 'max(400px, 80vh)',
+        width: 'max(600px, 85vw)',
     }
 }
