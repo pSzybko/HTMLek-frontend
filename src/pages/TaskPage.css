@@ -1,33 +1,43 @@
+* {}
+
 .TaskPage {
+    overflow: hidden;
+
     background: rgba(255, 255, 255, 0.5);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10.3px);
     -webkit-backdrop-filter: blur(10.3px);
-    margin-top: 2vh;
+    margin: 1vh;
+    padding: 0.5vh;
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-evenly;
-    height: fit-content;
-    padding-top: 20px;
-    padding-bottom: 50px;
-}
-
-.buttons {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
-    width: 25vw;
+    justify-content: center;
+    height: 96vh;
 }
 
 .taskName {
     text-align: center;
     text-transform: uppercase;
-    margin: 5px;
+    width: 100%;
+    font-size: xx-large;
 }
 
 .controlPanel {
-    margin-bottom: 20px;
+    height: max(5vh, 20px);
+    overflow: hidden;
+    justify-content: center;
+}
+
+.buttons {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 16px;
+    backdrop-filter: blur(10.3px);
+    padding: 0.5vh;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    width: max(25vw, 200px);
 }
 
 .TaskPage {
@@ -45,24 +55,49 @@
 }
 
 .item {
-    width: 48%;
-    background: rgba(50, 50, 50, 0.35);
+    width: 46vw;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10.3px);
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    overflow: hidden;
+}
 
+.cssEditor {
+    margin-left: 1vw;
+}
+
+.expectedResult {
+    margin-left: 1vw;
 }
 
 .wideItem {
-    width: 96%;
-    background: rgba(50, 50, 50, 0.35);
-
+    margin-top: 1vh;
+    width: 93vw;
 }
 
 .myFrame {
     background-color: white;
-    height: 500px;
+    height: max(500px, 50vh);
     border: none;
+    height: 40vh !important;
+
 }
 
 .result-header {
     white-space: nowrap;
     overflow: hidden;
+}
+
+.CodeMirror {
+    height: 40vh !important;
+    font-size: x-large;
+}
+
+.editor-header {
+    padding-left: 15px;
 }

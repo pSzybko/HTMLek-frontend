@@ -63,9 +63,9 @@ export default function TaskPage(props) {
 
     return (
         <div className='TaskPage'>
-            <IconContext.Provider value={{ color: "#453F3C", size: "40px" }}>
+            <IconContext.Provider value={{ color: "#453F3C", size: "max(3vh, 20px)" }}>
                 <div className='controlPanel'>
-                    <div className='taskName'>{location.state.exercise.exerciseTitle}</div>
+                    {/* <div className='taskName'>{location.state.exercise.exerciseTitle}</div> */}
                     <div className='buttons'>
                         <button className='finishButton' onClick={handleFinish}><BiIcons.BiCheck /></button>
                         <button className='abortButton' onClick={handleAbort}><BiIcons.BiX /></button>

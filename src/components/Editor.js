@@ -30,15 +30,13 @@ export default function Editor(props) {
                 {displayName}
             </div>
             <ControlledEditor
+                className='codeEditor'
                 value={codeValue}
                 onBeforeChange={handleChange}
                 options={{
                     lineWrapping: true,
                     lint: true,
-                    autoCloseBrackets: true,
-                    autoCloseTags: true,
                     matchBrackets: true,
-                    matchTags: true,
                     theme: 'material',
                     lineNumbers: true,
                     mode: language,

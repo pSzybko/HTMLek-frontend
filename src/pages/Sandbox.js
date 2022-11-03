@@ -83,7 +83,6 @@ body {
 }`
     )
 
-    const [dbCode, setDbCode] = useState()
     useEffect(() => {
         const dataJson = JSON.stringify({
             username: localStorage.getItem('username'),
@@ -92,7 +91,6 @@ body {
             const res = await axios.post((process.env.baseURL || 'http://localhost:3001') + '/api/code', dataJson, {
                 headers: { 'Content-Type': 'application/json' }
             })
-            setDbCode(res.data)
             if (res.data.status === 'ok') {
                 if (res.data.sandboxHTML.length !== 0) setHtmlCode(res.data.sandboxHTML)
                 if (res.data.sandboxCSS.length !== 0) setCssCode(res.data.sandboxCSS)
@@ -101,7 +99,7 @@ body {
 
         getCode()
 
-    }, [setDbCode])
+    }, [])
 
     const [source, setSource] = useState('')
 
@@ -176,9 +174,8 @@ body {
 
     return (
         <div className='TaskPage'>
-            <IconContext.Provider value={{ color: "#453F3C", size: "40px" }}>
+            <IconContext.Provider value={{ color: "#453F3C", size: "max(2.5vh, 10px)" }}>
                 <div className='controlPanel'>
-                    <div className='taskName'>Tryb sandbox</div>
                     <div className='buttons'>
                         <button onClick={saveCode}><BiIcons.BiDownload /></button>
                         <button className='finishButton' onClick={handleFinish}><BiIcons.BiCheck /></button>
@@ -210,8 +207,8 @@ body {
                     codeValue={cssCode}
                     onChange={setCssCode} />
             </div>
-            <div className='actualResult wideItem'>
-                <div className='result-header'>
+            <div className='actualResult item wideItem'>
+                <div className='editor-header'>
                     AKTUALNY REZULTAT
                 </div>
                 <iframe

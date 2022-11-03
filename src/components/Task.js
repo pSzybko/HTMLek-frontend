@@ -14,7 +14,7 @@ export default function Task(props) {
                             {props.task.description}
                         </p>
                         <p className='exerciseHeader'>
-                            Teoria i ćwiczenia:
+                            Teoria wraz z ćwiczeniami:
                         </p>
                         <ul className='exerciseList'>
                             {props.task.exercises.map((exercise, index) => (

@@ -11,6 +11,7 @@ export default function SandboxDescription() {
                 <div className='sandboxModalBody'>
                     Tryb sandbox pozwala Ci na pełną swobodę - nie ma tu zadań ani poleceń.
                     Wykorzystaj zdobyte umiejętności i stwórz swój własny projekt.
+                    Jeżeli jesteś tu pierwszy raz, zacznij od przygotowanych lekcji.
                     Środowisko działa analogicznie jak te poznane już podczas wykonywania zadań.
                     <br />
                     <ul className='buttonList'>
