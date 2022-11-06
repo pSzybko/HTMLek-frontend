@@ -14,7 +14,7 @@ export default function Author() {
                         <div className='author-credentials'>Paweł Sipko</div>
                     </div>
                     <div className='author-content'>
-                        Jestem studentem Akademii Górniczo-Hutniczej im. Stanisława Staszica w Krakowie.
+                        Student Informatyki Stosowanej na Wydziale Fizyki i Informatyki Stosowanej Akademii Górniczo-Hutniczej im. Stanisława Staszica w Krakowie.
                     </div>
                     <IconContext.Provider value={{ color: '#453F3C', size: '40px' }}>
                         <div className='links'>

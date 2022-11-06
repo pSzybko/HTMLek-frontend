@@ -1,0 +1,41 @@
+.sticky-menu-items {
+    list-style: none;
+    overflow: hidden;
+    font-weight: 400;
+    display: flex;
+    border-bottom: solid;
+    padding-left: 50px;
+    align-items: center;
+    height: 5vh;
+    background-color: rgba(228, 227, 227, 0.9);
+}
+
+.sticky-menu-items li {
+    white-space: nowrap;
+    overflow: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    justify-content: center;
+    flex: 1 1;
+    flex-grow: 1;
+}
+
+.logoWrapper {
+    font-size: xx-large;
+    /* line-height: 150px; */
+}
+
+.logoutWrapper button {
+    float: right;
+    margin-right: 5vw;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.logoutWrapper button:hover {
+    color: red
+}

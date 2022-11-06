@@ -40,6 +40,8 @@ export default function Editor(props) {
                     theme: 'material',
                     lineNumbers: true,
                     mode: language,
+                    tabSize: 4,
+                    indentUnit: 4
                 }}
             />
         </div>

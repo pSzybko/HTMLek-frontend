@@ -136,7 +136,13 @@ body {
             </html>
           `)
         }, 300)
-        return () => clearTimeout(timeout)
+        const timeout2 = setTimeout(() => {
+            handleSave()
+        }, 60 * 5000)
+        return () => {
+            clearTimeout(timeout)
+            clearTimeout(timeout2)
+        }
     }, [htmlCode, cssCode])
 
     const handleFinish = async () => {
@@ -144,7 +150,7 @@ body {
         navigate("/")
     }
 
-    const handleSave = async (flag = true) => {
+    const handleSave = async () => {
         const dataJson = JSON.stringify({
             username: localStorage.getItem('username'),
             sandboxHTML: htmlCode,
@@ -154,9 +160,6 @@ body {
             const res = await axios.post((process.env.baseURL || 'http://localhost:3001') + '/api/sandbox', dataJson, {
                 headers: { 'Content-Type': 'application/json' }
             })
-            if (flag && res.data.status === 'ok') {
-                alert("Pomyślnie zapisano")
-            }
         } catch (err) {
             alert(err)
         }
@@ -174,13 +177,12 @@ body {
 
     return (
         <div className='TaskPage'>
-            <IconContext.Provider value={{ color: "#453F3C", size: "max(2.5vh, 10px)" }}>
+            <IconContext.Provider value={{ color: "#453F3C", size: "24px" }}>
                 <div className='controlPanel'>
                     <div className='buttons'>
-                        <button onClick={saveCode}><BiIcons.BiDownload /></button>
-                        <button className='finishButton' onClick={handleFinish}><BiIcons.BiCheck /></button>
-                        <button className='saveButton' onClick={handleSave}><BiIcons.BiSave /></button>
-                        <button className='helpButton' onClick={openTaskModal}><BiIcons.BiQuestionMark /></button>
+                        <button className='TaskPageButton' onClick={handleFinish}><BiIcons.BiCheck /></button>
+                        <button className='TaskPageButton' onClick={saveCode}><BiIcons.BiDownload /></button>
+                        <button className='TaskPageButton' onClick={openTaskModal}><BiIcons.BiQuestionMark /></button>
                     </div>
                 </div>
             </IconContext.Provider>

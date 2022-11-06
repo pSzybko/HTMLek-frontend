@@ -2,6 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import Task from './Task'
+import { Link } from "react-router-dom"
 
 import "./Tasks.css"
 
@@ -32,9 +33,14 @@ export default function Tasks() {
             <div className='tasksWrapepr'>
                 {
                     Tasks.map((task, index) => (
-                        <Task task={task} key={index} />
+                        < Task task={task} num={index} key={index} />
                     ))
                 }
+                <div className='task'>
+                    <Link className='myLink' to='/sandbox' >
+                        <div className='taskTitle closed'>Tryb sandbox</div>
+                    </Link>
+                </div>
             </div>
         </div>
     )

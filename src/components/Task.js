@@ -6,7 +6,7 @@ export default function Task(props) {
 
     return (
         <div className='task'>
-            <div className={ShowMore ? 'taskTitle open' : 'taskTitle closed'} onClick={() => { setShowMore(!ShowMore) }}>{props.task.title}</div>
+            <div className={ShowMore ? 'taskTitle open' : 'taskTitle closed'} onClick={() => { setShowMore(!ShowMore) }}>{props.num + 1 + '. ' + props.task.title}</div>
             {
                 ShowMore && (
                     <div className='taskDescription'>

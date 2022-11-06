@@ -1,13 +1,24 @@
-.taskModal {
-    /* background-color: salmon; */
+.modalDescription {
     height: 100%;
     width: 100%;
-    /* padding: 10px; */
-    /* height: 100; */
+    overflow: hidden;
 }
 
-.taskModal h3 {
+.modalDescription .modalHeader {
     text-align: center;
     font-size: x-large;
-    margin: 10px;
+    margin-bottom: 2vh;
+}
+
+.modalDescription .modalBody {
+    font-size: large;
+}
+
+.buttonDescription {
+    margin-top: 2vh;
+}
+
+.separator {
+    margin-left: 7px;
+    margin-right: 7px;
 }
