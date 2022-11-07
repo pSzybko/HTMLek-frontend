@@ -143,7 +143,7 @@ body {
             clearTimeout(timeout)
             clearTimeout(timeout2)
         }
-    }, [htmlCode, cssCode])
+    })
 
     const handleFinish = async () => {
         handleSave(false)
@@ -160,6 +160,9 @@ body {
             const res = await axios.post((process.env.baseURL || 'http://localhost:3001') + '/api/sandbox', dataJson, {
                 headers: { 'Content-Type': 'application/json' }
             })
+            if (res.data.status !== 'ok') {
+                console.log(res.data.status)
+            }
         } catch (err) {
             alert(err)
         }

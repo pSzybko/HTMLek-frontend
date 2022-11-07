@@ -9,9 +9,7 @@ export default function StickyBar(props) {
         <div className='taskbarWrapper'>
             <ul className='sticky-menu-items'>
                 <li className='logoWrapper'>
-                    <strong>
-                        HTMLek
-                    </strong>
+                    <h3 className='taskbarTitle'>&lt;<strong className='myStrong'>p</strong>&gt;HTMLek&lt;/<strong className='myStrong'>p</strong>&gt;</h3>
                 </li>
                 <li className='logoutWrapper'>
                     <IconContext.Provider value={{ color: 'black', size: '40px' }}>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate } from "react-router-dom"
+
 import { IconContext } from "react-icons"
 import * as BiIcons from "react-icons/bi"
 import Modal from 'react-modal'
@@ -7,10 +8,10 @@ import { useLocation } from 'react-router-dom'
 
 import Editor from '../components/Editor'
 import { taskModalStyle } from '../components/TaskModalStyle'
-import './TaskPage.css'
 import TaskDescription from '../components/TaskDescription'
+import './TaskPage.css'
 
-export default function TaskPage(props) {
+export default function TaskPage() {
     const location = useLocation()
     const [htmlCode, setHtmlCode] = useState(location.state.exercise.exerciseStartingHTMLCode || '')
     const [cssCode, setCssCode] = useState(location.state.exercise.exerciseStartingCSSCode || '')
@@ -63,14 +64,13 @@ export default function TaskPage(props) {
 
     return (
         <div className='TaskPage'>
-            <IconContext.Provider value={{ color: "#453F3C", size: "max(3vh, 20px)" }}>
+            <IconContext.Provider value={{ color: "#453F3C", size: "24px" }}>
                 <div className='controlPanel'>
-                    {/* <div className='taskName'>{location.state.exercise.exerciseTitle}</div> */}
                     <div className='buttons'>
-                        <button className='finishButton' onClick={handleFinish}><BiIcons.BiCheck /></button>
-                        <button className='abortButton' onClick={handleAbort}><BiIcons.BiX /></button>
-                        <button className='helpButton' onClick={handleHelp}><BiIcons.BiQuestionMark /></button>
-                        <button className='resetButton' onClick={handleReset}><BiIcons.BiReset /></button>
+                        <button className='TaskPageButton' onClick={handleFinish}><BiIcons.BiCheck /></button>
+                        <button className='TaskPageButton' onClick={handleAbort}><BiIcons.BiX /></button>
+                        <button className='TaskPageButton' onClick={handleHelp}><BiIcons.BiQuestionMark /></button>
+                        <button className='TaskPageButton' onClick={handleReset}><BiIcons.BiReset /></button>
                     </div>
                 </div>
             </IconContext.Provider>

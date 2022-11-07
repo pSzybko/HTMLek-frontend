@@ -1,6 +1,7 @@
 import React from 'react'
-import './About.css'
+
 import AboutTabs from '../components/AboutTabs'
+import './About.css'
 
 export default function About() {
     return (

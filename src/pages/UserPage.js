@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import { IconContext } from "react-icons"
-import * as BiIcons from "react-icons/bi"
 
 import Tasks from '../components/Tasks'
-import './UserPage.css'
-import '../components/StickyBar'
 import StickyBar from '../components/StickyBar'
+import '../components/StickyBar'
+import './UserPage.css'
 
 export default function UserPage(props) {
     const [username, setUsername] = useState('')

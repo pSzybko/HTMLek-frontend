@@ -8,7 +8,6 @@ export default function Author() {
         <div className='author-wrapper'>
             <div className='author'>
                 <div className='author-text'>
-                    <div className='portada'></div>
                     <div className='title-wrapper'>
                         <div className='title'>O autorze</div>
                         <div className='author-credentials'>Paweł Sipko</div>

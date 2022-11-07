@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import Task from './Task'
 import { Link } from "react-router-dom"
+import * as AiIcons from "react-icons/ai"
+
 
 import "./Tasks.css"
 
@@ -38,7 +40,7 @@ export default function Tasks() {
                 }
                 <div className='task'>
                     <Link className='myLink' to='/sandbox' >
-                        <div className='taskTitle closed'>Tryb sandbox</div>
+                        <div className='taskTitle closed sandboxTitle'><AiIcons.AiOutlineCodeSandbox /> Tryb sandbox</div>
                     </Link>
                 </div>
             </div>

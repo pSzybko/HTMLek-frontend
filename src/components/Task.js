@@ -13,20 +13,19 @@ export default function Task(props) {
                         <p className='descr'>
                             {props.task.description}
                         </p>
-                        <p className='exerciseHeader'>
-                            Teoria wraz z ćwiczeniami:
-                        </p>
-                        <ul className='exerciseList'>
-                            {props.task.exercises.map((exercise, index) => (
-                                <li className='exercise' key={index}>
-                                    <div className='clickableLinks'>
+                        <div className='ecerciseWrapper'>
+                            <ul className='exerciseList'>
+                                {props.task.exercises.map((exercise, index) => (
+                                    <li className='exercise' key={index}>
                                         <Link className='myLink' to='/exercise' state={{ exercise: exercise, task: props.task }}>
-                                            {exercise.exerciseTitle}
+                                            <div className='clickableLink'>
+                                                {exercise.exerciseTitle}
+                                            </div>
                                         </Link>
-                                    </div>
-                                </li>
-                            ))}
-                        </ul>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
                     </div>
                 )
             }

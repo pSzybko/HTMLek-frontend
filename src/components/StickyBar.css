@@ -6,7 +6,7 @@
     border-bottom: solid;
     padding-left: 50px;
     align-items: center;
-    height: 5vh;
+    height: max(5vh, 50px);
     background-color: rgba(228, 227, 227, 0.9);
 }
 
@@ -38,4 +38,8 @@
 
 .logoutWrapper button:hover {
     color: red
+}
+
+.myStrong {
+    color: #F78764;
 }

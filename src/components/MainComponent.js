@@ -94,9 +94,7 @@ export default function MainComponent() {
             )
                 :
                 (
-                    <div className='auth'>
-                        <UserPage logOut={logOut} />
-                    </div>
+                    <UserPage logOut={logOut} />
                 )
             }
         </>
