@@ -17,7 +17,7 @@ export default function UserPage(props) {
     return (
         <div className='userPage'>
             <div className='menu'>
-                <StickyBar logOut={props.logOut} />
+                <StickyBar username={username} logOut={props.logOut} />
             </div>
             <div className='userHeaderWrapper'>
                 <h1 className='userHeader'>{customGreetings[Math.floor(Math.random() * customGreetings.length)]}</h1>

@@ -18,7 +18,19 @@
     margin-top: 2vh;
 }
 
+.buttonHeader {
+    margin-bottom: 1vh;
+}
+
 .separator {
     margin-left: 7px;
     margin-right: 7px;
+}
+
+.buttonListIcon {
+    vertical-align: middle;
+}
+
+.buttonList li:not(:last-child) {
+    margin-bottom: 20px;
 }

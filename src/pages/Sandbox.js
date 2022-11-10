@@ -10,6 +10,7 @@ import Editor from '../components/Editor'
 import SandboxDescription from '../components/SandboxDescription'
 import { taskModalStyle } from '../components/TaskModalStyle'
 import './TaskPage.css'
+
 export default function Sandbox() {
     const [htmlCode, setHtmlCode] = useState(
         `<!--ZASTĄP TEN KOD SWOIM WŁASNYM PROJEKTEM-->

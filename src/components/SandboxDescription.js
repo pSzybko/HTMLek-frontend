@@ -24,20 +24,20 @@ export default function SandboxDescription() {
                         </p>
                         <ul className='buttonList'>
                             <li>
-                                <BiIcons.BiDownload className='cze' />
+                                <BiIcons.BiDownload className='buttonListIcon' />
                                 <span className='separator'> - </span>
                                 zapisz stworzony kod na swoim komputerze.
                                 Dzięki temu możesz kontynuować pracę lokalnie,
                                 a utworzony projekt uruchomić w dowolnej przeglądarce internetowej.
                             </li>
                             <li>
-                                <BiIcons.BiCheck />
+                                <BiIcons.BiCheck className='buttonListIcon' />
                                 <span className='separator'> - </span>
                                 wyjście z trybu sandbox oraz jednoczesne zapisanie wprowadzonych zmian.
                                 Dzięki temu nie utracisz stworzonego kodu i będziesz mógł kontynuować pracę w tym samym miejscu.
                             </li>
                             <li>
-                                <BiIcons.BiQuestionMark />
+                                <BiIcons.BiQuestionMark className='buttonListIcon' />
                                 <span className='separator'> - </span>
                                 uzyskaj pomoc.
                             </li>

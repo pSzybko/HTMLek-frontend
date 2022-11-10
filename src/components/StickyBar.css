@@ -1,16 +1,16 @@
-.sticky-menu-items {
+.taskbarWrapper .sticky-menu-items {
+    height: max(6vh, 55px);
     list-style: none;
     overflow: hidden;
-    font-weight: 400;
     display: flex;
     border-bottom: solid;
-    padding-left: 50px;
-    align-items: center;
-    height: max(5vh, 50px);
-    background-color: rgba(228, 227, 227, 0.9);
+    padding-left: 5vw;
+    align-items: stretch;
+    justify-content: stretch;
+    background-color: rgba(228, 227, 227, 0.85);
 }
 
-.sticky-menu-items li {
+.taskbarWrapper .sticky-menu-items li {
     white-space: nowrap;
     overflow: hidden;
     user-select: none;
@@ -18,28 +18,67 @@
     -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    justify-content: center;
     flex: 1 1;
     flex-grow: 1;
 }
 
-.logoWrapper {
+.sticky-menu-items .logoWrapper {
     font-size: xx-large;
-    /* line-height: 150px; */
+    line-height: max(6vh, 55px);
 }
 
-.logoutWrapper button {
-    float: right;
-    margin-right: 5vw;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-}
-
-.logoutWrapper button:hover {
-    color: red
-}
-
-.myStrong {
+.sticky-menu-items .logoWrapper .myStrong {
     color: #F78764;
+}
+
+.barLogoutWrapper {
+    height: max(5vh, 45px);
+    margin-top: max(0.5vh, 5px);
+    line-height: max(6vh, 55px);
+
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+}
+
+.userBar {
+    height: max(5vh, 45px);
+    cursor: pointer;
+    margin-right: 5vw;
+    margin-left: auto;
+    overflow: hidden;
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 100px;
+    padding: 0px 20px;
+    border-radius: 8px;
+    background-color: rgba(247, 135, 100, .6);
+    font-size: 35px;
+}
+
+.userBar:hover {
+    background-color: rgba(247, 135, 100, .7);
+}
+
+.userBar:active {
+    background-color: rgba(247, 135, 100, .8);
+}
+
+.textArea {
+    height: max(5vh, 35px);
+    line-height: max(5vh, 35px);
+}
+
+.userIcon {
+    vertical-align: middle;
+    margin-right: 0.5vw;
+}
+
+.logoutUserIcon {
+    vertical-align: middle;
+    margin-right: 0.5vw;
+    margin-left: 1vw;
+    background-color: rgba(0, 0, 0, .2);
+    border-radius: 6px;
+    padding: 2px;
 }
