@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import { IconContext } from "react-icons"
-import * as BiIcons from "react-icons/bi"
+
+import { IconContext } from 'react-icons'
+import * as BiIcons from 'react-icons/bi'
 
 import './StickyBar.css'
 

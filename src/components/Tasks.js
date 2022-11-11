@@ -1,12 +1,12 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+
 import axios from 'axios'
+import { Link } from 'react-router-dom'
+import * as AiIcons from 'react-icons/ai'
+
 import Task from './Task'
-import { Link } from "react-router-dom"
-import * as AiIcons from "react-icons/ai"
-
-
-import "./Tasks.css"
+import './Tasks.css'
 
 export default function Tasks() {
     const [Tasks, setTasks] = useState([])
@@ -17,7 +17,7 @@ export default function Tasks() {
 
     const getAllTasks = async () => {
         try {
-            const res = await axios.get((process.env.baseURL || "http://localhost:3001") + '/api/tasks')
+            const res = await axios.get((process.env.baseURL || 'http://localhost:3001') + '/api/tasks')
             if (res.data.status === 'ok') {
                 setTasks(res.data.allTasks)
             }

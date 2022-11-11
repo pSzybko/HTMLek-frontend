@@ -1,6 +1,8 @@
 import React from 'react'
-import { IconContext } from "react-icons"
-import * as FiIcons from "react-icons/fi"
+
+import { IconContext } from 'react-icons'
+import * as FiIcons from 'react-icons/fi'
+
 import './Author.css'
 
 export default function Author() {

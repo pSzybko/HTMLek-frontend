@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 
 import Tasks from '../components/Tasks'
 import StickyBar from '../components/StickyBar'
-import '../components/StickyBar'
 import './UserPage.css'
 
 export default function UserPage(props) {

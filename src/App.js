@@ -1,10 +1,10 @@
-import './App.css'
-
 import React from 'react'
-import { Route, Routes, BrowserRouter } from "react-router-dom"
+import { Route, Routes, BrowserRouter } from 'react-router-dom'
+
 import MainComponent from './components/MainComponent'
 import TaskPage from './pages/TaskPage'
 import Sandbox from './pages/Sandbox'
+import './App.css'
 
 function App() {
     return (

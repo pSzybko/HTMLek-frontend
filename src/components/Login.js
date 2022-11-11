@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
-import './Modal.css'
+
 import axios from 'axios'
+
+import './Modal.css'
 
 export default function Login(props) {
 

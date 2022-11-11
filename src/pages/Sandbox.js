@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from 'react-router-dom'
 
 import Modal from 'react-modal'
-import { IconContext } from "react-icons"
-import * as BiIcons from "react-icons/bi"
+import { IconContext } from 'react-icons'
+import * as BiIcons from 'react-icons/bi'
 import axios from 'axios'
 
 import Editor from '../components/Editor'
@@ -109,7 +109,7 @@ body {
     const navigate = useNavigate()
 
     const saveCode = () => {
-        const element = document.createElement("a")
+        const element = document.createElement('a')
         const blob = new Blob([
             `
 <html>
@@ -123,7 +123,7 @@ body {
 `
         ], { type: 'text/html' })
         element.href = URL.createObjectURL(blob)
-        element.download = "HTMLek.html"
+        element.download = 'HTMLek.html'
         document.body.appendChild(element)
         element.click()
     }
@@ -148,7 +148,7 @@ body {
 
     const handleFinish = async () => {
         handleSave(false)
-        navigate("/")
+        navigate('/')
     }
 
     const handleSave = async () => {
@@ -181,7 +181,7 @@ body {
 
     return (
         <div className='TaskPage'>
-            <IconContext.Provider value={{ color: "#453F3C", size: "24px" }}>
+            <IconContext.Provider value={{ color: '#453F3C', size: '24px' }}>
                 <div className='controlPanel'>
                     <div className='buttons'>
                         <button className='TaskPageButton' onClick={handleFinish}><BiIcons.BiCheck /></button>
@@ -201,29 +201,29 @@ body {
             <div className='break'></div>
             <div className='htmlEditor item'>
                 <Editor
-                    language="xml"
-                    displayName="HTML"
+                    language='xml'
+                    displayName='HTML'
                     codeValue={htmlCode}
                     onChange={setHtmlCode} />
             </div>
             <div className='cssEditor item'>
                 <Editor
-                    language="css"
-                    displayName="CSS"
+                    language='css'
+                    displayName='CSS'
                     codeValue={cssCode}
                     onChange={setCssCode} />
             </div>
             <div className='actualResult item wideItem'>
-                <div className='editor-header'>
+                <div className='taskFrameHeader'>
                     AKTUALNY REZULTAT
                 </div>
                 <iframe
                     className='myFrameWide'
                     srcDoc={source}
-                    title="result"
-                    sandbox="allow-scripts"
-                    width="100%"
-                    height="100%" />
+                    title='result'
+                    sandbox='allow-scripts'
+                    width='100%'
+                    height='100%' />
             </div>
         </div>
     )

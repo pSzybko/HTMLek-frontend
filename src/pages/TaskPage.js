@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from 'react-router-dom'
 
-import { IconContext } from "react-icons"
-import * as BiIcons from "react-icons/bi"
+import { IconContext } from 'react-icons'
+import * as BiIcons from 'react-icons/bi'
 import Modal from 'react-modal'
 import { useLocation } from 'react-router-dom'
 
@@ -46,11 +46,11 @@ export default function TaskPage() {
 
     const handleFinish = () => {
         //TODO zmiana statusu w bazie danych 
-        navigate("/")
+        navigate('/')
     }
 
     const handleAbort = () => {
-        navigate("/")
+        navigate('/')
     }
 
     const handleHelp = () => {
@@ -64,7 +64,7 @@ export default function TaskPage() {
 
     return (
         <div className='TaskPage'>
-            <IconContext.Provider value={{ color: "#453F3C", size: "24px" }}>
+            <IconContext.Provider value={{ color: '#453F3C', size: '24px' }}>
                 <div className='controlPanel'>
                     <div className='buttons'>
                         <button className='TaskPageButton' onClick={handleFinish}><BiIcons.BiCheck /></button>
@@ -85,15 +85,15 @@ export default function TaskPage() {
             <div className='break'></div>
             <div className='htmlEditor item'>
                 <Editor
-                    language="xml"
-                    displayName="HTML"
+                    language='xml'
+                    displayName='HTML'
                     codeValue={htmlCode}
                     onChange={setHtmlCode} />
             </div>
             <div className='cssEditor item'>
                 <Editor
-                    language="css"
-                    displayName="CSS"
+                    language='css'
+                    displayName='CSS'
                     codeValue={cssCode}
                     onChange={setCssCode} />
             </div>
@@ -105,8 +105,8 @@ export default function TaskPage() {
                 <iframe
                     className='myFrame'
                     srcDoc={source}
-                    title="result"
-                    sandbox="allow-scripts"
+                    title='result'
+                    sandbox='allow-scripts'
                 />
             </div>
             <div className='expectedResult item'>
@@ -116,8 +116,8 @@ export default function TaskPage() {
                 <iframe
                     className='myFrame'
                     srcDoc={location.state.exercise.exerciseSolutionCode}
-                    title="result"
-                    sandbox="allow-scripts"
+                    title='result'
+                    sandbox='allow-scripts'
                 />
             </div>
         </div>

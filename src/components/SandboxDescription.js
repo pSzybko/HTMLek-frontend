@@ -1,14 +1,14 @@
 import React from 'react'
 
-import { IconContext } from "react-icons"
-import * as BiIcons from "react-icons/bi"
+import { IconContext } from 'react-icons'
+import * as BiIcons from 'react-icons/bi'
 
 import './TaskDescription.css'
 
 export default function SandboxDescription() {
     return (
         <div className='modalDescription'>
-            <IconContext.Provider value={{ color: "#453F3C", size: "40px" }}>
+            <IconContext.Provider value={{ color: '#453F3C', size: '40px' }}>
                 <h3 className='modalHeader'>Witaj w trybie sandbox</h3>
                 <div className='modalBody'>
                     Tryb sandbox pozwala Ci na pełną swobodę - nie ma tu zadań ani poleceń.

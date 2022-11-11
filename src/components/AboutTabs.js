@@ -1,6 +1,8 @@
 import React from 'react'
-import { tabs } from './AboutTabsElements'
+
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
+
+import { tabs } from './AboutTabsElements'
 import './AboutTabs.css'
 
 export default function AboutTabs() {

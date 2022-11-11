@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { IconContext } from "react-icons"
+
+import { IconContext } from 'react-icons'
 import MenuBar from './MenuBar'
 import Modal from 'react-modal'
 
@@ -67,7 +68,7 @@ export default function MainComponent() {
             {!auth ? (
                 <div className='nonAuth'>
                     <div className='menu'>
-                        <IconContext.Provider value={{ color: "#15172b", size: "50px" }}>
+                        <IconContext.Provider value={{ color: '#15172b', size: '50px' }}>
                             <MenuBar openLoginModal={openLoginModal} openRegisterModal={openRegisterModal} />
                         </IconContext.Provider>
                         <Modal

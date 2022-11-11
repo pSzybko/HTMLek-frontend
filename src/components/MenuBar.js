@@ -1,17 +1,19 @@
-import React from "react"
-import { IconContext } from "react-icons"
-import { ManuBarElements } from "./MenuBarElements"
-import * as BiIcons from "react-icons/bi"
-import * as FiIcons from "react-icons/fi"
+import React from 'react'
+
+import { IconContext } from 'react-icons'
+import * as BiIcons from 'react-icons/bi'
+import * as FiIcons from 'react-icons/fi'
 import * as Scroll from 'react-scroll'
+
+import { ManuBarElements } from './MenuBarElements'
 import './MenuBar.css'
 
 export default function MenuBar({ openRegisterModal, openLoginModal }) {
     return (
-        <div className="taskbarWrapper">
-            <IconContext.Provider value={{ color: "#453F3C", size: "40px" }}>
-                <nav className={"nav-menu"}>
-                    <ul className="nav-menu-items">
+        <div className='taskbarWrapper'>
+            <IconContext.Provider value={{ color: '#453F3C', size: '40px' }}>
+                <nav className={'nav-menu'}>
+                    <ul className='nav-menu-items'>
                         <li className='button' onClick={openRegisterModal}><BiIcons.BiLogIn /><br />zarejestruj się</li>
                         <li className='button' onClick={openLoginModal}><FiIcons.FiLogIn /><br />zaloguj się</li>
 
