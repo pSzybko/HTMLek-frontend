@@ -17,7 +17,7 @@ export default function Task(props) {
                         <div className='ecerciseWrapper'>
                             <ul className='exerciseList'>
                                 {props.task.exercises.map((exercise, index) => (
-                                    <li className='exercise' key={index}>
+                                    <li className={props.finishedTasks.includes(exercise.exerciseTitle) ? 'exercise doneExercise' : 'exercise'} key={index} >
                                         <Link className='myLink' to='/exercise' state={{ exercise: exercise, task: props.task }}>
                                             <div className='clickableLink'>
                                                 {exercise.exerciseTitle}
@@ -30,6 +30,6 @@ export default function Task(props) {
                     </div>
                 )
             }
-        </div>
+        </div >
     )
 }

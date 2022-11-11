@@ -5,6 +5,8 @@ import { IconContext } from 'react-icons'
 import * as BiIcons from 'react-icons/bi'
 import Modal from 'react-modal'
 import { useLocation } from 'react-router-dom'
+import axios from 'axios'
+
 
 import Editor from '../components/Editor'
 import { taskModalStyle } from '../components/TaskModalStyle'
@@ -44,13 +46,46 @@ export default function TaskPage() {
         setShowTaskModal(false)
     }
 
-    const handleFinish = () => {
-        //TODO zmiana statusu w bazie danych 
-        navigate('/')
+    const handleFinish = async () => {
+        try {
+            const dataJson = JSON.stringify({
+                username: localStorage.getItem('username'),
+                taskName: location.state.exercise.exerciseTitle
+            })
+            const res = await axios.post((process.env.baseURL || 'http://localhost:3001') + '/api/completeness', dataJson, {
+                headers: { 'Content-Type': 'application/json' }
+            })
+            if (res.data.completeness === 'false') {
+                const res2 = await axios.post((process.env.baseURL || 'http://localhost:3001') + '/api/copmlete', dataJson, {
+                    headers: { 'Content-Type': 'application/json' }
+                })
+                if (res2.data.status === 'ok') {
+                    navigate('/')
+                }
+            }
+            else {
+                navigate('/')
+            }
+        } catch (err) {
+            alert(err)
+        }
     }
 
-    const handleAbort = () => {
-        navigate('/')
+    const handleAbort = async () => {
+        try {
+            const dataJson = JSON.stringify({
+                username: localStorage.getItem('username'),
+                taskName: location.state.exercise.exerciseTitle
+            })
+            const res = await axios.post((process.env.baseURL || 'http://localhost:3001') + '/api/incopmlete', dataJson, {
+                headers: { 'Content-Type': 'application/json' }
+            })
+            if (res.data.status === 'ok') {
+                navigate('/')
+            }
+        } catch (err) {
+            alert(err)
+        }
     }
 
     const handleHelp = () => {
