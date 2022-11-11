@@ -99,7 +99,7 @@ export default function TaskPage() {
             </div>
             <div className='break'></div>
             <div className='actualResult item'>
-                <div className='result-header'>
+                <div className='taskFrameHeader'>
                     AKTUALNY REZULTAT
                 </div>
                 <iframe
@@ -107,21 +107,18 @@ export default function TaskPage() {
                     srcDoc={source}
                     title="result"
                     sandbox="allow-scripts"
-                    width="100%"
-                    height="100%" />
+                />
             </div>
             <div className='expectedResult item'>
-                <div className='result-header'>
+                <div className='taskFrameHeader'>
                     OCZEKIWANY REZULTAT
                 </div>
-                {/* TODO source zmienić na pobrany z bazy danych */}
                 <iframe
                     className='myFrame'
-                    srcDoc={source}
+                    srcDoc={location.state.exercise.exerciseSolutionCode}
                     title="result"
                     sandbox="allow-scripts"
-                    width="100%"
-                    height="100%" />
+                />
             </div>
         </div>
     )

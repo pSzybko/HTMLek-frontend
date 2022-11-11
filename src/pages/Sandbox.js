@@ -218,7 +218,7 @@ body {
                     AKTUALNY REZULTAT
                 </div>
                 <iframe
-                    className='myFrame'
+                    className='myFrameWide'
                     srcDoc={source}
                     title="result"
                     sandbox="allow-scripts"

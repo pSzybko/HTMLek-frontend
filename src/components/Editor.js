@@ -26,7 +26,7 @@ export default function Editor(props) {
 
     return (
         <div className='editor'>
-            <div className='editor-header'>
+            <div className='taskFrameHeader'>
                 {displayName}
             </div>
             <ControlledEditor

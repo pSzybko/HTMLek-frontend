@@ -42,6 +42,8 @@
 }
 
 .userBar {
+    min-width: min-content;
+    transition: width 10s linear;
     height: max(5vh, 45px);
     cursor: pointer;
     margin-right: 5vw;

@@ -82,22 +82,31 @@
     background-color: white;
     border: none;
     height: 40vh !important;
+    width: 46vw;
+}
+
+.myFrameWide {
+    background-color: white;
+    border: none;
+    height: 40vh !important;
     width: 93vw;
 }
 
-.result-header {
+.taskFrameHeader {
     white-space: nowrap;
     overflow: hidden;
     padding-left: 15px;
+    font-size: 1.8vh;
+    user-select: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 .CodeMirror {
     height: 40vh !important;
     font-size: x-large;
-}
-
-.editor-header {
-    padding-left: 15px;
 }
 
 .TaskPageButton {
