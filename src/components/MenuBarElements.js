@@ -8,14 +8,14 @@ export const ManuBarElements = [
         path: 'home',
         icon: <CgIcons.CgHomeAlt />,
         cName: 'nav-text',
-        description: 'strona główna',
+        description: 'Strona główna',
     },
     {
         title: 'About',
         path: 'about',
         icon: <CgIcons.CgFeed />,
         cName: 'nav-text',
-        description: 'nasza misja',
+        description: 'O nas',
 
     },
     {
@@ -23,6 +23,6 @@ export const ManuBarElements = [
         path: 'author',
         icon: <CgIcons.CgInfo />,
         cName: 'nav-text',
-        description: 'o nas',
+        description: 'Autor',
     },
 ]

@@ -14,8 +14,8 @@ export default function MenuBar({ openRegisterModal, openLoginModal }) {
             <IconContext.Provider value={{ color: '#453F3C', size: '40px' }}>
                 <nav className={'nav-menu'}>
                     <ul className='nav-menu-items'>
-                        <li className='button' onClick={openRegisterModal}><BiIcons.BiLogIn /><br />zarejestruj się</li>
-                        <li className='button' onClick={openLoginModal}><FiIcons.FiLogIn /><br />zaloguj się</li>
+                        <li className='button' onClick={openRegisterModal}><BiIcons.BiLogIn /><br />Zarejestruj się</li>
+                        <li className='button' onClick={openLoginModal}><FiIcons.FiLogIn /><br />Zaloguj się</li>
 
                         {ManuBarElements.map((element, index) => {
                             return (

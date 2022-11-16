@@ -17,7 +17,7 @@ export const taskModalStyle = {
         transform: 'translate(-50%, -50%)',
         border: '0px solid white',
         backgroundColor: 'rgba(255, 253, 250, 1.00)',
-        overflow: 'hidden',
+        overflow: 'scroll',
         WebkitOverflowScrolling: 'touch',
         borderRadius: '20px',
         outline: 'none',

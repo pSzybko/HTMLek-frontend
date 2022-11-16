@@ -34,14 +34,14 @@ export default function Editor(props) {
                 value={codeValue}
                 onBeforeChange={handleChange}
                 options={{
+                    mode: language,
                     lineWrapping: true,
-                    lint: true,
+                    lint: false,
                     matchBrackets: true,
                     theme: 'material',
                     lineNumbers: true,
-                    mode: language,
-                    tabSize: 4,
-                    indentUnit: 4
+                    smartIndent: true,
+                    electricChars: false
                 }}
             />
         </div>

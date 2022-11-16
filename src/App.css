@@ -18,13 +18,6 @@ body {
   background-color: var(--bg-color);
 }
 
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(10vh);
-  }
-}
-
 .menu {
   display: flex;
   flex-direction: row;

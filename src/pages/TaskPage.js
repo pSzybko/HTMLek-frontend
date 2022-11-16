@@ -102,10 +102,10 @@ export default function TaskPage() {
             <IconContext.Provider value={{ color: '#453F3C', size: '24px' }}>
                 <div className='controlPanel'>
                     <div className='buttons'>
-                        <button className='TaskPageButton' onClick={handleFinish}><BiIcons.BiCheck /></button>
-                        <button className='TaskPageButton' onClick={handleAbort}><BiIcons.BiX /></button>
-                        <button className='TaskPageButton' onClick={handleHelp}><BiIcons.BiQuestionMark /></button>
-                        <button className='TaskPageButton' onClick={handleReset}><BiIcons.BiReset /></button>
+                        <button className='TaskPageButton' title="Ukończ zadanie" onClick={handleFinish}><BiIcons.BiCheck /></button>
+                        <button className='TaskPageButton' title="Przerwij zadanie" onClick={handleAbort}><BiIcons.BiX /></button>
+                        <button className='TaskPageButton' title="Pomoc" onClick={handleHelp}><BiIcons.BiQuestionMark /></button>
+                        <button className='TaskPageButton' title="Zresetuj zadanie" onClick={handleReset}><BiIcons.BiReset /></button>
                     </div>
                 </div>
             </IconContext.Provider>
@@ -139,6 +139,7 @@ export default function TaskPage() {
                 </div>
                 <iframe
                     className='myFrame'
+                    name='myFrameResult'
                     srcDoc={source}
                     title='result'
                     sandbox='allow-scripts'

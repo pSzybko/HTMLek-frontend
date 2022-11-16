@@ -184,9 +184,9 @@ body {
             <IconContext.Provider value={{ color: '#453F3C', size: '24px' }}>
                 <div className='controlPanel'>
                     <div className='buttons'>
-                        <button className='TaskPageButton' onClick={handleFinish}><BiIcons.BiCheck /></button>
-                        <button className='TaskPageButton' onClick={saveCode}><BiIcons.BiDownload /></button>
-                        <button className='TaskPageButton' onClick={openTaskModal}><BiIcons.BiQuestionMark /></button>
+                        <button className='TaskPageButton' title="Zapisz i zakończ" onClick={handleFinish}><BiIcons.BiCheck /></button>
+                        <button className='TaskPageButton' title="Zapisz na komputerze" onClick={saveCode}><BiIcons.BiDownload /></button>
+                        <button className='TaskPageButton' title="Pomoc" onClick={openTaskModal}><BiIcons.BiQuestionMark /></button>
                     </div>
                 </div>
             </IconContext.Provider>
