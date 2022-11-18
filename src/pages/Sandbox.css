@@ -1,0 +1,103 @@
+.SandboxWrapper {
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10.3px);
+    -webkit-backdrop-filter: blur(10.3px);
+    margin: 1vh;
+    padding-bottom: 0.5vh;
+    padding-top: 1vh;
+    justify-content: center;
+    height: 96.5vh;
+}
+
+.SandboxWrapper .TaskPageColumn {
+    padding-bottom: 0.5vh;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    padding-top: 1vh;
+    align-items: center;
+    height: 96.5vh;
+}
+
+.SandboxWrapper .break-column {
+    flex-basis: 100%;
+    width: 0;
+}
+
+.SandboxWrapper .break {
+    flex-basis: 100%;
+    height: 0;
+}
+
+.SandboxWrapper .item {
+    width: 49vw;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10.3px);
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    overflow: hidden;
+}
+
+/* .SandboxWrapper .highItem {
+    height: 86vh !important;
+} */
+
+.SandboxWrapper .CodeMirror {
+    height: 40vh !important;
+    font-size: x-large;
+}
+
+.myFrameHigh {}
+
+.SandboxWrapper .buttons {
+    height: max(3vh, 40px);
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 16px;
+    backdrop-filter: blur(10.3px);
+    padding: 0.5vh;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    width: max(20vw, 200px);
+}
+
+.SandboxWrapper .myFrameHigh {
+    border: none;
+    height: 86vh !important;
+
+}
+
+.SandboxWrapper .controlPanel {
+    width: max-content;
+    position: relative;
+    margin: 0 auto;
+}
+
+.SandboxWrapper .cssEditor {
+    margin-top: 1vh;
+}
+
+.SandboxWrapper .TaskPageButton {
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 4vw;
+    height: 3vh;
+    min-height: 30px;
+    min-width: 30px;
+}
+
+.SandboxWrapper .taskFrameHeader {
+    white-space: nowrap;
+    overflow: hidden;
+    padding-left: 15px;
+    user-select: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}

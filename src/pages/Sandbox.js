@@ -9,7 +9,7 @@ import axios from 'axios'
 import Editor from '../components/Editor'
 import SandboxDescription from '../components/SandboxDescription'
 import { taskModalStyle } from '../components/TaskModalStyle'
-import './TaskPage.css'
+import './Sandbox.css'
 
 export default function Sandbox() {
     const [htmlCode, setHtmlCode] = useState(
@@ -180,16 +180,18 @@ body {
     }
 
     return (
-        <div className='TaskPage'>
-            <IconContext.Provider value={{ color: '#453F3C', size: '24px' }}>
-                <div className='controlPanel'>
-                    <div className='buttons'>
-                        <button className='TaskPageButton' title="Zapisz i zakończ" onClick={handleFinish}><BiIcons.BiCheck /></button>
-                        <button className='TaskPageButton' title="Zapisz na komputerze" onClick={saveCode}><BiIcons.BiDownload /></button>
-                        <button className='TaskPageButton' title="Pomoc" onClick={openTaskModal}><BiIcons.BiQuestionMark /></button>
+        <div className='SandboxWrapper'>
+            <div className='MenuWrapper'>
+                <IconContext.Provider value={{ color: '#453F3C', size: '24px' }}>
+                    <div className='controlPanel'>
+                        <div className='buttons'>
+                            <button className='TaskPageButton' title="Zapisz i zakończ" onClick={handleFinish}><BiIcons.BiCheck /></button>
+                            <button className='TaskPageButton' title="Zapisz na komputerze" onClick={saveCode}><BiIcons.BiDownload /></button>
+                            <button className='TaskPageButton' title="Pomoc" onClick={openTaskModal}><BiIcons.BiQuestionMark /></button>
+                        </div>
                     </div>
-                </div>
-            </IconContext.Provider>
+                </IconContext.Provider>
+            </div>
             <Modal
                 ariaHideApp={false}
                 style={taskModalStyle}
@@ -198,32 +200,35 @@ body {
             >
                 <SandboxDescription />
             </Modal>
-            <div className='break'></div>
-            <div className='htmlEditor item'>
-                <Editor
-                    language='xml'
-                    displayName='HTML'
-                    codeValue={htmlCode}
-                    onChange={setHtmlCode} />
-            </div>
-            <div className='cssEditor item'>
-                <Editor
-                    language='css'
-                    displayName='CSS'
-                    codeValue={cssCode}
-                    onChange={setCssCode} />
-            </div>
-            <div className='actualResult item wideItem'>
-                <div className='taskFrameHeader'>
-                    AKTUALNY REZULTAT
+            <div className='TaskPageColumn'>
+                <div className='htmlEditor item'>
+                    <Editor
+                        language='xml'
+                        displayName='HTML'
+                        codeValue={htmlCode}
+                        onChange={setHtmlCode} />
                 </div>
-                <iframe
-                    className='myFrameWide'
-                    srcDoc={source}
-                    title='result'
-                    sandbox='allow-scripts'
-                    width='100%'
-                    height='100%' />
+                {/* <div className='break'></div> */}
+                <div className='cssEditor item'>
+                    <Editor
+                        language='css'
+                        displayName='CSS'
+                        codeValue={cssCode}
+                        onChange={setCssCode} />
+                </div>
+                <div className='break-column'></div>
+                <div className=' item'>
+                    <div className='taskFrameHeader'>
+                        AKTUALNY REZULTAT
+                    </div>
+                    <iframe
+                        className='myFrameHigh'
+                        srcDoc={source}
+                        title='result'
+                        sandbox='allow-scripts'
+                        width='100%'
+                        height='100%' />
+                </div>
             </div>
         </div>
     )

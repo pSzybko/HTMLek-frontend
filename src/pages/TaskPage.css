@@ -5,28 +5,29 @@
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10.3px);
     -webkit-backdrop-filter: blur(10.3px);
-    margin: 1vh;
+    margin: 0.5vh;
     padding-bottom: 0.5vh;
     padding-top: 1vh;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    height: 96.5vh;
+    height: 98vh;
+    align-self: stretch;
 }
 
-.taskName {
+.TaskPage .taskName {
     text-align: center;
     text-transform: uppercase;
     width: 100%;
     font-size: xx-large;
 }
 
-.controlPanel {
+.TaskPage .controlPanel {
     overflow: hidden;
     justify-content: center;
 }
 
-.buttons {
+.TaskPage .buttons {
     height: max(3vh, 40px);
     background: rgba(255, 255, 255, 0.5);
     border-radius: 16px;
@@ -38,65 +39,46 @@
     width: max(20vw, 200px);
 }
 
-.TaskPage {
-    align-self: stretch;
-}
-
-.break-column {
+.TaskPage .break-column {
     flex-basis: 100%;
     width: 0;
 }
 
-.break {
+.TaskPage .break {
     flex-basis: 100%;
     height: 0;
 }
 
-.item {
-    width: 46vw;
+.TaskPage .item {
+    width: 49vw;
     background: rgba(255, 255, 255, 0.5);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10.3px);
     padding-top: 1vw;
     padding-bottom: 1vw;
-    padding-top: 1vh;
-    padding-bottom: 1vh;
     overflow: hidden;
 }
 
-.cssEditor {
-    margin-left: 1vw;
+.TaskPage .cssEditor {
+    margin-left: 0.5vw;
 }
 
-.expectedResult {
-    margin-left: 1vw;
+.TaskPage .expectedResult {
+    margin-left: 0.5vw;
 }
 
-.wideItem {
-    margin-top: 1vh;
-    width: 93vw;
-}
-
-.myFrame {
+.TaskPage .myFrame {
     background-color: white;
     border: none;
     height: 40vh !important;
-    width: 46vw;
+    width: 49vw;
 }
 
-.myFrameWide {
-    background-color: white;
-    border: none;
-    height: 40vh !important;
-    width: 93vw;
-}
-
-.taskFrameHeader {
+.TaskPage .taskFrameHeader {
     white-space: nowrap;
     overflow: hidden;
     padding-left: 15px;
-    font-size: 1.8vh;
     user-select: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -104,12 +86,12 @@
     -ms-user-select: none;
 }
 
-.CodeMirror {
-    height: 40vh !important;
+.TaskPage .CodeMirror {
+    height: 42vh !important;
     font-size: x-large;
 }
 
-.TaskPageButton {
+.TaskPage .TaskPageButton {
     margin-top: auto;
     margin-bottom: auto;
     width: 4vw;
