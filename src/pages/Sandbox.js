@@ -162,7 +162,7 @@ body {
                 headers: { 'Content-Type': 'application/json' }
             })
             if (res.data.status !== 'ok') {
-                console.log(res.data.status)
+                console.log(res.data.error)
             }
         } catch (err) {
             alert(err)
@@ -185,9 +185,9 @@ body {
                 <IconContext.Provider value={{ color: '#453F3C', size: '24px' }}>
                     <div className='controlPanel'>
                         <div className='buttons'>
-                            <button className='TaskPageButton' title="Zapisz i zakończ" onClick={handleFinish}><BiIcons.BiCheck /></button>
-                            <button className='TaskPageButton' title="Zapisz na komputerze" onClick={saveCode}><BiIcons.BiDownload /></button>
-                            <button className='TaskPageButton' title="Pomoc" onClick={openTaskModal}><BiIcons.BiQuestionMark /></button>
+                            <button className='TaskPageButton' title='Zapisz i zakończ' onClick={handleFinish}><BiIcons.BiCheck /></button>
+                            <button className='TaskPageButton' title='Zapisz na komputerze' onClick={saveCode}><BiIcons.BiDownload /></button>
+                            <button className='TaskPageButton' title='Pomoc' onClick={openTaskModal}><BiIcons.BiQuestionMark /></button>
                         </div>
                     </div>
                 </IconContext.Provider>
@@ -208,7 +208,6 @@ body {
                         codeValue={htmlCode}
                         onChange={setHtmlCode} />
                 </div>
-                {/* <div className='break'></div> */}
                 <div className='cssEditor item'>
                     <Editor
                         language='css'

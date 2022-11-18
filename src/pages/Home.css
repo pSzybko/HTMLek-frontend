@@ -93,7 +93,7 @@
 
 .Text-box .Title {
     font-size: clamp(1rem, 3.5vw, 4rem);
-    font-family: "Source Code Pro", monospace;
+    font-family: 'Source Code Pro', monospace;
     color: var(--font-color);
     position: absolute;
     width: max-content;
@@ -106,7 +106,7 @@
 
 .Text-box .Title::before,
 .Title::after {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     right: 0;
@@ -153,7 +153,7 @@
     opacity: 0;
     position: absolute;
     width: max-content;
-    font-family: "Source Code Pro", monospace;
+    font-family: 'Source Code Pro', monospace;
     color: var(--font-color);
     font-size: clamp(0.7rem, 1.5vw, 3rem);
     top: 50%;

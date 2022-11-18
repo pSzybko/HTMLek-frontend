@@ -18,7 +18,7 @@ export default function Task(props) {
                             <ul className='exerciseList'>
                                 {props.task.exercises.map((exercise, index) => (
                                     <li className={props.finishedTasks.includes(exercise.exerciseTitle) ? 'exercise doneExercise' : 'exercise'} key={index} >
-                                        <Link className='myLink' to='/exercise' state={{ exercise: exercise, task: props.task }}>
+                                        <Link className='myLink' to={{ pathname: '/exercise', search: '?task=' + props.task._id + '&exercise=' + exercise._id }} >
                                             <div className='clickableLink'>
                                                 {exercise.exerciseTitle}
                                             </div>

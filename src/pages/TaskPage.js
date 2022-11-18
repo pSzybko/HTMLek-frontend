@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom'
 import { IconContext } from 'react-icons'
 import * as BiIcons from 'react-icons/bi'
 import Modal from 'react-modal'
-import { useLocation } from 'react-router-dom'
 import axios from 'axios'
 
 
@@ -14,15 +13,44 @@ import TaskDescription from '../components/TaskDescription'
 import './TaskPage.css'
 
 export default function TaskPage() {
-    const location = useLocation()
-    const [htmlCode, setHtmlCode] = useState(location.state.exercise.exerciseStartingHTMLCode || '')
-    const [cssCode, setCssCode] = useState(location.state.exercise.exerciseStartingCSSCode || '')
+    const navigate = useNavigate()
+
+    const [exercise, setExercise] = useState({})
+
+    const [htmlCode, setHtmlCode] = useState('')
+    const [cssCode, setCssCode] = useState('')
 
     const [source, setSource] = useState('')
 
     const [showTaskModal, setShowTaskModal] = useState(true)
 
-    const navigate = useNavigate()
+    const getExercise = async () => {
+        try {
+            const queryString = window.location.search
+            const urlParams = new URLSearchParams(queryString)
+            const taskId = urlParams.get('task')
+            const exerciseId = urlParams.get('exercise')
+
+            const res = await axios.get((process.env.baseURL || 'http://localhost:3001') + '/api/exercise/' + taskId + '/' + exerciseId)
+
+            if (res.data.status !== 'ok') {
+                console.log(res.data.error)
+                navigate('/')
+            }
+            setExercise(res.data.exercise)
+
+        } catch (err) {
+            console.log(err)
+        }
+    }
+    useEffect(() => {
+        getExercise()
+    }, [])
+
+    useEffect(() => {
+        setHtmlCode(exercise.exerciseStartingHTMLCode || '')
+        setCssCode(exercise.exerciseStartingCSSCode || '')
+    }, [exercise])
 
     useEffect(() => {
         const timeout = setTimeout(() => {
@@ -50,7 +78,7 @@ export default function TaskPage() {
         try {
             const dataJson = JSON.stringify({
                 username: localStorage.getItem('username'),
-                taskName: location.state.exercise.exerciseTitle
+                taskName: exercise.exerciseTitle
             })
             const res = await axios.post((process.env.baseURL || 'http://localhost:3001') + '/api/completeness', dataJson, {
                 headers: { 'Content-Type': 'application/json' }
@@ -75,7 +103,7 @@ export default function TaskPage() {
         try {
             const dataJson = JSON.stringify({
                 username: localStorage.getItem('username'),
-                taskName: location.state.exercise.exerciseTitle
+                taskName: exercise.exerciseTitle
             })
             const res = await axios.post((process.env.baseURL || 'http://localhost:3001') + '/api/incopmlete', dataJson, {
                 headers: { 'Content-Type': 'application/json' }
@@ -93,8 +121,8 @@ export default function TaskPage() {
     }
 
     const handleReset = () => {
-        setHtmlCode(location.state.exercise.exerciseStartingHTMLCode)
-        setCssCode(location.state.exercise.exerciseStartingCSSCode)
+        setHtmlCode(exercise.exerciseStartingHTMLCode)
+        setCssCode(exercise.exerciseStartingCSSCode)
     }
 
     return (
@@ -102,10 +130,10 @@ export default function TaskPage() {
             <IconContext.Provider value={{ color: '#453F3C', size: '24px' }}>
                 <div className='controlPanel'>
                     <div className='buttons'>
-                        <button className='TaskPageButton' title="Ukończ zadanie" onClick={handleFinish}><BiIcons.BiCheck /></button>
-                        <button className='TaskPageButton' title="Przerwij zadanie" onClick={handleAbort}><BiIcons.BiX /></button>
-                        <button className='TaskPageButton' title="Pomoc" onClick={handleHelp}><BiIcons.BiQuestionMark /></button>
-                        <button className='TaskPageButton' title="Zresetuj zadanie" onClick={handleReset}><BiIcons.BiReset /></button>
+                        <button className='TaskPageButton' title='Ukończ zadanie' onClick={handleFinish}><BiIcons.BiCheck /></button>
+                        <button className='TaskPageButton' title='Przerwij zadanie' onClick={handleAbort}><BiIcons.BiX /></button>
+                        <button className='TaskPageButton' title='Pomoc' onClick={handleHelp}><BiIcons.BiQuestionMark /></button>
+                        <button className='TaskPageButton' title='Zresetuj zadanie' onClick={handleReset}><BiIcons.BiReset /></button>
                     </div>
                 </div>
             </IconContext.Provider>
@@ -115,7 +143,7 @@ export default function TaskPage() {
                 isOpen={showTaskModal}
                 onRequestClose={closeTaskModal}
             >
-                <TaskDescription description={location.state.exercise.exerciseDescription} />
+                <TaskDescription description={exercise.exerciseDescription} />
             </Modal>
             <div className='break'></div>
             <div className='htmlEditor item'>
@@ -151,7 +179,7 @@ export default function TaskPage() {
                 </div>
                 <iframe
                     className='myFrame'
-                    srcDoc={location.state.exercise.exerciseSolutionCode}
+                    srcDoc={exercise.exerciseSolutionCode}
                     title='result'
                     sandbox='allow-scripts'
                 />
