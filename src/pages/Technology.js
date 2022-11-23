@@ -11,7 +11,7 @@ export default function Technology() {
                     która nie wymaga użycia programów trzecich -
                     zapomnij o pisaniu kodu w notatniku i ciągłym
                     odświeżaniu strony w przeglądarce -
-                    naze scentralizowane środowisko pozwala na wygodną i wydajną naukę.
+                    nasze scentralizowane środowisko pozwala na wygodną i wydajną naukę.
                 </div>
             </div>
             <div className='technologyItem'>

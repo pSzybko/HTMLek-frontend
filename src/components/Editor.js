@@ -1,7 +1,7 @@
 import React from 'react'
 
 import 'codemirror/lib/codemirror.css'
-import 'codemirror/theme/material.css'
+import 'codemirror/theme/xq-light.css'
 import 'codemirror/mode/xml/xml'
 import 'codemirror/mode/css/css'
 import 'codemirror/addon/edit/closebrackets'
@@ -38,10 +38,11 @@ export default function Editor(props) {
                     lineWrapping: true,
                     lint: false,
                     matchBrackets: true,
-                    theme: 'material',
+                    theme: 'xq-light',
                     lineNumbers: true,
                     smartIndent: true,
-                    electricChars: false
+                    electricChars: false,
+                    tabSize: 2
                 }}
             />
         </div>

@@ -32,7 +32,6 @@ export default function TaskPage() {
             const exerciseId = urlParams.get('exercise')
 
             const res = await axios.get((process.env.baseURL || 'http://localhost:3001') + '/api/exercise/' + taskId + '/' + exerciseId)
-
             if (res.data.status !== 'ok') {
                 console.log(res.data.error)
                 navigate('/')
@@ -41,6 +40,8 @@ export default function TaskPage() {
 
         } catch (err) {
             console.log(err)
+            alert('Nie udało się wczytać żądanego zadania.')
+            navigate('/')
         }
     }
     useEffect(() => {

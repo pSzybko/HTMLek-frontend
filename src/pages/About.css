@@ -1,9 +1,3 @@
-:root {
-    --bg-color: #c4e5ff;
-    --font-color: #453F3C;
-    --special-color: #F78764;
-}
-
 .about {
     height: 100vh;
     color: var(--font-color);

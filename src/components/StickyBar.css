@@ -28,7 +28,7 @@
 }
 
 .sticky-menu-items .logoWrapper .myStrong {
-    color: #F78764;
+    color: var(--special-color);
 }
 
 .barLogoutWrapper {

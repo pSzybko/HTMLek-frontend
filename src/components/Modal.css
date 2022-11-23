@@ -1,13 +1,13 @@
 :root {
-    --white: #b9d5e8;
+    --modal-special-color: #B0C7ED;
 }
 
 .modal {
-    background: var(--white);
+    background: var(--modal-special-color);
     overflow: hidden;
     width: 100%;
     height: 100%;
-    color: #fff;
+    color: var(--font-color);
 }
 
 .form {
@@ -19,7 +19,7 @@
 }
 
 .title {
-    color: #fff;
+
     font-size: 1.7em;
     text-align: center;
 }
@@ -54,12 +54,11 @@
 }
 
 .input-container input::placeholder {
-    color: black;
+    color: rgb(51, 51, 51);
 }
 
 .modalButton {
-    background-color: #6B92A4;
-    color: rgba(255, 255, 255, 0.7);
+    background-color: #fff;
     border: 0;
     border-radius: 15px;
     display: block;

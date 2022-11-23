@@ -23,8 +23,8 @@ export default function Education() {
                 <div className='educationText'>
                     Tworząc platformę edukacyjną korzystaliśmy z doświadczenia
                     zarówno uczniów jak i nauczycieli. Skoncentrowaliśmy się na
-                    stworzeniu narzędzia, które może być wykorzystywane w szkołach
-                    oraz, po które uczniowie chętnie sięgną poza zajęciami lekcyjnymi.
+                    stworzeniu narzędzia, które może być wykorzystywane w szkołach,
+                    oraz po które uczniowie chętnie sięgną poza zajęciami lekcyjnymi.
                     Z tego powodu oferujemy zarówno zagadnienia na poziomie podstawowym
                     oraz zaawansowane materiały dla najbardziej zainteresowanych.
                 </div>

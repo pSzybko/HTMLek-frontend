@@ -1,9 +1,6 @@
 :root {
     --typewriterSpeed: 3s;
     --typewriterCharacters: 13;
-    --bg-color: #d5e6f3;
-    --font-color: #453F3C;
-    --special-color: #F78764;
 }
 
 
@@ -43,11 +40,6 @@
     border-color: var(--special-color);
     color: black;
     border-radius: 5px 5px 0 0;
-}
-
-.react-tabs__tab--disabled {
-    color: blue;
-    cursor: default;
 }
 
 .react-tabs__tab:focus {
