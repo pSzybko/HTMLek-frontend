@@ -21,9 +21,9 @@ export default function Login(props) {
 
             if (res) {
                 localStorage.setItem('token', res.data.token)
-                localStorage.setItem('username', username)
                 props.changeAuth()
                 props.closeLoginModal()
+                props.setIsAdmin(res.data.user.role === 'admin')
             }
         }
         catch (err) { alert('Wrong login or password!') }

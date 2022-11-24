@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import * as AiIcons from 'react-icons/ai'
+import jwtDecode from 'jwt-decode'
+
 
 import Task from './Task'
 import './Tasks.css'
@@ -22,8 +24,12 @@ export default function Tasks() {
             if (res.data.status === 'ok') {
                 setTasks(res.data.allTasks)
             }
+
+            const token = localStorage.getItem('token')
+            const user = jwtDecode(token)
+
             const dataJson = JSON.stringify({
-                username: localStorage.getItem('username'),
+                username: user.username,
             })
             const res2 = await axios.post((process.env.baseURL || 'http://localhost:3001') + '/api/completed', dataJson, {
                 headers: { 'Content-Type': 'application/json' }
@@ -32,7 +38,7 @@ export default function Tasks() {
                 setFinishedTasks(res2.data.completedTasks)
             }
         } catch (err) {
-            alert(err)
+            alert('Nie udało się wczytać zawartości strony :(')
         }
     }
 

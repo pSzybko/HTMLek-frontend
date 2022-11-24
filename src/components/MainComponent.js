@@ -18,6 +18,7 @@ export default function MainComponent() {
     const [showLoginModal, setShowLoginModal] = useState(false)
     const [showRegisterModal, setShowRegisterModal] = useState(false)
     const [auth, setAuth] = useState(false)
+    const [isAdmin, setIsAdmin] = useState(false)
 
     window.onbeforeunload = function () {
         window.scrollTo(0, 0)
@@ -77,7 +78,7 @@ export default function MainComponent() {
                             isOpen={showLoginModal}
                             onRequestClose={closeLoginModal}
                         >
-                            <Login auth={auth} closeLoginModal={closeLoginModal} openRegisterModal={openRegisterModal} changeAuth={changeAuth} />
+                            <Login auth={auth} closeLoginModal={closeLoginModal} openRegisterModal={openRegisterModal} changeAuth={changeAuth} setIsAdmin={setIsAdmin} />
                         </Modal>
                         <Modal
                             ariaHideApp={false}
@@ -94,9 +95,14 @@ export default function MainComponent() {
                 </div>
             )
                 :
-                (
-                    <UserPage logOut={logOut} />
-                )
+                !isAdmin ?
+                    (
+                        <UserPage logOut={logOut} />
+                    )
+                    :
+                    (
+                        <div>heh to admin</div>
+                    )
             }
         </>
     )

@@ -5,7 +5,7 @@ import { IconContext } from 'react-icons'
 import * as BiIcons from 'react-icons/bi'
 import Modal from 'react-modal'
 import axios from 'axios'
-
+import jwtDecode from 'jwt-decode'
 
 import Editor from '../components/Editor'
 import { taskModalStyle } from '../components/TaskModalStyle'
@@ -77,8 +77,11 @@ export default function TaskPage() {
 
     const handleFinish = async () => {
         try {
+            const token = localStorage.getItem('token')
+            const user = jwtDecode(token)
+
             const dataJson = JSON.stringify({
-                username: localStorage.getItem('username'),
+                username: user.username,
                 taskName: exercise.exerciseTitle
             })
             const res = await axios.post((process.env.baseURL || 'http://localhost:3001') + '/api/completeness', dataJson, {
@@ -96,14 +99,18 @@ export default function TaskPage() {
                 navigate('/')
             }
         } catch (err) {
-            alert(err)
+            console.log(err)
+            navigate('/')
         }
     }
 
     const handleAbort = async () => {
         try {
+            const token = localStorage.getItem('token')
+            const user = jwtDecode(token)
+
             const dataJson = JSON.stringify({
-                username: localStorage.getItem('username'),
+                username: user.username,
                 taskName: exercise.exerciseTitle
             })
             const res = await axios.post((process.env.baseURL || 'http://localhost:3001') + '/api/incopmlete', dataJson, {
@@ -113,7 +120,8 @@ export default function TaskPage() {
                 navigate('/')
             }
         } catch (err) {
-            alert(err)
+            console.log(err)
+            navigate('/')
         }
     }
 

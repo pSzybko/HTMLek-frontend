@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
+import jwtDecode from 'jwt-decode'
+
 import Tasks from '../components/Tasks'
 import StickyBar from '../components/StickyBar'
 import './UserPage.css'
@@ -7,9 +9,12 @@ import './UserPage.css'
 export default function UserPage(props) {
     const [username, setUsername] = useState('')
 
+    const token = localStorage.getItem('token')
+    const user = jwtDecode(token)
+
     useEffect(() => {
-        setUsername(localStorage.getItem('username'))
-    }, [setUsername])
+        setUsername(user.username)
+    }, [setUsername, user])
 
     const customGreetings = ['Witaj ponownie ' + username, 'Dobrze Cię znowu widzieć ' + username, 'Nad czym dzisiaj będziesz pracować?']
 

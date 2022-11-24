@@ -5,6 +5,8 @@ import Modal from 'react-modal'
 import { IconContext } from 'react-icons'
 import * as BiIcons from 'react-icons/bi'
 import axios from 'axios'
+import jwtDecode from 'jwt-decode'
+
 
 import Editor from '../components/Editor'
 import SandboxDescription from '../components/SandboxDescription'
@@ -85,8 +87,10 @@ body {
     )
 
     useEffect(() => {
+        const token = localStorage.getItem('token')
+        const user = jwtDecode(token)
         const dataJson = JSON.stringify({
-            username: localStorage.getItem('username'),
+            username: user.username,
         })
         const getCode = async () => {
             const res = await axios.post((process.env.baseURL || 'http://localhost:3001') + '/api/code', dataJson, {
@@ -152,8 +156,11 @@ body {
     }
 
     const handleSave = async () => {
+        const token = localStorage.getItem('token')
+        const user = jwtDecode(token)
+
         const dataJson = JSON.stringify({
-            username: localStorage.getItem('username'),
+            username: user.username,
             sandboxHTML: htmlCode,
             sandboxCSS: cssCode
         })
@@ -163,9 +170,11 @@ body {
             })
             if (res.data.status !== 'ok') {
                 console.log(res.data.error)
+                navigate('/')
             }
         } catch (err) {
-            alert(err)
+            console.log(err)
+            navigate('/')
         }
     }
 
