@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import { IconContext } from 'react-icons'
 import MenuBar from './MenuBar'
@@ -12,9 +13,10 @@ import { modalStyle } from './ModalStyle'
 import Home from '../pages/Home'
 import About from '../pages/About'
 import jwtDecode from 'jwt-decode'
-import UserPage from '../pages/UserPage'
 
 export default function MainComponent() {
+    const navigate = useNavigate()
+
     const [showLoginModal, setShowLoginModal] = useState(false)
     const [showRegisterModal, setShowRegisterModal] = useState(false)
     const [auth, setAuth] = useState(false)
@@ -47,53 +49,50 @@ export default function MainComponent() {
         setAuth(!auth)
     }
 
-    const logOut = () => {
-        localStorage.removeItem('token')
-        setAuth(false)
-    }
-
     useEffect(() => {
         const token = localStorage.getItem('token')
         if (token) {
             const user = jwtDecode(token)
-            if (!user) {
-                localStorage.removeItem('token')
-                setAuth(false)
-            } else {
-                setAuth(true)
+            setIsAdmin(user.role === 'admin')
+            setAuth(true)
+            if (isAdmin === true) {
+                navigate('/admin')
+            }
+            else {
+                navigate('/home')
             }
         }
-    }, [])
+    })
     return (
         <>
-            {!auth ? (
-                <div className='nonAuth'>
-                    <div className='menu'>
-                        <IconContext.Provider value={{ color: '#15172b', size: '50px' }}>
-                            <MenuBar openLoginModal={openLoginModal} openRegisterModal={openRegisterModal} />
-                        </IconContext.Provider>
-                        <Modal
-                            ariaHideApp={false}
-                            style={modalStyle}
-                            isOpen={showLoginModal}
-                            onRequestClose={closeLoginModal}
-                        >
-                            <Login auth={auth} closeLoginModal={closeLoginModal} openRegisterModal={openRegisterModal} changeAuth={changeAuth} setIsAdmin={setIsAdmin} />
-                        </Modal>
-                        <Modal
-                            ariaHideApp={false}
-                            style={modalStyle}
-                            isOpen={showRegisterModal}
-                            onRequestClose={closeRegisterModal}
-                        >
-                            <Register closeRegisterModal={closeRegisterModal} openLoginModal={openLoginModal} />
-                        </Modal>
-                    </div>
-                    <Home />
-                    <About />
-                    <Author />
+
+            <div className='nonAuth'>
+                <div className='menu'>
+                    <IconContext.Provider value={{ color: '#15172b', size: '50px' }}>
+                        <MenuBar openLoginModal={openLoginModal} openRegisterModal={openRegisterModal} />
+                    </IconContext.Provider>
+                    <Modal
+                        ariaHideApp={false}
+                        style={modalStyle}
+                        isOpen={showLoginModal}
+                        onRequestClose={closeLoginModal}
+                    >
+                        <Login auth={auth} closeLoginModal={closeLoginModal} openRegisterModal={openRegisterModal} changeAuth={changeAuth} setIsAdmin={setIsAdmin} />
+                    </Modal>
+                    <Modal
+                        ariaHideApp={false}
+                        style={modalStyle}
+                        isOpen={showRegisterModal}
+                        onRequestClose={closeRegisterModal}
+                    >
+                        <Register closeRegisterModal={closeRegisterModal} openLoginModal={openLoginModal} />
+                    </Modal>
                 </div>
-            )
+                <Home />
+                <About />
+                <Author />
+            </div>
+            {/* )
                 :
                 !isAdmin ?
                     (
@@ -101,9 +100,9 @@ export default function MainComponent() {
                     )
                     :
                     (
-                        <div>heh to admin</div>
+                        <AdminPage />
                     )
-            }
+            } */}
         </>
     )
 }

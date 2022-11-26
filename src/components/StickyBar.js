@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import { IconContext } from 'react-icons'
 import * as BiIcons from 'react-icons/bi'
@@ -6,7 +7,14 @@ import * as BiIcons from 'react-icons/bi'
 import './StickyBar.css'
 
 export default function StickyBar(props) {
+    const navigate = useNavigate()
+
     const [ShowMore, setShowMore] = useState(false)
+
+    const logOut = () => {
+        localStorage.removeItem('token')
+        navigate('/')
+    }
 
     return (
         <div className='taskbarWrapper'>
@@ -21,7 +29,7 @@ export default function StickyBar(props) {
                                 <BiIcons.BiUserCircle className='userIcon' />{props.username}
                                 {
                                     ShowMore && (
-                                        <BiIcons.BiLogOut className='logoutUserIcon' onClick={props.logOut} />
+                                        <BiIcons.BiLogOut className='logoutUserIcon' onClick={logOut} />
                                     )
                                 }
                             </div>
