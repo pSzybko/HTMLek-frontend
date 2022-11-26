@@ -9,7 +9,7 @@
     padding-bottom: 0.5vh;
     padding-top: 1vh;
     justify-content: center;
-    height: 96.5vh;
+    height: max(96.5vh, 750px);
 }
 
 .SandboxWrapper .TaskPageColumn {
@@ -19,7 +19,7 @@
     justify-content: flex-start;
     padding-top: 1vh;
     align-items: center;
-    height: 96.5vh;
+    height: max(96.5vh, 750px);
 }
 
 .SandboxWrapper .break-column {
@@ -48,11 +48,10 @@
 } */
 
 .SandboxWrapper .CodeMirror {
-    height: 40vh !important;
+    height: max(40vh, 300px) !important;
     font-size: x-large;
 }
 
-.myFrameHigh {}
 
 .SandboxWrapper .buttons {
     height: max(3vh, 40px);
@@ -68,7 +67,7 @@
 
 .SandboxWrapper .myFrameHigh {
     border: none;
-    height: 86vh !important;
+    height: max(86vh, 650px) !important;
 
 }
 
