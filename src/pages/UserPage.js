@@ -16,6 +16,7 @@ export default function UserPage() {
         const token = localStorage.getItem('token')
         if (!token) {
             navigate('/')
+            window.location.reload(false)
         }
         const user = jwtDecode(token)
         if (user.role === 'admin') {
