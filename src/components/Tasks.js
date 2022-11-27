@@ -38,7 +38,7 @@ export default function Tasks() {
                 setFinishedTasks(res2.data.completedTasks)
             }
         } catch (err) {
-            alert('Nie udało się wczytać zawartości strony :(')
+            console.log(err)
         }
     }
 

@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-// import { Route, Routes, BrowserRouter } from 'react-router-dom'
 
 import jwtDecode from 'jwt-decode'
+
+import AboutTabs from '../components/AboutTabs'
+import { AdminTabsElements } from './AdminTabsElements'
 
 import './AdminPage.css'
 
@@ -31,12 +33,8 @@ export default function AdminPage() {
             <div>
                 HTMLek Panel Administratora
             </div>
-            <div className='AdminMenu'>
-                <button>Dodaj zadanie</button>
-                <button>Usun zadanie</button>
-                <button>Edytuj zadanie</button>
-                <button onClick={logOut}>Logout</button>
-            </div>
+            <button onClick={logOut}>Logout</button>
+            <AboutTabs tabs={AdminTabsElements} />
         </div>
     )
 }
