@@ -1,5 +1,3 @@
-import React from 'react'
-
 import AddTask from '../pages/AddTask'
 import EditTask from '../pages/EditTask'
 import RemoveTask from './RemoveTask'
@@ -10,26 +8,26 @@ import RemoveExercise from './RemoveExercise'
 export const AdminTabsElements = [
     {
         title: 'Dodaj lekcję',
-        text: <AddTask />
+        element: AddTask,
     },
     {
         title: 'Edytuj lekcję',
-        text: <EditTask />
+        element: EditTask
     },
     {
         title: 'Usun lekcję',
-        text: <RemoveTask />
+        element: RemoveTask
     },
     {
         title: 'Dodaj zadanie',
-        text: <AddExercise />
+        element: AddExercise
     },
     {
         title: 'Edytuj zadanie',
-        text: <EditExercise />
+        element: EditExercise
     },
     {
         title: 'Usun zadanie',
-        text: <RemoveExercise />
+        element: RemoveExercise
     },
 ]

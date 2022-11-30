@@ -7,14 +7,14 @@ import Mission from '../pages/Mission'
 export const tabs = [
     {
         title: 'Misja',
-        text: <Mission />
+        element: Mission
     },
     {
         title: 'Edukacja',
-        text: <Education />
+        element: Education
     },
     {
         title: 'Technologia',
-        text: <Technology />
+        element: Technology
     }
 ]

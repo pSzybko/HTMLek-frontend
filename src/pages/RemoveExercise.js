@@ -1,7 +1,86 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
-export default function RemoveExercise() {
+import axios from 'axios'
+
+export default function RemoveExercise(props) {
+    const [task, setTask] = useState({ exercises: [] })
+    const [exerciseTitle, setExerciseTitle] = useState('')
+    const [exerciseTitleInput, setExerciseTitleInput] = useState('')
+
+    useEffect(() => {
+        props.getTasks()
+    }, [])
+
+    const removeExercise = async () => {
+        if (exerciseTitle !== exerciseTitleInput) {
+            alert('Wpisz poprawną nazwę zadania!')
+            return
+        }
+        try {
+            const res = await axios.delete((process.env.baseURL || 'http://localhost:3001') + '/api/exercise/' + task.title + '/' + exerciseTitle)
+            if (res.data.status === 'ok') {
+                alert('Pomyślnie usunięto zadanie.')
+            }
+            else {
+                alert('Nie udało się usunąć zadania.')
+            }
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        removeExercise()
+    }
+
+    const getTask = async (name) => {
+        try {
+            const res = await axios.get((process.env.baseURL || 'http://localhost:3001') + '/api/task/' + name)
+            if (res.data.status === 'ok') {
+                setTask(res.data.task)
+            }
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
     return (
-        <div>RemoveExercise</div>
+        <div>
+            <h2>
+                Usuń pojedyncze zadanie
+            </h2>
+            <form onSubmit={handleSubmit}>
+                <label>
+                    Wybierz lekcję do usunięcia:
+                    <select onChange={(e) => {
+                        e.target.value !== '' ? getTask(e.target.value) : setTask({ exercises: [] })
+                    }} required>
+                        <option value=''>---wybierz lekcję---</option>
+                        {
+                            props.tasks.map((task, index) => (
+                                <option key={index} value={task.title}>{task.title}</option>
+                            ))
+                        }
+                    </select>
+                </label>
+                <label>
+                    Wybierz zadanie do usunięcia:
+                    <select onChange={(e) => { setExerciseTitle(e.target.value) }} required>
+                        <option value=''>---wybierz zadanie---</option>
+                        {
+                            task.exercises.map((task, index) => (
+                                <option key={index} value={task.exerciseTitle}>{task.exerciseTitle}</option>
+                            ))
+                        }
+                    </select>
+                </label>
+                <label>
+                    Aby usunąć wskazane zadanie napisz poniżej jego dokładną nazwę
+                    <input type='text' autoComplete='off' placeholder='Nazwa lekcji' onChange={(e) => { setExerciseTitleInput(e.target.value) }} required />
+                </label>
+                <button type='submit'>Usuń</button>
+            </form>
+        </div >
     )
 }

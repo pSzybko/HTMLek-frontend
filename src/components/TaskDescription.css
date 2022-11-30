@@ -50,7 +50,7 @@
 .modalBody li::before {
     margin-left: 2.5vw;
     margin-right: 15px;
-    content: "➤";
+    content: '➤';
 }
 
 .modalBody strong {
@@ -113,14 +113,14 @@
 }
 
 .modalBody .taskFrame:before {
-    content: "<zadanie>";
+    content: '<zadanie>';
     top: -12px;
     margin-right: -40px;
     right: 100%;
 }
 
 .modalBody .taskFrame:after {
-    content: "</zadanie>";
+    content: '</zadanie>';
     margin-left: -40px;
     left: 100%;
     top: auto;
@@ -132,11 +132,11 @@
 }
 
 .modalBody .importantFrame:before {
-    content: "<ważne>";
+    content: '<ważne>';
 }
 
 .modalBody .importantFrame:after {
-    content: "</ważne>";
+    content: '</ważne>';
 }
 
 .modalBody .importantFrame strong {

@@ -1,9 +1,56 @@
-import React from 'react'
+import React, { useState } from 'react'
+
+import axios from 'axios'
 
 export default function AddTask() {
+
+    const [Title, setTitle] = useState('')
+    const [Description, setDescription] = useState('')
+
+    const addNewTask = async () => {
+        const dataJson = JSON.stringify({
+            title: Title,
+            description: Description,
+            exercises: []
+        })
+        try {
+            const res = await axios.post((process.env.baseURL || 'http://localhost:3001') + '/api/task', dataJson, {
+                headers: { 'Content-Type': 'application/json' }
+            })
+
+            if (res.data.status === 'ok') {
+                alert('Pomyślnie dodano lekcję.')
+            }
+            else {
+                alert('Nie udało się dodać lekcji.')
+            }
+        }
+        catch (err) {
+            console.log(err)
+        }
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        addNewTask()
+    }
+
     return (
         <div>
-            TODO formularz zadania
-        </div>
+            <h2>Dodaj nową lekcję</h2>
+            <form autoComplete='off' onSubmit={handleSubmit}>
+                <label>
+                    Nazwa lekcji:
+                    <input type='text' autoComplete='off' placeholder='Nazwa lekcji' onChange={(e) => { setTitle(e.target.value) }} required />
+                </label>
+                <label>
+                    Opis lekcji:
+                    <textarea autoComplete='off' placeholder='Opis lekcji' onChange={(e) => { setDescription(e.target.value) }} required />
+                </label>
+                <button type='submit'>
+                    Dodaj
+                </button>
+            </form>
+        </div >
     )
 }

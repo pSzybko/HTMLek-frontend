@@ -1,14 +1,28 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import jwtDecode from 'jwt-decode'
+import axios from 'axios'
 
-import AboutTabs from '../components/AboutTabs'
+import AdminTabs from '../components/AdminTabs'
 import { AdminTabsElements } from './AdminTabsElements'
 
 import './AdminPage.css'
 
 export default function AdminPage() {
+    const [Tasks, setTasks] = useState([])
+
+    const getTasks = async () => {
+        try {
+            const res = await axios.get((process.env.baseURL || 'http://localhost:3001') + '/api/tasks')
+            if (res.data.status === 'ok') {
+                setTasks(res.data.allTasks)
+            }
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -30,11 +44,11 @@ export default function AdminPage() {
 
     return (
         <div className='AdminPageHome'>
-            <div>
+            <h1>
                 HTMLek Panel Administratora
-            </div>
+            </h1>
             <button onClick={logOut}>Logout</button>
-            <AboutTabs tabs={AdminTabsElements} />
+            <AdminTabs tabs={AdminTabsElements} tasks={Tasks} getTasks={getTasks} />
         </div>
     )
 }
