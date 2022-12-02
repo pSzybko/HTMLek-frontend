@@ -4,6 +4,9 @@ import { useNavigate } from 'react-router-dom'
 import jwtDecode from 'jwt-decode'
 import axios from 'axios'
 
+import { IconContext } from 'react-icons'
+import * as BiIcons from 'react-icons/bi'
+
 import AdminTabs from '../components/AdminTabs'
 import { AdminTabsElements } from './AdminTabsElements'
 
@@ -44,11 +47,17 @@ export default function AdminPage() {
 
     return (
         <div className='AdminPageHome'>
-            <h1>
-                HTMLek Panel Administratora
-            </h1>
-            <button onClick={logOut}>Logout</button>
-            <AdminTabs tabs={AdminTabsElements} tasks={Tasks} getTasks={getTasks} />
+            <div className='headerSection'>
+                <h1 className='mainHeader'>
+                    HTMLek Panel Administratora
+                </h1>
+                <IconContext.Provider value={{ color: 'black', size: '40px' }}>
+                    <button onClick={logOut}><BiIcons.BiLogOut /></button>
+                </IconContext.Provider>
+            </div>
+            <IconContext.Provider value={{ color: 'black', size: '60px' }}>
+                <AdminTabs tabs={AdminTabsElements} tasks={Tasks} getTasks={getTasks} />
+            </IconContext.Provider>
         </div>
     )
 }

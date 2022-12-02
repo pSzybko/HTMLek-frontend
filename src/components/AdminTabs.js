@@ -17,7 +17,7 @@ export default function AdminTabs(props) {
             {props.tabs.map((element, index) => {
                 return (
                     <TabPanel index={index} key={index}>
-                        <div className='test'> {<element.element tasks={props.tasks} getTasks={props.getTasks} />}</div>
+                        <div className='myTabs'> {<element.element tasks={props.tasks} getTasks={props.getTasks} />}</div>
                     </TabPanel>
                 )
             })}

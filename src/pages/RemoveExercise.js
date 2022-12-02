@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 import axios from 'axios'
+import * as BiIcons from 'react-icons/bi'
 
 export default function RemoveExercise(props) {
     const [task, setTask] = useState({ exercises: [] })
@@ -24,6 +25,8 @@ export default function RemoveExercise(props) {
             else {
                 alert('Nie udało się usunąć zadania.')
             }
+            window.location.reload(false)
+
         } catch (err) {
             console.log(err)
         }
@@ -46,7 +49,7 @@ export default function RemoveExercise(props) {
     }
 
     return (
-        <div>
+        <div className='myTab'>
             <h2>
                 Usuń pojedyncze zadanie
             </h2>
@@ -79,7 +82,9 @@ export default function RemoveExercise(props) {
                     Aby usunąć wskazane zadanie napisz poniżej jego dokładną nazwę
                     <input type='text' autoComplete='off' placeholder='Nazwa lekcji' onChange={(e) => { setExerciseTitleInput(e.target.value) }} required />
                 </label>
-                <button type='submit'>Usuń</button>
+                <button type='submit'>
+                    <BiIcons.BiSave />
+                </button>
             </form>
         </div >
     )

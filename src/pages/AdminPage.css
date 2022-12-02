@@ -1,0 +1,75 @@
+.AdminPageHome {
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+
+.AdminPageHome .headerSection {
+    text-align: center;
+}
+
+.AdminPageHome button {
+    cursor: pointer;
+}
+
+.myTab form {
+    padding-left: 5vw;
+    padding-right: 5vh;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    display: grid;
+    grid-gap: 20px;
+}
+
+.myTab h2 {
+    text-align: center;
+}
+
+.myTab button,
+.myTab fieldset,
+.myTab input,
+.myTab legend,
+.myTab select,
+.myTab textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.myTab input,
+.myTab select,
+.myTab textarea {
+    border: 2px solid #333;
+    background-color: white;
+    border-radius: 0.25rem;
+}
+
+.myTab input[type="text"],
+.myTab input[type="email"],
+.myTab select,
+.myTab textarea {
+    font: 1.25rem / 1.5 sans-serif;
+    width: 100%;
+    padding: 0.75rem 1rem;
+}
+
+.myTab button {
+    width: max(5vw, 100px);
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: rgba(114, 114, 114, 0.425);
+}
+
+.myTab button:hover {
+    background-color: rgba(114, 114, 114, 0.625);
+}
+
+.myTab textarea {
+    resize: vertical;
+    height: 10rem;
+}

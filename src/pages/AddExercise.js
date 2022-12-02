@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 import axios from 'axios'
+import * as BiIcons from 'react-icons/bi'
 
 export default function AddExercise(props) {
     const [title, setTitle] = useState('')
@@ -44,7 +45,7 @@ export default function AddExercise(props) {
     }
 
     return (
-        <div>
+        <div className='myTab'>
             <h2>Dodaj nowe zadanie</h2>
             <form autoComplete='off' onSubmit={handleSubmit}>
                 <label>
@@ -79,7 +80,7 @@ export default function AddExercise(props) {
                     <textarea type='text' autoComplete='off' placeholder='Opis zadania' onChange={(e) => { setExerciseStartingCSSCode(e.target.value) }} required />
                 </label>
                 <button type='submit'>
-                    Dodaj
+                    <BiIcons.BiSave />
                 </button>
             </form>
         </div>

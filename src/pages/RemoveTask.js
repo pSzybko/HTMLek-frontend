@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 import axios from 'axios'
+import * as BiIcons from 'react-icons/bi'
 
 export default function RemoveTask(props) {
     const [Task, setTask] = useState('')
@@ -16,6 +17,7 @@ export default function RemoveTask(props) {
                 alert('Wpisz poprawną nazwę lekcji!')
                 return
             }
+            alert(TaskName)
             const res = await axios.delete((process.env.baseURL || 'http://localhost:3001') + '/api/task/' + TaskName)
             if (res.data.status === 'ok') {
                 alert('Pomyślnie usunięto lekcję.')
@@ -35,7 +37,7 @@ export default function RemoveTask(props) {
     }
 
     return (
-        <div>
+        <div className='myTab'>
             <h2>
                 Usuń lekcję wraz z zadaniami
             </h2>
@@ -55,7 +57,9 @@ export default function RemoveTask(props) {
                     Aby usunąć wskazaną lekcję napisz poniżej jej dokładną nazwę
                     <input type='text' autoComplete='off' placeholder='Nazwa lekcji' onChange={(e) => { setTaskName(e.target.value) }} required />
                 </label>
-                <button type='submit'>Usuń</button>
+                <button type='submit'>
+                    <BiIcons.BiSave />
+                </button>
             </form>
         </div>
     )

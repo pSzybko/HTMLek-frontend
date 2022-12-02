@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 
 import axios from 'axios'
+import * as BiIcons from 'react-icons/bi'
+
 
 export default function AddTask() {
 
@@ -36,7 +38,7 @@ export default function AddTask() {
     }
 
     return (
-        <div>
+        <div className='myTab'>
             <h2>Dodaj nową lekcję</h2>
             <form autoComplete='off' onSubmit={handleSubmit}>
                 <label>
@@ -48,7 +50,7 @@ export default function AddTask() {
                     <textarea autoComplete='off' placeholder='Opis lekcji' onChange={(e) => { setDescription(e.target.value) }} required />
                 </label>
                 <button type='submit'>
-                    Dodaj
+                    <BiIcons.BiSave />
                 </button>
             </form>
         </div >
