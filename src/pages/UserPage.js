@@ -23,14 +23,14 @@ export default function UserPage() {
             navigate('/admin')
         }
         setUsername(user.username)
-    }, [setUsername])
+    }, [setUsername, navigate])
 
     const customGreetings = ['Witaj ponownie ' + username, 'Dobrze Cię znowu widzieć ' + username, 'Nad czym dzisiaj będziesz pracować?']
 
     return (
         <div className='userPage'>
             <div className='menu'>
-                <StickyBar username={username} />
+                <StickyBar username={username} page={'user'} />
             </div>
             <div className='userHeaderWrapper'>
                 <h1 className='userHeader'>{customGreetings[Math.floor(Math.random() * customGreetings.length)]}</h1>

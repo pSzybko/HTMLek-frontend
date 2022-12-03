@@ -63,6 +63,7 @@ export default function MainComponent() {
             }
         }
     })
+
     return (
         <>
 
@@ -92,17 +93,6 @@ export default function MainComponent() {
                 <About />
                 <Author />
             </div>
-            {/* )
-                :
-                !isAdmin ?
-                    (
-                        <UserPage logOut={logOut} />
-                    )
-                    :
-                    (
-                        <AdminPage />
-                    )
-            } */}
         </>
     )
 }

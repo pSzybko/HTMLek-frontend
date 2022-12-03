@@ -1,10 +1,5 @@
-.AdminPageHome {
-    padding-left: 1vw;
-    padding-right: 1vw;
-}
-
-.AdminPageHome .headerSection {
-    text-align: center;
+.AdminPageHome .bodySection {
+    padding: 1vw;
 }
 
 .AdminPageHome button {

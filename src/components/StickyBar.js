@@ -6,7 +6,7 @@ import * as BiIcons from 'react-icons/bi'
 
 import './StickyBar.css'
 
-export default function StickyBar(props) {
+export default function StickyBar({ username, page }) {
     const navigate = useNavigate()
 
     const [ShowMore, setShowMore] = useState(false)
@@ -23,10 +23,15 @@ export default function StickyBar(props) {
                     <li className='logoWrapper'>
                         <h3 className='taskbarTitle'>&lt;<strong className='myStrong'>p</strong>&gt;HTMLek&lt;/<strong className='myStrong'>p</strong>&gt;</h3>
                     </li>
+                    {page === 'admin' &&
+                        <li className='adminPanel'>
+                            <h3 className='taskbarTitle'>Panel administratora</h3>
+                        </li>
+                    }
                     <li className='barLogoutWrapper'>
                         <div className='userBar barLogoutItem' onMouseEnter={() => { setShowMore(true) }} onMouseLeave={() => { setShowMore(false) }}>
                             <div className='textArea'>
-                                <BiIcons.BiUserCircle className='userIcon' />{props.username}
+                                <BiIcons.BiUserCircle className='userIcon' />{username}
                                 {
                                     ShowMore && (
                                         <BiIcons.BiLogOut className='logoutUserIcon' onClick={logOut} />

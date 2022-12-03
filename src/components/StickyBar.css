@@ -22,16 +22,16 @@
     flex-grow: 1;
 }
 
-.sticky-menu-items .logoWrapper {
+.taskbarWrapper .sticky-menu-items .logoWrapper {
     font-size: xx-large;
     line-height: max(6vh, 55px);
 }
 
-.sticky-menu-items .logoWrapper .myStrong {
+.taskbarWrapper .sticky-menu-items .logoWrapper .myStrong {
     color: var(--special-color);
 }
 
-.barLogoutWrapper {
+.taskbarWrapper .sticky-menu-items .barLogoutWrapper {
     height: max(5vh, 45px);
     margin-top: max(0.5vh, 5px);
     line-height: max(6vh, 55px);
@@ -41,7 +41,7 @@
     justify-content: stretch;
 }
 
-.userBar {
+.taskbarWrapper .sticky-menu-items .barLogoutWrapper .userBar {
     min-width: min-content;
     transition: width 10s linear;
     height: max(5vh, 45px);
@@ -58,20 +58,20 @@
     font-size: 35px;
 }
 
-.userBar:hover {
+.taskbarWrapper .sticky-menu-items .barLogoutWrapper .userBar:hover {
     background-color: rgba(247, 135, 100, .7);
 }
 
-.userBar:active {
+.taskbarWrapper .sticky-menu-items .barLogoutWrapper .userBar:active {
     background-color: rgba(247, 135, 100, .8);
 }
 
-.textArea {
+.taskbarWrapper .sticky-menu-items .barLogoutWrapper .userBar .textArea {
     height: max(5vh, 35px);
     line-height: max(5vh, 35px);
 }
 
-.userIcon {
+.taskbarWrapper .sticky-menu-items .barLogoutWrapper .userBar .textArea .userIcon {
     vertical-align: middle;
     margin-right: 0.5vw;
 }
@@ -83,4 +83,10 @@
     background-color: rgba(0, 0, 0, .2);
     border-radius: 6px;
     padding: 2px;
+}
+
+.taskbarWrapper .sticky-menu-items .adminPanel {
+    text-align: center;
+    font-size: x-large;
+    line-height: max(6vh, 55px);
 }

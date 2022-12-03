@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import * as BiIcons from 'react-icons/bi'
 
-export default function EditExercise(props) {
+export default function EditExercise({ getTasks, tasks }) {
     const [showMore, setShowMore] = useState(false)
 
     const [task, setTask] = useState({ exercises: [] })
@@ -20,7 +20,7 @@ export default function EditExercise(props) {
     const [exerciseStartingCSSCode, setExerciseStartingCSSCode] = useState('')
 
     useEffect(() => {
-        props.getTasks()
+        getTasks()
     }, [])
 
     const getTask = async (name) => {
@@ -103,7 +103,7 @@ export default function EditExercise(props) {
                     }} required>
                         <option value=''>---wybierz lekcję---</option>
                         {
-                            props.tasks.map((task, index) => (
+                            tasks.map((task, index) => (
                                 <option key={index} value={task.title}>{task.title}</option>
                             ))
                         }

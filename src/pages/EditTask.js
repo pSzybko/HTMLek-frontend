@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import * as BiIcons from 'react-icons/bi'
 
-export default function EditTask(props) {
+export default function EditTask({ getTasks, tasks }) {
     const [showMore, setShowMore] = useState(false)
     const [Task, setTask] = useState({ title: '', description: '' })
 
@@ -12,7 +12,7 @@ export default function EditTask(props) {
     const [TaskName, setTaskName] = useState('')
 
     useEffect(() => {
-        props.getTasks()
+        getTasks()
     }, [])
 
     const getTaskData = async (value) => {
@@ -77,7 +77,7 @@ export default function EditTask(props) {
                     <select onChange={(e) => { loadMore(e.target.value) }}>
                         <option value=''>---wybierz lekcję---</option>
                         {
-                            props.tasks.map((task, index) => (
+                            tasks.map((task, index) => (
                                 <option key={index} value={task.title}>{task.title}</option>
                             ))
                         }

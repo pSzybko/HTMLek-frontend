@@ -3,12 +3,12 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import * as BiIcons from 'react-icons/bi'
 
-export default function RemoveTask(props) {
+export default function RemoveTask({ getTasks, tasks }) {
     const [Task, setTask] = useState('')
     const [TaskName, setTaskName] = useState('')
 
     useEffect(() => {
-        props.getTasks()
+        getTasks()
     }, [])
 
     const removeTask = async () => {
@@ -19,13 +19,13 @@ export default function RemoveTask(props) {
             }
             alert(TaskName)
             const res = await axios.delete((process.env.baseURL || 'http://localhost:3001') + '/api/task/' + TaskName)
+            window.location.reload(false)
             if (res.data.status === 'ok') {
                 alert('Pomyślnie usunięto lekcję.')
             }
             else {
                 alert('Nie udało się usunąć lekcji.')
             }
-            window.location.reload(false)
         } catch (err) {
             console.log(err)
         }
@@ -47,7 +47,7 @@ export default function RemoveTask(props) {
                     <select onChange={(e) => { setTask(e.target.value) }} required>
                         <option value=''>---wybierz lekcję---</option>
                         {
-                            props.tasks.map((task, index) => (
+                            tasks.map((task, index) => (
                                 <option key={index}>{task.title}</option>
                             ))
                         }
