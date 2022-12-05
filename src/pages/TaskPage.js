@@ -157,7 +157,6 @@ export default function TaskPage() {
                 <div className='controlPanel'>
                     <div className='buttons'>
                         <button className='TaskPageButton' title='Rozwiązanie' onClick={handleSolution}><BiIcons.BiCodeAlt /></button>
-                        {/* <button className='TaskPageButton' title='Podpowiedź' onClick={handleSolution}><BiIcons.BiCodeAlt /></button> */}
                         <button className='TaskPageButton' title='Przerwij rozwiązywanie' onClick={handleAbort}><BiIcons.BiX /></button>
                         <button className='TaskPageButton' title='Pomoc' onClick={handleHelp}><BiIcons.BiQuestionMark /></button>
                         <button className='TaskPageButton' title='Zresetuj zadanie' onClick={handleReset}><BiIcons.BiReset /></button>
