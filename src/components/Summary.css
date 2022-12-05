@@ -1,0 +1,66 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+.mySummary {
+    height: 100%;
+    user-select: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.mySummary .summaryHeader {}
+
+.mySummary .summaryBox {
+    background-color: lightpink;
+    border-radius: 16px;
+    white-space: pre-wrap;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-height: 93%;
+}
+
+.mySummary .summaryBox .summaryItem {
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-basis: calc(50% - 10px);
+    justify-content: flex-start;
+    flex-direction: column;
+    margin: 5px;
+    background: rgba(255, 255, 255, 0.5);
+
+}
+
+
+.mySummary .summaryBox .summaryItem .contentHeader {
+    padding-left: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    font-size: x-large;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.mySummary .summaryBox .summaryItem .contentCode {
+    padding: 5px;
+    font-size: large;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    overflow-y: scroll;
+}
+
+.mySummary .controlPanel {
+    padding: 5px;
+    text-align: center;
+
+}
+
+.mySummary .controlPanel .TaskPageButton {
+    width: 100px;
+    cursor: pointer;
+}

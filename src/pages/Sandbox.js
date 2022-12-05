@@ -152,7 +152,7 @@ body {
 
     const handleFinish = async () => {
         handleSave(false)
-        navigate('/')
+        navigate('/home')
     }
 
     const handleSave = async () => {
@@ -170,11 +170,11 @@ body {
             })
             if (res.data.status !== 'ok') {
                 console.log(res.data.error)
-                navigate('/')
+                navigate('/home')
             }
         } catch (err) {
             console.log(err)
-            navigate('/')
+            navigate('/home')
         }
     }
 

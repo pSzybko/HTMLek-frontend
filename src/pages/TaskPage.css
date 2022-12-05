@@ -100,4 +100,5 @@
     height: 3vh;
     min-height: 30px;
     min-width: 30px;
+    cursor: pointer;
 }

@@ -8,6 +8,7 @@ import axios from 'axios'
 import jwtDecode from 'jwt-decode'
 
 import Editor from '../components/Editor'
+import Summary from '../components/Summary'
 import { taskModalStyle } from '../components/TaskModalStyle'
 import TaskDescription from '../components/TaskDescription'
 import './TaskPage.css'
@@ -24,6 +25,8 @@ export default function TaskPage() {
 
     const [showTaskModal, setShowTaskModal] = useState(true)
 
+    const [showSummaryModal, setShowSummaryModal] = useState(false)
+
     const getExercise = async () => {
         try {
             const queryString = window.location.search
@@ -34,14 +37,14 @@ export default function TaskPage() {
             const res = await axios.get((process.env.baseURL || 'http://localhost:3001') + '/api/exercise/' + taskId + '/' + exerciseId)
             if (res.data.status !== 'ok') {
                 console.log(res.data.error)
-                navigate('/')
+                navigate('/home')
             }
             setExercise(res.data.exercise)
 
         } catch (err) {
             console.log(err)
             alert('Nie udało się wczytać żądanego zadania.')
-            navigate('/')
+            navigate('/home')
         }
     }
     useEffect(() => {
@@ -55,12 +58,12 @@ export default function TaskPage() {
 
     useEffect(() => {
         const timeout = setTimeout(() => {
-            setSource(`
-            <html>
-              <body>${htmlCode}</body>
-              <style>${cssCode}</style>
-            </html>
-          `)
+            setSource(
+                `<html>
+    <body>${htmlCode}</body>
+    <style>${cssCode}</style>
+</html>`
+            )
         }, 300)
         return () => clearTimeout(timeout)
     }, [htmlCode, cssCode])
@@ -73,6 +76,16 @@ export default function TaskPage() {
     const closeTaskModal = () => {
         document.body.style.overflow = 'unset'
         setShowTaskModal(false)
+    }
+
+    const openSummaryModal = () => {
+        document.body.style.overflow = 'hidden'
+        setShowSummaryModal(true)
+    }
+
+    const closeSummaryModal = () => {
+        document.body.style.overflow = 'unset'
+        setShowSummaryModal(false)
     }
 
     const handleFinish = async () => {
@@ -92,15 +105,15 @@ export default function TaskPage() {
                     headers: { 'Content-Type': 'application/json' }
                 })
                 if (res2.data.status === 'ok') {
-                    navigate('/')
+                    navigate('/home')
                 }
             }
             else {
-                navigate('/')
+                navigate('/home')
             }
         } catch (err) {
             console.log(err)
-            navigate('/')
+            navigate('/home')
         }
     }
 
@@ -117,11 +130,11 @@ export default function TaskPage() {
                 headers: { 'Content-Type': 'application/json' }
             })
             if (res.data.status === 'ok') {
-                navigate('/')
+                navigate('/home')
             }
         } catch (err) {
             console.log(err)
-            navigate('/')
+            navigate('/home')
         }
     }
 
@@ -134,13 +147,18 @@ export default function TaskPage() {
         setCssCode(exercise.exerciseStartingCSSCode)
     }
 
+    const handleSolution = () => {
+        openSummaryModal()
+    }
+
     return (
         <div className='TaskPage'>
             <IconContext.Provider value={{ color: '#453F3C', size: '24px' }}>
                 <div className='controlPanel'>
                     <div className='buttons'>
-                        <button className='TaskPageButton' title='Ukończ zadanie' onClick={handleFinish}><BiIcons.BiCheck /></button>
-                        <button className='TaskPageButton' title='Przerwij zadanie' onClick={handleAbort}><BiIcons.BiX /></button>
+                        <button className='TaskPageButton' title='Rozwiązanie' onClick={handleSolution}><BiIcons.BiCodeAlt /></button>
+                        {/* <button className='TaskPageButton' title='Podpowiedź' onClick={handleSolution}><BiIcons.BiCodeAlt /></button> */}
+                        <button className='TaskPageButton' title='Przerwij rozwiązywanie' onClick={handleAbort}><BiIcons.BiX /></button>
                         <button className='TaskPageButton' title='Pomoc' onClick={handleHelp}><BiIcons.BiQuestionMark /></button>
                         <button className='TaskPageButton' title='Zresetuj zadanie' onClick={handleReset}><BiIcons.BiReset /></button>
                     </div>
@@ -153,6 +171,14 @@ export default function TaskPage() {
                 onRequestClose={closeTaskModal}
             >
                 <TaskDescription description={exercise.exerciseDescription} />
+            </Modal>
+            <Modal
+                ariaHideApp={false}
+                style={taskModalStyle}
+                isOpen={showSummaryModal}
+                onRequestClose={closeSummaryModal}
+            >
+                <Summary htmlCode={htmlCode} cssCode={cssCode} exerciseSolutionCode={exercise.exerciseSolutionCode} handleFinish={handleFinish} />
             </Modal>
             <div className='break'></div>
             <div className='htmlEditor item'>
