@@ -1,26 +1,17 @@
 import React from 'react'
 
+import Animation from '../components/Animation'
+
 import './Mission.css'
 
 export default function Mission() {
     return (
-        <div>
-            <div className='educationItem'>
-                <div className='educationImg'>
-                    Tu będzie jakaś ładna grafika kiedyś <br></br>
-                    Tu będzie jakaś ładna grafika kiedyś <br></br>
-                    Tu będzie jakaś ładna grafika kiedyś <br></br>
-                    Tu będzie jakaś ładna grafika kiedyś <br></br>
-                    Tu będzie jakaś ładna grafika kiedyś <br></br>
-                    Tu będzie jakaś ładna grafika kiedyś <br></br>
-                    Tu będzie jakaś ładna grafika kiedyś <br></br>
-                    Tu będzie jakaś ładna grafika kiedyś <br></br>
-                    Tu będzie jakaś ładna grafika kiedyś <br></br>
-                    Tu będzie jakaś ładna grafika kiedyś <br></br>
-                </div>
+        <div className='mission'>
+            <div className='missionItem'>
+                <Animation modelPath="/trophy2.stl" />
             </div>
-            <div className='educationItem'>
-                <div className='educationText'>
+            <div className='missionItem'>
+                <div className='missionText'>
                     Tworząc platformę edukacyjną korzystaliśmy z doświadczenia
                     zarówno uczniów jak i nauczycieli. Skoncentrowaliśmy się na
                     stworzeniu narzędzia, które może być wykorzystywane w szkołach,

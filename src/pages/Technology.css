@@ -6,12 +6,10 @@
 
 .technologyItem {
     flex: 50%;
+    width: 50%;
+    height: 100%;
 }
 
 .technologyText {
-    padding: 10px;
-}
-
-.technologyImage {
     padding: 10px;
 }

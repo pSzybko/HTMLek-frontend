@@ -12,59 +12,6 @@
 }
 
 
-.mySvg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: 0;
-    transform: translate(-50%, -100%);
-}
-
-#smoke-1 {
-    stroke-dasharray: 0, 10;
-    animation: smoke 6s ease infinite;
-}
-
-#smoke-2 {
-    stroke-dasharray: 0, 10;
-    animation: smoke 6s 0.5s ease infinite;
-}
-
-@keyframes smoke {
-    0% {
-        stroke-dasharray: 0, 10;
-    }
-
-    50% {
-        stroke-dasharray: 10, 0;
-    }
-
-    100% {
-        stroke-dasharray: 10, 0;
-        opacity: 0;
-    }
-}
-
-#line-1 {
-    opacity: 0;
-    animation: writing 0.5s linear forwards;
-}
-
-#line-2 {
-    opacity: 0;
-    animation: writing 0.5s 1s linear forwards;
-}
-
-#line-3 {
-    opacity: 0;
-    animation: writing 0.5s 1.5s linear forwards;
-}
-
-#line-4 {
-    opacity: 0;
-    animation: writing 0.5s 2s linear forwards;
-}
-
 @keyframes writing {
     0% {
         width: 0px;
@@ -92,13 +39,12 @@
 
 .Text-box .Title {
     font-size: clamp(1rem, 3.5vw, 4rem);
-    font-family: 'Source Code Pro', monospace;
     color: var(--font-color);
     position: absolute;
     width: max-content;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, 80%);
+    transform: translate(-50%, 300%);
 
 
 }
@@ -157,10 +103,22 @@
     font-size: clamp(0.7rem, 1.5vw, 3rem);
     top: 50%;
     left: 50%;
-    transform: translate(-50%, 500%);
+    transform: translate(-50%, 875%);
     animation: 3s ease 3s normal forwards 1 fadeInUp;
 }
 
 .Text-box .Title strong {
     color: var(--special-color);
+}
+
+.animationWrapper {
+    position: absolute;
+    height: 50vh;
+    width: 100vw;
+    z-index: 50;
+}
+
+.animationWrapper .animation {
+    height: 100%;
+    width: 100%;
 }

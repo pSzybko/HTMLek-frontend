@@ -1,0 +1,16 @@
+.mission {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.missionItem {
+    flex: 50%;
+    width: 50%;
+    height: 100%;
+}
+
+.missionItem .animation {
+    height: 100%;
+    width: 100%;
+}

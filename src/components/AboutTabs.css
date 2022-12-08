@@ -13,8 +13,7 @@
     -ms-user-select: none;
     margin-top: 50px;
     font-size: clamp(0.7rem, 1.5vw, 3rem);
-
-
+    height: 90%;
 }
 
 .react-tabs__tab-list {
@@ -58,12 +57,17 @@
 
 .react-tabs__tab-panel {
     display: none;
+    height: 100%;
+
 }
 
 .react-tabs__tab-panel--selected {
     display: block;
+    height: 100%;
 }
 
 .react-tabs__tab-panel--selected * {
-    color: var(--font-color)
+    color: var(--font-color);
+    height: 100%;
+
 }

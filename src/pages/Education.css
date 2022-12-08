@@ -6,13 +6,11 @@
 
 .educationItem {
     flex: 50%;
-
+    width: 50%;
+    height: 100%;
 }
 
-.educationText {
-    padding: 10px;
-}
-
-.educationImage {
-    padding: 10px;
+.educationItem .animation {
+    height: 100%;
+    width: 100%;
 }

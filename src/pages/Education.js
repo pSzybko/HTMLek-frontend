@@ -1,23 +1,14 @@
 import React from 'react'
 
+import Animation from '../components/Animation'
+
 import './Education.css'
 
 export default function Education() {
     return (
         <div className='education'>
             <div className='educationItem'>
-                <div className='educationImg'>
-                    Tu będzie jakaś ładna grafika kiedyś <br></br>
-                    Tu będzie jakaś ładna grafika kiedyś <br></br>
-                    Tu będzie jakaś ładna grafika kiedyś <br></br>
-                    Tu będzie jakaś ładna grafika kiedyś <br></br>
-                    Tu będzie jakaś ładna grafika kiedyś <br></br>
-                    Tu będzie jakaś ładna grafika kiedyś <br></br>
-                    Tu będzie jakaś ładna grafika kiedyś <br></br>
-                    Tu będzie jakaś ładna grafika kiedyś <br></br>
-                    Tu będzie jakaś ładna grafika kiedyś <br></br>
-                    Tu będzie jakaś ładna grafika kiedyś <br></br>
-                </div>
+                <Animation modelPath="/GradHat.stl" />
             </div>
             <div className='educationItem'>
                 <div className='educationText'>

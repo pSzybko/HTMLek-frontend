@@ -1,5 +1,7 @@
 import React from 'react'
 
+import Animation from '../components/Animation'
+
 import './Technology.css'
 
 export default function Technology() {
@@ -15,18 +17,7 @@ export default function Technology() {
                 </div>
             </div>
             <div className='technologyItem'>
-                <div className='technologyImg'>
-                    Tu będzie jakaś ładna grafika kiedyś <br></br>
-                    Tu będzie jakaś ładna grafika kiedyś <br></br>
-                    Tu będzie jakaś ładna grafika kiedyś <br></br>
-                    Tu będzie jakaś ładna grafika kiedyś <br></br>
-                    Tu będzie jakaś ładna grafika kiedyś <br></br>
-                    Tu będzie jakaś ładna grafika kiedyś <br></br>
-                    Tu będzie jakaś ładna grafika kiedyś <br></br>
-                    Tu będzie jakaś ładna grafika kiedyś <br></br>
-                    Tu będzie jakaś ładna grafika kiedyś <br></br>
-                    Tu będzie jakaś ładna grafika kiedyś <br></br>
-                </div>
+                <Animation modelPath="/laptop2.stl" />
             </div>
         </div>
     )
