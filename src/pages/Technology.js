@@ -2,22 +2,22 @@ import React from 'react'
 
 import Animation from '../components/Animation'
 
-import './Technology.css'
+import '../components/AboutTabsElements.css'
 
 export default function Technology() {
     return (
-        <div className='technology'>
-            <div className='technologyItem'>
-                <div className='technologyText'>
-                    Zależało nam na stworzeniu interaktywnej platformy,
-                    która nie wymaga użycia programów trzecich -
-                    zapomnij o pisaniu kodu w notatniku i ciągłym
-                    odświeżaniu strony w przeglądarce -
-                    nasze scentralizowane środowisko pozwala na wygodną i wydajną naukę.
+        <div className='AboutTabsElement'>
+            <div className='AboutTabsElementItem'>
+                <div className='text'>
+                    Głównym celem stworzenia platformy było wyeliminowanie
+                    konieczności korzystania z programów trzecich - zapomnij
+                    o pisaniu kodu w notatniku oraz ciągłym odświeżaniu strony w
+                    przeglądarce. Nasze scentralizowane środowisko pozwala na wygodną i
+                    wydajną naukę.
                 </div>
             </div>
-            <div className='technologyItem'>
-                <Animation modelPath="/laptop2.stl" />
+            <div className='AboutTabsElementItem'>
+                <Animation modelPath="/technology.stl" />
             </div>
         </div>
     )
