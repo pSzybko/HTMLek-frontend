@@ -8,6 +8,8 @@ import { STLLoader } from "three/examples/jsm/loaders/STLLoader"
 
 import * as THREE from "three"
 
+import './Animation.css'
+
 function ModelRender({ modelPath }) {
     const ref = useRef()
 
