@@ -112,6 +112,8 @@
 }
 
 .animationWrapper {
+    display: flex;
+    justify-content: center;
     position: absolute;
     height: 50vh;
     width: 100vw;
@@ -120,5 +122,5 @@
 
 .animationWrapper .animation {
     height: 100%;
-    width: 100%;
+    width: 50%;
 }

@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState, useMemo, useLayoutEffect, Suspense } from 'react'
-import { createRoot } from 'react-dom/client'
 
 import { Canvas, useFrame, useLoader, useThree } from '@react-three/fiber'
 import { useCursor, OrbitControls } from '@react-three/drei'

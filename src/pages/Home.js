@@ -8,7 +8,7 @@ export default function Home() {
     return (
         <>
             <div className='animationWrapper'>
-                <Animation modelPath="/desk.stl" />
+                <Animation modelPath="/Home.stl" />
             </div>
             <div className='home' id='home' >
                 <div className='Text-box'>

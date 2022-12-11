@@ -8,7 +8,7 @@ export default function Mission() {
     return (
         <div className='AboutTabsElement'>
             <div className='AboutTabsElementItem'>
-                <Animation modelPath="/trophy.stl" />
+                <Animation modelPath="/Mission.stl" />
             </div>
             <div className='AboutTabsElementItem'>
                 <div className='text'>

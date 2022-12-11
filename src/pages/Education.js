@@ -8,7 +8,7 @@ export default function Education() {
     return (
         <div className='AboutTabsElement'>
             <div className='AboutTabsElementItem'>
-                <Animation modelPath="/GradHat.stl" />
+                <Animation modelPath="/Education.stl" />
             </div>
             <div className='AboutTabsElementItem'>
                 <div className='text'>
