@@ -6,13 +6,17 @@
     cursor: pointer;
 }
 
+.myTab {
+    font-size: large;
+}
+
 .myTab form {
     padding-left: 5vw;
     padding-right: 5vh;
     padding-top: 1vw;
     padding-bottom: 1vw;
     display: grid;
-    grid-gap: 20px;
+    grid-gap: 40px;
 }
 
 .myTab h2 {

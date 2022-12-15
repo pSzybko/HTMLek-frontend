@@ -16,7 +16,7 @@ body {
 .mySummary .summaryHeader {}
 
 .mySummary .summaryBox {
-    background-color: lightpink;
+    background-color: var(--special-color);
     border-radius: 16px;
     white-space: pre-wrap;
     display: flex;
