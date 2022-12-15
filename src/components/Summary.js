@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react'
 import { IconContext } from 'react-icons'
 import * as BiIcons from 'react-icons/bi'
 
+import Editor from '../components/Editor'
+
 import './Summary.css'
 
 export default function Summary({ htmlCode, cssCode, exerciseSolutionCode, handleFinish }) {
@@ -37,24 +39,33 @@ export default function Summary({ htmlCode, cssCode, exerciseSolutionCode, handl
                         Twój kod HTML
                     </div>
                     <div className='contentCode'>
-                        {htmlCode}
+                        <Editor
+                            language='xml'
+                            codeValue={htmlCode}
+                            onChange={() => { }} />
                     </div>
 
-                </div>
-                <div className='summaryItem'>
-                    <div className='contentHeader'>
-                        Twój kod CSS
-                    </div>
-                    <div className='contentCode'>
-                        {cssCode}
-                    </div>
                 </div>
                 <div className='summaryItem'>
                     <div className='contentHeader'>
                         Przykładowe rozwiązanie HTML
                     </div>
                     <div className='contentCode'>
-                        {solutionHTML}
+                        <Editor
+                            language='xml'
+                            codeValue={solutionHTML}
+                            onChange={() => { }} />
+                    </div>
+                </div>
+                <div className='summaryItem'>
+                    <div className='contentHeader'>
+                        Twój kod CSS
+                    </div>
+                    <div className='contentCode'>
+                        <Editor
+                            language='css'
+                            codeValue={cssCode}
+                            onChange={() => { }} />
                     </div>
                 </div>
                 <div className='summaryItem'>
@@ -62,7 +73,10 @@ export default function Summary({ htmlCode, cssCode, exerciseSolutionCode, handl
                         Przykładowe rozwiązanie CSS
                     </div>
                     <div className='contentCode'>
-                        {solutionCSS}
+                        <Editor
+                            language='css'
+                            codeValue={solutionCSS}
+                            onChange={() => { }} />
                     </div>
                 </div>
             </div>

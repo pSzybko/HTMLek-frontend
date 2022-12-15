@@ -54,6 +54,27 @@ body {
     overflow-y: scroll;
 }
 
+.mySummary .summaryBox .summaryItem .contentCode .CodeMirror {
+    height: 100%;
+    max-height: max(200px, 40vh);
+}
+
+.mySummary .summaryBox .summaryItem .contentCode .codeEditor>* {
+    user-select: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.mySummary .summaryBox .summaryItem .contentCode .editor {
+    height: 100%;
+}
+
+.mySummary .summaryBox .summaryItem .contentCode .editor .codeEditor {
+    height: 100%;
+}
+
 .mySummary .controlPanel {
     padding: 5px;
     text-align: center;
