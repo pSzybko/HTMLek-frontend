@@ -13,8 +13,6 @@ body {
     -ms-user-select: none;
 }
 
-.mySummary .summaryHeader {}
-
 .mySummary .summaryBox {
     background-color: var(--special-color);
     border-radius: 16px;

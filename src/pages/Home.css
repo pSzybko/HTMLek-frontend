@@ -1,78 +1,12 @@
 :root {
-    --typewriterSpeed: 3s;
-    --typewriterCharacters: 13;
+    --writtingAnimationSpeed: 3s;
+    --writtingAnimationCharacters: 13;
     --font-color: #453F3C;
     --special-color: #F78764;
     --bg-color: #D6E6FF;
 }
 
-.home {
-    height: 100vh;
-    position: relative;
-}
-
-
-@keyframes writing {
-    0% {
-        width: 0px;
-        opacity: 1;
-    }
-
-    100% {
-        width: 14px;
-        opacity: 1;
-    }
-}
-
-.Text-box {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: 0;
-    transform: translate(-50%, 50%);
-    user-select: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-}
-
-.Text-box .Title {
-    font-size: clamp(1rem, 3.5vw, 4rem);
-    color: var(--font-color);
-    position: absolute;
-    width: max-content;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 300%);
-
-
-}
-
-.Text-box .Title::before,
-.Title::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-
-.Text-box .Title::before {
-    background: var(--bg-color);
-    animation: typewriter var(--typewriterSpeed) steps(var(--typewriterCharacters)) 1s forwards;
-}
-
-.Text-box .Title::after {
-    width: clamp(0.2rem, 0.4vw, 0.8rem);
-    background: var(--special-color);
-    animation: typewriter var(--typewriterSpeed) steps(var(--typewriterCharacters)) 1s forwards,
-        blink 1000ms steps(var(--typewriterCharacters)) infinite;
-}
-
-
-@keyframes fadeInUp {
+@keyframes fadeIn {
     from {
         opacity: 0;
     }
@@ -82,7 +16,7 @@
     }
 }
 
-@keyframes typewriter {
+@keyframes writtingAnimation {
     to {
         left: 100%;
     }
@@ -94,33 +28,80 @@
     }
 }
 
-.Text-box .Subtitle {
-    opacity: 0;
-    position: absolute;
-    width: max-content;
-    font-family: 'Source Code Pro', monospace;
-    color: var(--font-color);
-    font-size: clamp(0.7rem, 1.5vw, 3rem);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 875%);
-    animation: 3s ease 3s normal forwards 1 fadeInUp;
+.home {
+    height: 100vh;
+    display: grid;
 }
 
-.Text-box .Title strong {
-    color: var(--special-color);
-}
-
-.animationWrapper {
+.home .animationWrapper {
     display: flex;
     justify-content: center;
-    position: absolute;
     height: 50vh;
     width: 100vw;
-    z-index: 50;
+    z-index: 1;
 }
 
-.animationWrapper .animation {
+.home .animationWrapper .animation {
     height: 100%;
     width: 50%;
+}
+
+.home .Text-box {
+    z-index: 0;
+    display: grid;
+    text-align: center;
+    width: 100%;
+    user-select: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+
+}
+
+.home .Text-box .Title {
+    font-size: clamp(1rem, 3.5vw, 4rem);
+    color: var(--font-color);
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    width: max-content;
+}
+
+.home .Text-box .Title::before,
+.Title::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.home .Text-box .Title::before {
+    background: var(--bg-color);
+    animation: writtingAnimation var(--writtingAnimationSpeed) steps(var(--writtingAnimationCharacters)) 1s forwards;
+}
+
+.home .Text-box .Title::after {
+    height: clamp(1rem, 3vw, 4rem);
+    width: 0.5rem;
+    background: var(--special-color);
+    animation: writtingAnimation var(--writtingAnimationSpeed) steps(var(--writtingAnimationCharacters)) 1s forwards,
+        blink 1000ms steps(var(--writtingAnimationCharacters)) infinite;
+}
+
+.home .Text-box .Subtitle {
+    margin-top: max(8vh, 80px);
+    opacity: 0;
+    color: var(--font-color);
+    font-size: clamp(0.7rem, 1.5vw, 3rem);
+    animation: 3s ease 3s normal forwards 1 fadeIn;
+}
+
+.home .Text-box .Title strong {
+    color: var(--special-color);
 }
