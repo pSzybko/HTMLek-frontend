@@ -10,10 +10,10 @@ import jwtDecode from 'jwt-decode'
 import Editor from '../components/Editor'
 import Summary from '../components/Summary'
 import { taskModalStyle } from '../components/TaskModalStyle'
-import TaskDescription from '../components/TaskDescription'
-import './TaskPage.css'
+import ExerciseDescription from '../components/ExerciseDescription'
+import './ExercisePage.css'
 
-export default function TaskPage() {
+export default function ExercisePage() {
     const navigate = useNavigate()
 
     const [exercise, setExercise] = useState({})
@@ -169,7 +169,7 @@ export default function TaskPage() {
                 isOpen={showTaskModal}
                 onRequestClose={closeTaskModal}
             >
-                <TaskDescription description={exercise.exerciseDescription} />
+                <ExerciseDescription description={exercise.exerciseDescription} />
             </Modal>
             <Modal
                 ariaHideApp={false}

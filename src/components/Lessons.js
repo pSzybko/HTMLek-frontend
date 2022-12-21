@@ -7,22 +7,22 @@ import * as AiIcons from 'react-icons/ai'
 import jwtDecode from 'jwt-decode'
 
 
-import Task from './Task'
-import './Tasks.css'
+import Lesson from './Lesson'
+import './Lessons.css'
 
-export default function Tasks() {
-    const [Tasks, setTasks] = useState([])
-    const [finishedTasks, setFinishedTasks] = useState([])
+export default function Lessons() {
+    const [Lessons, setLessons] = useState([])
+    const [finishedLessons, setFinishedLessons] = useState([])
 
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
 
-    const getAllTasks = async () => {
+    const getAllLessons = async () => {
         try {
             const res = await axios.get((process.env.baseURL || 'http://localhost:3001') + '/api/tasks')
             if (res.data.status === 'ok') {
-                setTasks(res.data.allTasks)
+                setLessons(res.data.allTasks)
             }
 
             const token = localStorage.getItem('token')
@@ -35,7 +35,7 @@ export default function Tasks() {
                 headers: { 'Content-Type': 'application/json' }
             })
             if (res2.data.status === 'ok') {
-                setFinishedTasks(res2.data.completedTasks)
+                setFinishedLessons(res2.data.completedTasks)
             }
         } catch (err) {
             console.log(err)
@@ -43,15 +43,15 @@ export default function Tasks() {
     }
 
     useEffect(() => {
-        getAllTasks()
+        getAllLessons()
     }, [])
 
     return (
         <div className='tasks' id='tasks' >
             <div className='tasksWrapepr'>
                 {
-                    Tasks.map((task, index) => (
-                        < Task finishedTasks={finishedTasks} task={task} num={index} key={index} />
+                    Lessons.map((task, index) => (
+                        <Lesson finishedTasks={finishedLessons} task={task} num={index} key={index} />
                     ))
                 }
                 <div className='task'>

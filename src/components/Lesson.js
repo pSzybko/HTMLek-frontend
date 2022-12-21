@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import { Link } from 'react-router-dom'
 
-export default function Task(props) {
+export default function Lesson(props) {
     const [ShowMore, setShowMore] = useState(false)
 
     return (

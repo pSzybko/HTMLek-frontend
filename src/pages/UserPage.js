@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 
 import jwtDecode from 'jwt-decode'
 
-import Tasks from '../components/Tasks'
+import Lessons from '../components/Lessons'
 import StickyBar from '../components/StickyBar'
 import './UserPage.css'
 
@@ -35,7 +35,7 @@ export default function UserPage() {
             <div className='userHeaderWrapper'>
                 <h1 className='userHeader'>{customGreetings[Math.floor(Math.random() * customGreetings.length)]}</h1>
             </div>
-            <Tasks />
+            <Lessons />
         </div>
     )
 }

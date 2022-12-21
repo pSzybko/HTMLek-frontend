@@ -36,6 +36,7 @@ export default function Editor(props) {
                 options={{
                     mode: language,
                     lineWrapping: true,
+                    closebrackets: true,
                     lint: false,
                     matchBrackets: true,
                     theme: 'xq-light',

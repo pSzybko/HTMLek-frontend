@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './TaskDescription.css'
+import './ExerciseDescription.css'
 
 export default function TaskDescription(props) {
     return (

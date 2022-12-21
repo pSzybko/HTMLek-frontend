@@ -3,7 +3,7 @@ import React from 'react'
 import { IconContext } from 'react-icons'
 import * as BiIcons from 'react-icons/bi'
 
-import './TaskDescription.css'
+import './ExerciseDescription.css'
 
 export default function SandboxDescription() {
     return (
