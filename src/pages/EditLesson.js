@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import * as BiIcons from 'react-icons/bi'
 
-export default function EditTask({ getTasks, tasks }) {
+export default function EditLesson({ getTasks, tasks }) {
     const [showMore, setShowMore] = useState(false)
     const [Task, setTask] = useState({ title: '', description: '' })
 

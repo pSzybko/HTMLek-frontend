@@ -4,12 +4,12 @@ import axios from 'axios'
 import * as BiIcons from 'react-icons/bi'
 
 
-export default function AddTask() {
+export default function AddLesson() {
 
     const [Title, setTitle] = useState('')
     const [Description, setDescription] = useState('')
 
-    const addNewTask = async () => {
+    const addNewLesson = async () => {
         const dataJson = JSON.stringify({
             title: Title,
             description: Description,
@@ -34,7 +34,7 @@ export default function AddTask() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        addNewTask()
+        addNewLesson()
     }
 
     return (

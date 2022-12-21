@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import * as BiIcons from 'react-icons/bi'
 
-export default function RemoveTask({ getTasks, tasks }) {
+export default function RemoveLesson({ getTasks, tasks }) {
     const [Task, setTask] = useState('')
     const [TaskName, setTaskName] = useState('')
 
@@ -17,9 +17,8 @@ export default function RemoveTask({ getTasks, tasks }) {
                 alert('Wpisz poprawną nazwę lekcji!')
                 return
             }
-            alert(TaskName)
-            const res = await axios.delete((process.env.baseURL || 'http://localhost:3001') + '/api/task/' + TaskName)
-            window.location.reload(false)
+            const res = await axios.delete((process.env.baseURL || 'http://localhost:3001') + '/api/task/' + Task)
+            // window.location.reload(false)
             if (res.data.status === 'ok') {
                 alert('Pomyślnie usunięto lekcję.')
             }

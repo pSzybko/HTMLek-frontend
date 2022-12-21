@@ -1,6 +1,6 @@
-import AddTask from '../pages/AddTask'
-import EditTask from '../pages/EditTask'
-import RemoveTask from './RemoveTask'
+import AddLesson from './AddLesson'
+import EditLesson from './EditLesson'
+import RemoveLesson from './RemoveLesson'
 import AddExercise from './AddExercise'
 import EditExercise from './EditExercise'
 import RemoveExercise from './RemoveExercise'
@@ -8,15 +8,15 @@ import RemoveExercise from './RemoveExercise'
 export const AdminTabsElements = [
     {
         title: 'Dodaj lekcję',
-        element: AddTask,
+        element: AddLesson,
     },
     {
         title: 'Edytuj lekcję',
-        element: EditTask
+        element: EditLesson
     },
     {
         title: 'Usun lekcję',
-        element: RemoveTask
+        element: RemoveLesson
     },
     {
         title: 'Dodaj zadanie',
