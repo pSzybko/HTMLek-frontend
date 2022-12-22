@@ -17,7 +17,7 @@ export default function RemoveLesson({ getTasks, tasks }) {
                 alert('Wpisz poprawną nazwę lekcji!')
                 return
             }
-            const res = await axios.delete((process.env.baseURL || 'http://localhost:3001') + '/api/task/' + Task)
+            const res = await axios.delete((process.env.baseURL || 'http://localhost:3001') + '/api/lesson/' + Task)
             // window.location.reload(false)
             if (res.data.status === 'ok') {
                 alert('Pomyślnie usunięto lekcję.')

@@ -20,7 +20,7 @@ export default function Lessons() {
 
     const getAllLessons = async () => {
         try {
-            const res = await axios.get((process.env.baseURL || 'http://localhost:3001') + '/api/tasks')
+            const res = await axios.get((process.env.baseURL || 'http://localhost:3001') + '/api/lessons')
             if (res.data.status === 'ok') {
                 setLessons(res.data.allTasks)
             }

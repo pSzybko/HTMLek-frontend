@@ -16,7 +16,7 @@ export default function AddLesson() {
             exercises: []
         })
         try {
-            const res = await axios.post((process.env.baseURL || 'http://localhost:3001') + '/api/task', dataJson, {
+            const res = await axios.post((process.env.baseURL || 'http://localhost:3001') + '/api/lesson', dataJson, {
                 headers: { 'Content-Type': 'application/json' }
             })
 
