@@ -14,7 +14,6 @@ export default function Summary({ htmlCode, cssCode, exerciseSolutionCode, handl
     const getSolution = () => {
         const codeArr = exerciseSolutionCode.split('<style>')
         setSolutionHTML(codeArr[0])
-        console.log(codeArr[0])
         if (codeArr.length > 1) {
             setSolutionCSS(codeArr[1].split('</style>')[0])
         }
