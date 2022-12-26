@@ -41,7 +41,7 @@ export default function RemoveExercise({ getTasks, tasks }) {
         try {
             const res = await axios.get((process.env.baseURL || 'http://localhost:3001') + '/api/lesson/' + name)
             if (res.data.status === 'ok') {
-                setTask(res.data.task)
+                setTask(res.data.lesson)
             }
         } catch (err) {
             console.log(err)

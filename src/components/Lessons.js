@@ -22,7 +22,7 @@ export default function Lessons() {
         try {
             const res = await axios.get((process.env.baseURL || 'http://localhost:3001') + '/api/lessons')
             if (res.data.status === 'ok') {
-                setLessons(res.data.allTasks)
+                setLessons(res.data.allLessons)
             }
 
             const token = localStorage.getItem('token')
@@ -35,7 +35,7 @@ export default function Lessons() {
                 headers: { 'Content-Type': 'application/json' }
             })
             if (res2.data.status === 'ok') {
-                setFinishedLessons(res2.data.completedTasks)
+                setFinishedLessons(res2.data.finishedExercises)
             }
         } catch (err) {
             console.log(err)

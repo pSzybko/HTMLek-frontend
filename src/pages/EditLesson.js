@@ -25,9 +25,9 @@ export default function EditLesson({ getTasks, tasks }) {
             setTask({ title: '', description: '' })
             return
         }
-        setTask(res.data.task)
-        setTitle(res.data.task.title)
-        setDescription(res.data.task.description)
+        setTask(res.data.lesson)
+        setTitle(res.data.lesson.title)
+        setDescription(res.data.lesson.description)
     }
 
     const loadMore = (value) => {

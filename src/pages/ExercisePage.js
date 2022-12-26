@@ -95,7 +95,7 @@ export default function ExercisePage() {
 
             const dataJson = JSON.stringify({
                 username: user.username,
-                taskName: exercise.exerciseTitle
+                exerciseName: exercise.exerciseTitle
             })
             const res = await axios.post((process.env.baseURL || 'http://localhost:3001') + '/api/completeness', dataJson, {
                 headers: { 'Content-Type': 'application/json' }
@@ -124,7 +124,7 @@ export default function ExercisePage() {
 
             const dataJson = JSON.stringify({
                 username: user.username,
-                taskName: exercise.exerciseTitle
+                exerciseName: exercise.exerciseTitle
             })
             const res = await axios.post((process.env.baseURL || 'http://localhost:3001') + '/api/incopmlete', dataJson, {
                 headers: { 'Content-Type': 'application/json' }

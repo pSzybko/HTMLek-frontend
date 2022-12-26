@@ -22,7 +22,7 @@ export default function AdminPage() {
         try {
             const res = await axios.get((process.env.baseURL || 'http://localhost:3001') + '/api/lessons')
             if (res.data.status === 'ok') {
-                setTasks(res.data.allTasks)
+                setTasks(res.data.allLessons)
             }
         } catch (err) {
             console.log(err)
