@@ -10,10 +10,13 @@ export default function AddLesson() {
     const [Description, setDescription] = useState('')
 
     const addNewLesson = async () => {
+        const token = localStorage.getItem('token')
+
         const dataJson = JSON.stringify({
             title: Title,
             description: Description,
-            exercises: []
+            exercises: [],
+            token: token
         })
         try {
             const res = await axios.post((process.env.baseURL || 'http://localhost:3001') + '/api/lesson', dataJson, {
