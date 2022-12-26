@@ -36,10 +36,13 @@ export default function EditLesson({ getTasks, tasks }) {
     }
 
     const updateTask = async () => {
+        const token = localStorage.getItem('token')
+
         const dataJson = JSON.stringify({
             _id: Task._id,
             title: Title,
             description: Description,
+            token: token
         })
         if (Task.title !== TaskName) {
             alert('Wpisz poprawną nazwę lekcji!')
