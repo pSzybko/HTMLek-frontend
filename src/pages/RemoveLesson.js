@@ -12,12 +12,14 @@ export default function RemoveLesson({ getTasks, tasks }) {
     }, [])
 
     const removeTask = async () => {
+        const token = localStorage.getItem('token')
+
         try {
             if (Task !== TaskName) {
                 alert('Wpisz poprawną nazwę lekcji!')
                 return
             }
-            const res = await axios.delete((process.env.baseURL || 'http://localhost:3001') + '/api/lesson/' + Task)
+            const res = await axios.delete((process.env.baseURL || 'http://localhost:3001') + '/api/lesson/' + Task + '/' + token)
             // window.location.reload(false)
             if (res.data.status === 'ok') {
                 alert('Pomyślnie usunięto lekcję.')
