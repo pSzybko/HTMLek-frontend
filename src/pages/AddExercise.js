@@ -16,13 +16,16 @@ export default function AddExercise({ getTasks, tasks }) {
     }, [])
 
     const addExercise = async () => {
+        const token = localStorage.getItem('token')
+
         const dataJson = JSON.stringify({
             title: title,
             exerciseTitle: exerciseTitle,
             exerciseDescription: exerciseDescription,
             exerciseSolutionCode: exerciseSolutionCode,
             exerciseStartingHTMLCode: exerciseStartingHTMLCode,
-            exerciseStartingCSSCode: exerciseStartingCSSCode
+            exerciseStartingCSSCode: exerciseStartingCSSCode,
+            token: token
         })
         try {
             const res = await axios.post((process.env.baseURL || 'http://localhost:3001') + '/api/exercise', dataJson, {
