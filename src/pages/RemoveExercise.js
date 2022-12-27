@@ -17,8 +17,9 @@ export default function RemoveExercise({ getTasks, tasks }) {
             alert('Wpisz poprawną nazwę zadania!')
             return
         }
+        const token = localStorage.getItem('token')
         try {
-            const res = await axios.delete((process.env.baseURL || 'http://localhost:3001') + '/api/exercise/' + task.title + '/' + exerciseTitle)
+            const res = await axios.delete((process.env.baseURL || 'http://localhost:3001') + '/api/exercise/' + task.title + '/' + exerciseTitle + '/' + token)
             if (res.data.status === 'ok') {
                 alert('Pomyślnie usunięto zadanie.')
             }
