@@ -57,16 +57,24 @@ export default function ExercisePage() {
     }, [])
 
     useEffect(() => {
-        const formattedHTML = exercise.exerciseStartingHTMLCode ? prettier.format('' + exercise.exerciseStartingHTMLCode, {
-            parser: "html",
-            plugins: [parserHtml],
-        }) : ''
-        setHtmlCode(formattedHTML)
-        const formattedCSS = exercise.exerciseStartingCSSCode ? prettier.format(exercise.exerciseStartingCSSCode, {
-            parser: "css",
-            plugins: [parserCss],
-        }) : ''
-        setCssCode(formattedCSS)
+        try {
+            const formattedHTML = exercise.exerciseStartingHTMLCode ? prettier.format('' + exercise.exerciseStartingHTMLCode, {
+                parser: "html",
+                plugins: [parserHtml],
+            }) : ''
+            setHtmlCode(formattedHTML)
+        } catch (err) {
+            setHtmlCode(exercise.exerciseStartingHTMLCode)
+        }
+        try {
+            const formattedCSS = exercise.exerciseStartingCSSCode ? prettier.format(exercise.exerciseStartingCSSCode, {
+                parser: "css",
+                plugins: [parserCss],
+            }) : ''
+            setCssCode(formattedCSS)
+        } catch (err) {
+            setCssCode(exercise.exerciseStartingCSSCode)
+        }
     }, [exercise])
 
     useEffect(() => {

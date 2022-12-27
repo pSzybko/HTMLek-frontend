@@ -16,20 +16,28 @@ export default function Summary({ htmlCode, cssCode, exerciseSolutionCode, handl
 
     const getSolution = () => {
         const codeArr = exerciseSolutionCode.split('<style>')
-        const formattedHTML = codeArr[0] ? prettier.format('' + codeArr[0], {
-            parser: "html",
-            plugins: [parserHtml],
-        }) : ''
-        setSolutionHTML(formattedHTML)
-        if (codeArr.length > 1) {
-            const formattedCSS = prettier.format(codeArr[1].split('</style>')[0], {
-                parser: "css",
-                plugins: [parserCss],
-            })
-            setSolutionCSS(formattedCSS)
+        try {
+            const formattedHTML = codeArr[0] ? prettier.format(+ codeArr[0], {
+                parser: "html",
+                plugins: [parserHtml],
+            }) : ''
+            setSolutionHTML(formattedHTML)
+        } catch (err) {
+            setSolutionHTML(codeArr[0])
         }
-        else {
-            setSolutionCSS('')
+        try {
+            if (codeArr.length > 1) {
+                const formattedCSS = prettier.format(codeArr[1].split('</style>')[0], {
+                    parser: "css",
+                    plugins: [parserCss],
+                })
+                setSolutionCSS(formattedCSS)
+            }
+            else {
+                setSolutionCSS('')
+            }
+        } catch (err) {
+            setSolutionCSS(codeArr[1].split('</style>')[0])
         }
     }
 
