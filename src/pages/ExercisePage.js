@@ -11,6 +11,11 @@ import Editor from '../components/Editor'
 import Summary from '../components/Summary'
 import { taskModalStyle } from '../components/TaskModalStyle'
 import ExerciseDescription from '../components/ExerciseDescription'
+
+import prettier from 'prettier/standalone'
+import parserHtml from 'prettier/parser-html'
+import parserCss from 'prettier/parser-postcss'
+
 import './ExercisePage.css'
 
 export default function ExercisePage() {
@@ -52,8 +57,16 @@ export default function ExercisePage() {
     }, [])
 
     useEffect(() => {
-        setHtmlCode(exercise.exerciseStartingHTMLCode || '')
-        setCssCode(exercise.exerciseStartingCSSCode || '')
+        const formattedHTML = exercise.exerciseStartingHTMLCode ? prettier.format('' + exercise.exerciseStartingHTMLCode, {
+            parser: "html",
+            plugins: [parserHtml],
+        }) : ''
+        setHtmlCode(formattedHTML)
+        const formattedCSS = exercise.exerciseStartingCSSCode ? prettier.format(exercise.exerciseStartingCSSCode, {
+            parser: "css",
+            plugins: [parserCss],
+        }) : ''
+        setCssCode(formattedCSS)
     }, [exercise])
 
     useEffect(() => {

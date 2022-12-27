@@ -6,6 +6,9 @@ import * as BiIcons from 'react-icons/bi'
 import Editor from '../components/Editor'
 
 import './Summary.css'
+import prettier from 'prettier/standalone'
+import parserHtml from 'prettier/parser-html'
+import parserCss from 'prettier/parser-postcss'
 
 export default function Summary({ htmlCode, cssCode, exerciseSolutionCode, handleFinish }) {
     const [solutionHTML, setSolutionHTML] = useState('')
@@ -13,9 +16,17 @@ export default function Summary({ htmlCode, cssCode, exerciseSolutionCode, handl
 
     const getSolution = () => {
         const codeArr = exerciseSolutionCode.split('<style>')
-        setSolutionHTML(codeArr[0])
+        const formattedHTML = codeArr[0] ? prettier.format('' + codeArr[0], {
+            parser: "html",
+            plugins: [parserHtml],
+        }) : ''
+        setSolutionHTML(formattedHTML)
         if (codeArr.length > 1) {
-            setSolutionCSS(codeArr[1].split('</style>')[0])
+            const formattedCSS = prettier.format(codeArr[1].split('</style>')[0], {
+                parser: "css",
+                plugins: [parserCss],
+            })
+            setSolutionCSS(formattedCSS)
         }
         else {
             setSolutionCSS('')

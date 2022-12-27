@@ -21,7 +21,7 @@ export default function Editor(props) {
     } = props
 
     function handleChange(editor, data, value) {
-        onChange('' + value)
+        onChange(value)
     }
 
     return (
