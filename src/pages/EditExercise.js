@@ -59,6 +59,7 @@ export default function EditExercise({ getTasks, tasks }) {
             alert('Wpisz poprawną nazwę zadania!')
             return
         }
+        const token = localStorage.getItem('token')
         const dataJson = JSON.stringify({
             title: title,
             _id: exerciseId,
@@ -66,7 +67,8 @@ export default function EditExercise({ getTasks, tasks }) {
             exerciseDescription: exerciseDescription,
             exerciseSolutionCode: exerciseSolutionCode,
             exerciseStartingHTMLCode: exerciseStartingHTMLCode,
-            exerciseStartingCSSCode: exerciseStartingCSSCode
+            exerciseStartingCSSCode: exerciseStartingCSSCode,
+            token: token
         })
         try {
             const res = await axios.put((process.env.baseURL || 'http://localhost:3001') + '/api/exercise', dataJson, {
