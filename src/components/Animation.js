@@ -100,14 +100,14 @@ export default function Animation({ modelPath }) {
                         enableZoom={true}
                         enablePan={false}
                         minDistance={5}
-                        maxDistance={200}
+                        maxDistance={15}
                     />
 
                     {/* effect */}
                     <RenderToAscii
                         color='black'
                         backgroundColor='#D6E6FF'
-                        resolution={.200}
+                        resolution={.225}
                     />
 
                 </Canvas>
