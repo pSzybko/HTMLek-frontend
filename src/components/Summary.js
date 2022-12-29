@@ -17,7 +17,7 @@ export default function Summary({ htmlCode, cssCode, exerciseSolutionCode, handl
     const getSolution = () => {
         const codeArr = exerciseSolutionCode.split('<style>')
         try {
-            const formattedHTML = codeArr[0] ? prettier.format(+ codeArr[0], {
+            const formattedHTML = codeArr[0] ? prettier.format('' + codeArr[0], {
                 parser: "html",
                 plugins: [parserHtml],
             }) : ''
