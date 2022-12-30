@@ -70,9 +70,9 @@ export default function EditLesson({ getTasks, tasks }) {
 
     return (
         <div className='myTab'>
-            <h2>
-                Wybierz lekcję do edycji
-            </h2>
+            <div className='myTabHeader'>
+                <h2>Wybierz lekcję do edycji</h2>
+            </div>
             <form autoComplete='off' onSubmit={handleSubmit}>
 
                 <label>

@@ -19,8 +19,9 @@
     grid-gap: 40px;
 }
 
-.myTab h2 {
+.myTab .myTabHeader {
     text-align: center;
+    padding: 1.5vh;
 }
 
 .myTab button,

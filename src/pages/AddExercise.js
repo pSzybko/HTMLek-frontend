@@ -49,7 +49,9 @@ export default function AddExercise({ getTasks, tasks }) {
 
     return (
         <div className='myTab'>
-            <h2>Dodaj nowe zadanie</h2>
+            <div className='myTabHeader'>
+                <h2>Dodaj nowe zadanie</h2>
+            </div>
             <form autoComplete='off' onSubmit={handleSubmit}>
                 <label>
                     Wybierz lekcję:

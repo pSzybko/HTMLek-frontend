@@ -42,7 +42,9 @@ export default function AddLesson() {
 
     return (
         <div className='myTab'>
-            <h2>Dodaj nową lekcję</h2>
+            <div className='myTabHeader'>
+                <h2>Dodaj nową lekcję</h2>
+            </div>
             <form autoComplete='off' onSubmit={handleSubmit}>
                 <label>
                     Nazwa lekcji:

@@ -93,9 +93,9 @@ export default function EditExercise({ getTasks, tasks }) {
 
     return (
         <div className='myTab'>
-            <h2>
-                Edytuj wskazane zadanie
-            </h2>
+            <div className='myTabHeader'>
+                <h2>Edytuj wskazane zadanie</h2>
+            </div>
             <form onSubmit={handleSubmit}>
                 <label>
                     Wybierz lekcję:

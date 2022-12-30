@@ -51,9 +51,9 @@ export default function RemoveExercise({ getTasks, tasks }) {
 
     return (
         <div className='myTab'>
-            <h2>
-                Usuń pojedyncze zadanie
-            </h2>
+            <div className='myTabHeader'>
+                <h2>Usuń pojedyncze zadanie</h2>
+            </div>
             <form onSubmit={handleSubmit}>
                 <label>
                     Wybierz lekcję do usunięcia:
