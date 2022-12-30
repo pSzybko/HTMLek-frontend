@@ -177,6 +177,10 @@
     justify-content: center;
 }
 
+.modalBody .flexDiv * {
+    background-color: rgba(217, 236, 236, 0.50);
+}
+
 .modalBody .flexDivChild {
     margin-left: 10px;
     margin-top: 10px;
@@ -184,4 +188,7 @@
     padding: 10px;
     flex-basis: 390px;
     border: solid;
+    border-radius: 8px;
+    border-width: 2px;
+    border-color: #3F7F7F;
 }
