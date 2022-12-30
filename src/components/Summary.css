@@ -14,7 +14,7 @@ body {
 }
 
 .mySummary .summaryBox {
-    background-color: var(--special-color);
+    background-color: var(--bg-color);
     border-radius: 16px;
     white-space: pre-wrap;
     display: flex;
