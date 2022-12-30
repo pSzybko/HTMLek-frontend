@@ -15,7 +15,7 @@ export const ManuBarElements = [
         path: 'about',
         icon: <CgIcons.CgFeed />,
         cName: 'nav-text',
-        description: 'O nas',
+        description: 'O serwisie',
 
     },
     {
