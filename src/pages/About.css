@@ -1,6 +1,4 @@
 .about {
     height: 100vh;
-    color: var(--font-color);
     margin: 0vh 5vw 0vh 5vw;
-    padding-top: 0.5vh;
 }
