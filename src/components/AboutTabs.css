@@ -1,10 +1,3 @@
-:root {
-    --typewriterSpeed: 3s;
-    --typewriterCharacters: 13;
-}
-
-
-
 .react-tabs {
     user-select: none;
     -webkit-user-select: none;

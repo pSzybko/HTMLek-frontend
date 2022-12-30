@@ -1,7 +1,3 @@
-:root {
-    --modal-special-color: #B0C7ED;
-}
-
 .modal {
     background: var(--modal-special-color);
     overflow: hidden;
