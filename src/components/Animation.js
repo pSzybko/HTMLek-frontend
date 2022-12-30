@@ -3,9 +3,9 @@ import React, { useEffect, useRef, useState, useMemo, useLayoutEffect, Suspense 
 import { Canvas, useFrame, useLoader, useThree } from '@react-three/fiber'
 import { useCursor, OrbitControls } from '@react-three/drei'
 import { AsciiEffect } from 'three-stdlib'
-import { STLLoader } from "three/examples/jsm/loaders/STLLoader"
+import { STLLoader } from 'three/examples/jsm/loaders/STLLoader'
 
-import * as THREE from "three"
+import * as THREE from 'three'
 
 import './Animation.css'
 
@@ -27,7 +27,7 @@ function ModelRender({ modelPath }) {
             onPointerOut={() => hover(false)}
             scale={hovered ? 1.35 : 1}
         >
-            <meshStandardMaterial color="white" flatShading={true} side={THREE.DoubleSide} />
+            <meshStandardMaterial color='white' flatShading={true} side={THREE.DoubleSide} />
         </mesh >
     )
 }
@@ -84,14 +84,14 @@ export default function Animation({ modelPath }) {
             <div className='animation'>
                 <Canvas camera={{ fov: 35 }}>
                     {/* background */}
-                    <color attach="background" args={['black']} />
+                    <color attach='background' args={['black']} />
 
                     {/* lights */}
                     <spotLight position={[100, 100, 10]} angle={0.45} penumbra={1} />
                     <pointLight position={[-100, -100, 5]} />
 
                     {/* object */}
-                    <Suspense fallback={"loading..."}>
+                    <Suspense fallback={'loading...'}>
                         <ModelRender modelPath={modelPath} />
                     </Suspense>
 

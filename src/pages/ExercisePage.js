@@ -59,7 +59,7 @@ export default function ExercisePage() {
     useEffect(() => {
         try {
             const formattedHTML = exercise.exerciseStartingHTMLCode ? prettier.format('' + exercise.exerciseStartingHTMLCode, {
-                parser: "html",
+                parser: 'html',
                 plugins: [parserHtml],
             }) : ''
             setHtmlCode(formattedHTML)
@@ -68,7 +68,7 @@ export default function ExercisePage() {
         }
         try {
             const formattedCSS = exercise.exerciseStartingCSSCode ? prettier.format(exercise.exerciseStartingCSSCode, {
-                parser: "css",
+                parser: 'css',
                 plugins: [parserCss],
             }) : ''
             setCssCode(formattedCSS)

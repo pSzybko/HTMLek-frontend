@@ -47,8 +47,8 @@
     border-radius: 0.25rem;
 }
 
-.myTab input[type="text"],
-.myTab input[type="email"],
+.myTab input[type='text'],
+.myTab input[type='email'],
 .myTab select,
 .myTab textarea {
     font: 1.25rem / 1.5 sans-serif;

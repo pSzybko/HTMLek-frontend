@@ -17,7 +17,7 @@ export default function Technology() {
                 </div>
             </div>
             <div className='AboutTabsElementItem'>
-                <Animation modelPath="/Technology.stl" />
+                <Animation modelPath='/Technology.stl' />
             </div>
         </div>
     )

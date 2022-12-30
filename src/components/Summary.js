@@ -18,7 +18,7 @@ export default function Summary({ htmlCode, cssCode, exerciseSolutionCode, handl
         const codeArr = exerciseSolutionCode.split('<style>')
         try {
             const formattedHTML = codeArr[0] ? prettier.format('' + codeArr[0], {
-                parser: "html",
+                parser: 'html',
                 plugins: [parserHtml],
             }) : ''
             setSolutionHTML(formattedHTML)
@@ -28,7 +28,7 @@ export default function Summary({ htmlCode, cssCode, exerciseSolutionCode, handl
         try {
             if (codeArr.length > 1) {
                 const formattedCSS = prettier.format(codeArr[1].split('</style>')[0], {
-                    parser: "css",
+                    parser: 'css',
                     plugins: [parserCss],
                 })
                 setSolutionCSS(formattedCSS)
