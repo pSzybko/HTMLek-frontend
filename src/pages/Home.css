@@ -1,11 +1,3 @@
-:root {
-    --writtingAnimationSpeed: 3s;
-    --writtingAnimationCharacters: 13;
-    --font-color: #453F3C;
-    --special-color: #F78764;
-    --bg-color: #D6E6FF;
-}
-
 @keyframes fadeIn {
     from {
         opacity: 0;

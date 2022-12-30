@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 :root {
-  --font: sans-serif;
-  --submit-color: #06b;
-  --submit-hover: rgb(97, 163, 217);
   --text-color: #fff;
-  --background-gradient: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
+  --writtingAnimationSpeed: 3s;
+  --writtingAnimationCharacters: 13;
+  --font-color: #453F3C;
+  --special-color: #F78764;
+  --bg-color: #D6E6FF;
 }
 
 * {
