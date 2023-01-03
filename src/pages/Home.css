@@ -42,6 +42,7 @@
     z-index: 0;
     display: grid;
     text-align: center;
+    position: relative;
     width: 100%;
     user-select: none;
     -webkit-user-select: none;
