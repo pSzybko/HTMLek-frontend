@@ -37,11 +37,13 @@ export default function MainComponent() {
 
     const closeLoginModal = () => {
         document.body.style.overflow = 'unset'
+        document.body.style.overflowX = 'hidden'
         setShowLoginModal(false)
     }
 
     const closeRegisterModal = () => {
         document.body.style.overflow = 'unset'
+        document.body.style.overflowX = 'hidden'
         setShowRegisterModal(false)
     }
 
