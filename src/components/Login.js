@@ -49,7 +49,6 @@ export default function Login(props) {
                     <input id='nickname' className='input' type='text' placeholder='Nazwa użytkownika' autoComplete='off' onChange={(e) => { setUsername(e.target.value) }} required />
                     <input id='password' className='input' type='password' placeholder='Hasło' autoComplete='off' onChange={(e) => { setPassword(e.target.value) }} required />
                 </div>
-                <div className='spacing'></div>
                 <button type='submit' className='modalButton'>
                     Zaloguj
                 </button>
