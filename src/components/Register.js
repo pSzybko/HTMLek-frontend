@@ -53,8 +53,10 @@ export default function Register(props) {
     return (
         <div className='modal'>
             <form className='form' autoComplete='off' onSubmit={handleSubmit} >
-                <div className='title'>Witaj!</div>
-                <div className='subtitle'>Załóż konto</div>
+                <div className='modalHeader'>
+                    <p className='title'>Witaj!</p>
+                    <p className='subtitle'>Załóż konto</p>
+                </div>
                 <div className='input-container'>
                     <input id='nickname' className='input' type='input' placeholder='Nazwa użytkownika' role='presentation' autoComplete='off' onChange={(e) => { setUsername(e.target.value) }} required />
                     <input id='password' className='input' type='password' placeholder='Hasło' onChange={(e) => { setPassword(e.target.value) }} required />

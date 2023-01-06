@@ -43,8 +43,10 @@ export default function Login(props) {
     return (
         <div className='modal'>
             <form className='form' autoComplete='off' onSubmit={handleSubmit}>
-                <div className='title'>Witaj!</div>
-                <div className='subtitle'>Zaloguj się</div>
+                <div className='modalHeader'>
+                    <p className='title'>Witaj!</p>
+                    <p className='subtitle'>Zaloguj się</p>
+                </div>
                 <div className='input-container'>
                     <input id='nickname' className='input' type='text' placeholder='Nazwa użytkownika' autoComplete='off' onChange={(e) => { setUsername(e.target.value) }} required />
                     <input id='password' className='input' type='password' placeholder='Hasło' autoComplete='off' onChange={(e) => { setPassword(e.target.value) }} required />

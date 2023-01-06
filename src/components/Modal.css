@@ -11,6 +11,8 @@
 
 .form {
     padding: 50px;
+    display: grid;
+    gap: 30px;
 }
 
 .title {
@@ -29,11 +31,6 @@
     border-radius: 15px;
     width: 100%;
     overflow: hidden;
-    margin-top: 30px;
-}
-
-.spacing {
-    height: 45px;
 }
 
 .input-container input {
@@ -45,11 +42,10 @@
     padding: 8px 15px;
     border-bottom: 1px solid #eee;
     width: 100%;
-    font-size: 12px;
 }
 
 .input-container input::placeholder {
-    color: rgb(51, 51, 51);
+    color: rgb(50, 50, 50);
 }
 
 .modalButton {
@@ -57,22 +53,24 @@
     border: 0;
     border-radius: 15px;
     display: block;
-    margin: 15px auto;
     padding: 15px 45px;
     width: 100%;
-    font-size: 13px;
+    font-size: 17px;
     font-weight: bold;
     cursor: pointer;
-    opacity: 1;
-    visibility: visible;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .redirectLink {
-    margin-top: 50px;
+    display: grid;
+    gap: 10px;
     text-align: center;
 }
 
 .modalButton:hover {
+    background-color: #eee;
     color: var(--special-color);
     outline: 2px solid var(--special-color);
 }
