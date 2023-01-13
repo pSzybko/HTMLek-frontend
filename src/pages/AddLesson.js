@@ -19,7 +19,7 @@ export default function AddLesson() {
             token: token
         })
         try {
-            const res = await axios.post((process.env.baseURL || 'http://localhost:3001') + '/api/lesson', dataJson, {
+            const res = await axios.post((process.env.REACT_APP_BASE_URL || 'http://localhost:3001') + '/api/lesson', dataJson, {
                 headers: { 'Content-Type': 'application/json' }
             })
 

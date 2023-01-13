@@ -20,7 +20,7 @@ export default function Lessons() {
 
     const getAllLessons = async () => {
         try {
-            const res = await axios.get((process.env.baseURL || 'http://localhost:3001') + '/api/lessons')
+            const res = await axios.get((process.env.REACT_APP_BASE_URL || 'http://localhost:3001') + '/api/lessons')
             if (res.data.status === 'ok') {
                 setLessons(res.data.allLessons)
             }
@@ -31,7 +31,7 @@ export default function Lessons() {
             const dataJson = JSON.stringify({
                 username: user.username,
             })
-            const res2 = await axios.post((process.env.baseURL || 'http://localhost:3001') + '/api/completed', dataJson, {
+            const res2 = await axios.post((process.env.REACT_APP_BASE_URL || 'http://localhost:3001') + '/api/completed', dataJson, {
                 headers: { 'Content-Type': 'application/json' }
             })
             if (res2.data.status === 'ok') {

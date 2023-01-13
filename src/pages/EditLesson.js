@@ -20,7 +20,7 @@ export default function EditLesson({ getTasks, tasks }) {
             setTask({ title: '', description: '' })
             return
         }
-        const res = await axios.get((process.env.baseURL || 'http://localhost:3001') + '/api/lesson/' + value)
+        const res = await axios.get((process.env.REACT_APP_BASE_URL || 'http://localhost:3001') + '/api/lesson/' + value)
         if (res.data.status !== 'ok') {
             setTask({ title: '', description: '' })
             return
@@ -49,7 +49,7 @@ export default function EditLesson({ getTasks, tasks }) {
             return
         }
         try {
-            const res = await axios.put((process.env.baseURL || 'http://localhost:3001') + '/api/lesson', dataJson, {
+            const res = await axios.put((process.env.REACT_APP_BASE_URL || 'http://localhost:3001') + '/api/lesson', dataJson, {
                 headers: { 'Content-Type': 'application/json' }
             })
             if (res.data.status === 'ok') {

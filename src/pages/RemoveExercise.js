@@ -19,7 +19,7 @@ export default function RemoveExercise({ getTasks, tasks }) {
         }
         const token = localStorage.getItem('token')
         try {
-            const res = await axios.delete((process.env.baseURL || 'http://localhost:3001') + '/api/exercise/' + task.title + '/' + exerciseTitle + '/' + token)
+            const res = await axios.delete((process.env.REACT_APP_BASE_URL || 'http://localhost:3001') + '/api/exercise/' + task.title + '/' + exerciseTitle + '/' + token)
             if (res.data.status === 'ok') {
                 alert('Pomyślnie usunięto zadanie.')
             }
@@ -40,7 +40,7 @@ export default function RemoveExercise({ getTasks, tasks }) {
 
     const getTask = async (name) => {
         try {
-            const res = await axios.get((process.env.baseURL || 'http://localhost:3001') + '/api/lesson/' + name)
+            const res = await axios.get((process.env.REACT_APP_BASE_URL || 'http://localhost:3001') + '/api/lesson/' + name)
             if (res.data.status === 'ok') {
                 setTask(res.data.lesson)
             }

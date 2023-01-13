@@ -20,7 +20,7 @@ export default function AdminPage() {
 
     const getTasks = async () => {
         try {
-            const res = await axios.get((process.env.baseURL || 'http://localhost:3001') + '/api/lessons')
+            const res = await axios.get((process.env.REACT_APP_BASE_URL || 'http://localhost:3001') + '/api/lessons')
             if (res.data.status === 'ok') {
                 setTasks(res.data.allLessons)
             }

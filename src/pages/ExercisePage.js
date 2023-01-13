@@ -39,7 +39,7 @@ export default function ExercisePage() {
             const taskId = urlParams.get('task')
             const exerciseId = urlParams.get('exercise')
 
-            const res = await axios.get((process.env.baseURL || 'http://localhost:3001') + '/api/exercise/' + taskId + '/' + exerciseId)
+            const res = await axios.get((process.env.REACT_APP_BASE_URL || 'http://localhost:3001') + '/api/exercise/' + taskId + '/' + exerciseId)
             if (res.data.status !== 'ok') {
                 console.log(res.data.error)
                 navigate('/home')
@@ -118,11 +118,11 @@ export default function ExercisePage() {
                 username: user.username,
                 exerciseName: exercise.exerciseTitle
             })
-            const res = await axios.post((process.env.baseURL || 'http://localhost:3001') + '/api/completeness', dataJson, {
+            const res = await axios.post((process.env.REACT_APP_BASE_URL || 'http://localhost:3001') + '/api/completeness', dataJson, {
                 headers: { 'Content-Type': 'application/json' }
             })
             if (res.data.completeness === 'false') {
-                const res2 = await axios.post((process.env.baseURL || 'http://localhost:3001') + '/api/copmlete', dataJson, {
+                const res2 = await axios.post((process.env.REACT_APP_BASE_URL || 'http://localhost:3001') + '/api/copmlete', dataJson, {
                     headers: { 'Content-Type': 'application/json' }
                 })
                 if (res2.data.status === 'ok') {
@@ -147,7 +147,7 @@ export default function ExercisePage() {
                 username: user.username,
                 exerciseName: exercise.exerciseTitle
             })
-            const res = await axios.post((process.env.baseURL || 'http://localhost:3001') + '/api/incopmlete', dataJson, {
+            const res = await axios.post((process.env.REACT_APP_BASE_URL || 'http://localhost:3001') + '/api/incopmlete', dataJson, {
                 headers: { 'Content-Type': 'application/json' }
             })
             if (res.data.status === 'ok') {

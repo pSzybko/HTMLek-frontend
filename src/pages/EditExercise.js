@@ -25,7 +25,7 @@ export default function EditExercise({ getTasks, tasks }) {
 
     const getTask = async (name) => {
         try {
-            const res = await axios.get((process.env.baseURL || 'http://localhost:3001') + '/api/lesson/' + name)
+            const res = await axios.get((process.env.REACT_APP_BASE_URL || 'http://localhost:3001') + '/api/lesson/' + name)
             if (res.data.status === 'ok') {
                 setTask(res.data.lesson)
             }
@@ -38,7 +38,7 @@ export default function EditExercise({ getTasks, tasks }) {
         setShowMore(value !== '' && task.exercises.length !== 0)
         setExerciseId(value)
         try {
-            const res = await axios.get((process.env.baseURL || 'http://localhost:3001') + '/api/exercise/' + task._id + '/' + value)
+            const res = await axios.get((process.env.REACT_APP_BASE_URL || 'http://localhost:3001') + '/api/exercise/' + task._id + '/' + value)
             if (res.data.status === 'ok') {
                 setExercise(res.data.exercise)
                 setExerciseTitle(res.data.exercise.exerciseTitle)
@@ -71,7 +71,7 @@ export default function EditExercise({ getTasks, tasks }) {
             token: token
         })
         try {
-            const res = await axios.put((process.env.baseURL || 'http://localhost:3001') + '/api/exercise', dataJson, {
+            const res = await axios.put((process.env.REACT_APP_BASE_URL || 'http://localhost:3001') + '/api/exercise', dataJson, {
                 headers: { 'Content-Type': 'application/json' }
             })
             if (res.data.status === 'ok') {

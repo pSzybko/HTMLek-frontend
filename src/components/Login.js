@@ -15,7 +15,7 @@ export default function Login(props) {
             password: password
         })
         try {
-            const res = await axios.post((process.env.baseURL || 'http://localhost:3001') + '/api/login', dataJson, {
+            const res = await axios.post((process.env.REACT_APP_BASE_URL || 'http://localhost:3001') + '/api/login', dataJson, {
                 headers: { 'Content-Type': 'application/json' }
             })
 

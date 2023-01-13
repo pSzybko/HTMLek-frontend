@@ -28,7 +28,7 @@ export default function AddExercise({ getTasks, tasks }) {
             token: token
         })
         try {
-            const res = await axios.post((process.env.baseURL || 'http://localhost:3001') + '/api/exercise', dataJson, {
+            const res = await axios.post((process.env.REACT_APP_BASE_URL || 'http://localhost:3001') + '/api/exercise', dataJson, {
                 headers: { 'Content-Type': 'application/json' }
             })
             if (res.data.status === 'ok') {

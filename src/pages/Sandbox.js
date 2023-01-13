@@ -93,7 +93,7 @@ body {
             username: user.username,
         })
         const getCode = async () => {
-            const res = await axios.post((process.env.baseURL || 'http://localhost:3001') + '/api/code', dataJson, {
+            const res = await axios.post((process.env.REACT_APP_BASE_URL || 'http://localhost:3001') + '/api/code', dataJson, {
                 headers: { 'Content-Type': 'application/json' }
             })
             if (res.data.status === 'ok') {
@@ -165,7 +165,7 @@ body {
             sandboxCSS: cssCode
         })
         try {
-            const res = await axios.post((process.env.baseURL || 'http://localhost:3001') + '/api/sandbox', dataJson, {
+            const res = await axios.post((process.env.REACT_APP_BASE_URL || 'http://localhost:3001') + '/api/sandbox', dataJson, {
                 headers: { 'Content-Type': 'application/json' }
             })
             if (res.data.status !== 'ok') {
