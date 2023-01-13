@@ -1,85 +1,75 @@
 .SandboxWrapper {
-    overflow: hidden;
     background: rgba(255, 255, 255, 0.5);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10.3px);
-    -webkit-backdrop-filter: blur(10.3px);
-    margin: 1vh;
-    padding-bottom: 0.5vh;
-    padding-top: 1vh;
-    justify-content: center;
-    height: max(96.5vh, 750px);
+    height: 100%;
+    display: flex;
+    gap: 10px;
+    flex-flow: column nowrap;
 }
 
 .SandboxWrapper .TaskPageColumn {
-    padding-bottom: 0.5vh;
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: row wrap;
     justify-content: flex-start;
-    padding-top: 1vh;
-    align-items: center;
-    height: max(96.5vh, 750px);
 }
 
-.SandboxWrapper .break-column {
-    flex-basis: 100%;
-    width: 0;
-}
-
-.SandboxWrapper .break {
-    flex-basis: 100%;
-    height: 0;
+.column {
+    flex: 50%;
+    overflow: hidden;
 }
 
 .SandboxWrapper .item {
-    width: 49vw;
     background: rgba(255, 255, 255, 0.5);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10.3px);
-    padding-top: 1vw;
-    padding-bottom: 1vw;
-    overflow: hidden;
+    width: 100%;
+    padding-top: 5px;
+    flex-grow: 1;
 }
 
 .SandboxWrapper .CodeMirror {
-    height: max(40vh, 300px) !important;
-    font-size: x-large;
+    height: 45vh;
 }
 
+.controlledEditorWrapper {
+    height: 100%;
+}
+
+.rowItem {
+    /* height: 50%; */
+}
+
+.columnItem {
+    height: 100%;
+}
+
+.editor {
+    height: 100%;
+}
 
 .SandboxWrapper .buttons {
-    height: max(3vh, 40px);
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 16px;
-    backdrop-filter: blur(10.3px);
-    padding: 0.5vh;
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
-    width: max(20vw, 200px);
+    align-items: center;
+    justify-content: center;
+}
+
+.SandboxWrapper .buttons .buttonsFrame {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 16px;
+    display: flex;
+    width: max-content;
+    gap: 30px;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    justify-content: center;
 }
 
 .SandboxWrapper .myFrameHigh {
     border: none;
-    height: max(86vh, 650px) !important;
-
-}
-
-.SandboxWrapper .controlPanel {
-    width: max-content;
-    position: relative;
-    margin: 0 auto;
-}
-
-.SandboxWrapper .cssEditor {
-    margin-top: 1vh;
 }
 
 .SandboxWrapper .TaskPageButton {
-    margin-top: auto;
-    margin-bottom: auto;
     width: 4vw;
     height: 3vh;
     min-height: 30px;

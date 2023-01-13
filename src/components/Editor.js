@@ -29,23 +29,25 @@ export default function Editor(props) {
             <div className='taskFrameHeader'>
                 {displayName}
             </div>
-            <ControlledEditor
-                className='codeEditor'
-                value={codeValue}
-                onBeforeChange={handleChange}
-                options={{
-                    mode: language,
-                    lineWrapping: true,
-                    closebrackets: true,
-                    lint: false,
-                    matchBrackets: true,
-                    theme: 'xq-light',
-                    lineNumbers: true,
-                    smartIndent: true,
-                    electricChars: false,
-                    tabSize: 2
-                }}
-            />
+            <div className='controlledEditorWrapper'>
+                <ControlledEditor
+                    className='codeEditor'
+                    value={codeValue}
+                    onBeforeChange={handleChange}
+                    options={{
+                        mode: language,
+                        lineWrapping: true,
+                        closebrackets: true,
+                        lint: false,
+                        matchBrackets: true,
+                        theme: 'xq-light',
+                        lineNumbers: true,
+                        smartIndent: true,
+                        electricChars: false,
+                        tabSize: 2
+                    }}
+                />
+            </div>
         </div>
     )
 }
